@@ -41,3 +41,86 @@ insert into Staff_Member (name, gender, second_name, lastname, second_lastname ,
 insert into Staff_Member (name, gender, second_name, lastname, second_lastname , birth_date, user_id) values ('Ranee', 'M', 'Joey', 'Thornley', 'Malden', '03/09/1987', 18);
 insert into Staff_Member (name, gender, second_name, lastname, second_lastname , birth_date, user_id) values ('Emelia', 'F', 'Krishna', 'Schoolcroft', 'Edinburough', '23/06/1984', 19);
 insert into Staff_Member (name, gender, second_name, lastname, second_lastname , birth_date, user_id) values ('Zebulon', 'F', 'Pat', 'Haville', 'Giorgeschi', '24/09/1978', 20);
+
+INSERT INTO Job_Offer (name, description, available_vacans, date_begin, date_end, min_age, max_age, employer_id, salary)
+values ('Security Guard', 'We need security guards for three days for a music event, we expect you to be responsible, diligent, and punctual',
+4, TO_DATE('21072021','DDMMYYYY'), TO_DATE('28072021','DDMMYYYY'), 18, 35, 1, 354.2);
+
+INSERT INTO Job_Offer (name, description, available_vacans, date_begin, date_end, employer_id, salary)
+values ('Laboratory Cleaning', 'We need someone to clean our chemical laboratory, you dont need previous experience or special knowledgments',
+1, TO_DATE('27082021','DDMMYYYY'), TO_DATE('28082021','DDMMYYYY'), 3, 423.2);
+
+
+INSERT INTO Job_Offer (name, description, available_vacans, date_begin, date_end, employer_id, salary)
+values ('Office Cleaning', 'We are looking for self-motivated individual who have attention to details and truly appreciate a clean and tidy space.
+We are an eco-conscious business and we love to innovate with our cleaning practice, to help reduce our waste. 
+We try to use natural and eco-friendly cleaning products as much as we can and always appreciate input from our 
+team to keep the space clean while keeping our earth and people safe.',
+2, TO_DATE('12072021','DDMMYYYY'), TO_DATE('16082021','DDMMYYYY'), 4, 232.12);
+
+
+INSERT INTO Job_Offer (name, description, available_vacans, date_begin, date_end, min_age, max_age, employer_id, salary)
+values ('Cashier', 'We need a cashier for three days for a music event, we expect you to be responsible, diligent, and punctual',
+5, TO_DATE('21072021','DDMMYYYY'), TO_DATE('28072021','DDMMYYYY'), 18, 35, 2, 189.43);
+
+
+INSERT INTO Job_Offer (name, description, available_vacans, date_begin, date_end, min_age, max_age, employer_id,salary)
+values ('Cruise Ship Waiter', 'We need gentle, responsible, and patient waiters for our cruise to the Bahamas!',
+8, TO_DATE('10072021','DDMMYYYY'), TO_DATE('20072021','DDMMYYYY'), 18, 35, 2, 673.2);
+
+INSERT INTO Job_Offer (name, description, available_vacans, date_begin, date_end, employer_id,salary) values ('Software Engineer I', 'Become one of the stars behind The SHOW and become part of the world’s 
+most powerful entertainment brands. Our Company has one exciting mission: To entertain the human race.
+The Software Engineer role is responsible for taking technology innovations to the next level. 
+The primary responsibility of the position will be to design and develop the technology that enables great 
+customer experiences. This will include developing production grade code through vision, definition, 
+planning, execution, deployment and sustainment. All duties are to be performed in accordance with 
+departmental and MGM Resorts International policies, practices, and procedures.',
+1, TO_DATE('05072021','DDMMYYYY'), TO_DATE('20082021','DDMMYYYY'), 3, 1283.2);
+
+
+INSERT INTO Job_Offer (name, description, available_vacans, date_begin, date_end, gender, employer_id, salary) values ('Package Sorter', 'Be on the last stop before we deliver customer smiles! Delivery Station Team Members receive trucks full of orders then prepare them for delivery. As part of this team, you`ll load conveyor belts and transport and stage deliveries to be picked up by drivers',
+5, TO_DATE('21012021','DDMMYYYY'), TO_DATE('28102021','DDMMYYYY'), 'M', 4, 803.4);
+
+
+
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),3,1);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('24062021','DDMMYYYY'),7,1);
+
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('25062021','DDMMYYYY'),3,2);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('25062021','DDMMYYYY'),4,2);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('25062021','DDMMYYYY'),5,2);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('25062021','DDMMYYYY'),6,2);
+
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),7,3);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),8,3);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),9,3);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),10,3);
+
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),8,4);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('24062021','DDMMYYYY'),12,4);
+
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),1,6);
+
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),1,7);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),2,7);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),6,7);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),9,7);
+INSERT INTO Job_Application (status, date_application, employee_id, job_offer_id) values 
+('Pending',TO_DATE('23062021','DDMMYYYY'),12,7);
