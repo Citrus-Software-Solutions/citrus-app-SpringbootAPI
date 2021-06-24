@@ -1,15 +1,15 @@
-# CITRUS APP SPRINGBOOTAPI
+# Citrus App: SpringbootAPI
 
 «SpringBootAPI» is the nest API for the back end procedures and functions of "Citrus" APP.
 
 
 ### Built with
 
-*[Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-*[Spring Boot](https://spring.io/tools)
-*[Maven](https://maven.apache.org/download.cgi)
-*[Postgre SQL13](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
-*[Eclipse IDE 2021-06](https://www.eclipse.org/downloads/)
+* [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+* [Spring Boot](https://spring.io/tools)
+* [Maven](https://maven.apache.org/download.cgi)
+* [Postgre SQL13](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+* [Eclipse IDE 2021-06](https://www.eclipse.org/downloads/)
 
 
 
@@ -20,15 +20,17 @@ Please make sure to have all the previouse mentioned technologies properly insta
 ### Prerequisites
 
 
-*Please check that you have properly instaleld Java [java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) in your pc. Run the following commands to check your Java version:
+* Please check that you have properly instaleld Java [java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) in your pc. Run the following commands to check your Java version:
 ```sh
 java -version
 ```
-and
+Check that your System Envuiroment Variable is working
 ```bash
 echo $JAVA_HOME
 ```
-*Check that you have installed [Maven](https://maven.apache.org/download.cgi) properly:
+(This should give back the directory of your java jdk)
+
+* Check that you have installed [Maven](https://maven.apache.org/download.cgi) properly:
 ```sh
 mvn -v
 ```
