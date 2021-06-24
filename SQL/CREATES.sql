@@ -42,7 +42,7 @@ CREATE TABLE Staff_Member (
 CREATE TABLE Job_Offer (
     id serial PRIMARY KEY,
     name VARCHAR (25) NOT NULL,
-    description varchar(100) NOT NULL,
+    description varchar(700) NOT NULL,
     available_vacans integer NOT NULL,
     date_begin date not null,
     date_end date not null,
@@ -56,8 +56,8 @@ CREATE TABLE Job_Offer (
 
 CREATE TABLE Job_Application (
     id serial PRIMARY KEY,
-    status VARCHAR (10) NOT NULL,
-    Date_Aplication date not null,
+    status VARCHAR (10) NOT NULL CHECK (status = 'Pending' or status = 'Accepted' or status = 'Rejected'),
+    date_application date not null,
     employee_id integer not null,
     constraint Fk_fk_employee FOREIGN KEY (employee_id) REFERENCES employee (id),
     job_offer_id integer not null,
