@@ -1,5 +1,5 @@
 package domain.valueobjects;
 
-public class BirthDate {
+public class Job_Offer_Id {
 
 }
