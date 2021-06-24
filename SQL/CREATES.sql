@@ -4,7 +4,7 @@ CREATE TABLE Users(
     username VARCHAR (20) UNIQUE NOT NULL,
     password VARCHAR (50) NOT NULL,
     email VARCHAR (100) UNIQUE NOT NULL,
-    status VARCHAR(15) NOT NULL CHECK (status = 'Activo' or status = 'Inactivo')
+    status VARCHAR(15) NOT NULL CHECK (status = 'Active' or status = 'Inactive')
 );
 
 
@@ -18,7 +18,7 @@ CREATE TABLE Employer (
 CREATE TABLE Employee (
     id serial PRIMARY KEY,
     name VARCHAR (25) NOT NULL,
-    gender varchar (15) NOT NULL CHECK (gender = 'Masculino' or gender = 'Femenino'),
+    gender varchar (2) NOT NULL CHECK (gender = 'M' or gender = 'F'),
     second_name varchar (25),
     lastname VARCHAR (25) NOT NULL,
     second_lastname varchar (25) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE Employee (
 CREATE TABLE Staff_Member (
     id serial PRIMARY KEY,
     name VARCHAR (15) NOT NULL,
-    gender varchar (14) NOT NULL CHECK (gender = 'Masculino' or gender = 'Femenino'),
+    gender varchar (2) NOT NULL CHECK (gender = 'M' or gender = 'F'),
     second_name varchar (25),
     lastname VARCHAR (25) NOT NULL,
     second_lastname varchar (25) NOT NULL,
@@ -44,7 +44,10 @@ CREATE TABLE Job_Offer (
     name VARCHAR (25) NOT NULL,
     description varchar(100) NOT NULL,
     available_vacans integer NOT NULL,
-    gender varchar(11) CHECK (gender = 'Masculino' or gender = 'Femenino'),
+    date_begin date not null,
+    date_end date not null,
+    gender varchar(2) CHECK (gender = 'M' or gender = 'F'),
+    salary float NOT NULL,
     min_age integer,
     max_age integer,
     employer_id integer not null,
