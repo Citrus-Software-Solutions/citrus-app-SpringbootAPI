@@ -4,13 +4,12 @@ import java.util.ArrayList;
 
 public class Employee extends User{
 	
-	private Employee_name name;
+	private Employee_Name name;
 	
 	private Gender gender;
 	
-	private DateFormat birthdate;
-		
-	
+	private Date_Format birthdate;
+			
 	//public JobOffer createOffer() {
 		
 		//return;

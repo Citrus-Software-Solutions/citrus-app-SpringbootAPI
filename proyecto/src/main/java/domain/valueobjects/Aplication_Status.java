@@ -1,6 +1,5 @@
 package domain.valueobjects;
 
-public class UserName {
-
+public class Aplication_Status {
 	private String value;
 }

@@ -8,13 +8,13 @@ public class JobOffer {
 	
 	private Job_Offer_Name name;
 	
-	private Job_Offer_description description;
+	private Job_Offer_Description description;
 	
 	private Quota available_vacans;
 	
-	private DateFormat date_begin;
+	private Date_Format date_begin;
 	
-	private DateFormat date_end;
+	private Date_Format date_end;
 	
 	private Price salary;
 	

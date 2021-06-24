@@ -4,13 +4,13 @@ import domain.valueobjects.*;
 
 public class StaffMember extends User{
 		
-	private StaffMember_name name;
+	private Staff_Member_Name name;
 		
 	private Location location;
 	
 	private Gender gender;
 	
-	private DateFormat birthdate;
+	private Date_Format birthdate;
 	
 	
 	//public JobOffer createOffer() {

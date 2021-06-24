@@ -2,7 +2,7 @@ package domain.valueobjects;
 
 import java.util.Date;
 
-public class DateFormat {
+public class Date_Format {
 
 	private Date value;
 }

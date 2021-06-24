@@ -1,6 +1,6 @@
 package domain.valueobjects;
 
-public class Employee_name {
+public class Employee_Name {
 	
 	private String name;
 	

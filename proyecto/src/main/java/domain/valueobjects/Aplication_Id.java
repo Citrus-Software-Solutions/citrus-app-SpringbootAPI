@@ -1,5 +1,5 @@
 package domain.valueobjects;
 
-public class Job_Application_id {
+public class Aplication_Id {
 	private Long value; 
 }
