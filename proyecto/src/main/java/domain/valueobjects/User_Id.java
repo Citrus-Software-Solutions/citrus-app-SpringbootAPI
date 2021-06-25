@@ -1,6 +1,6 @@
 package domain.valueobjects;
 
-public class Job_Offer_Id {
+public class User_Id {
 
 	private Long value;
 }

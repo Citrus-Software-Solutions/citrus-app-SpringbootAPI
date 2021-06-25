@@ -1,8 +1,9 @@
 package domain.valueobjects;
 
-import java.util.Date;
+import java.sql.Date;
 
-public class DateFormat {
+
+public class Date_Application {
 
 	private Date value;
 }
