@@ -18,4 +18,5 @@ public class User {
 	private Password password;
 	private Email email;
 	private User_Status status;
+	private Location location;
 }

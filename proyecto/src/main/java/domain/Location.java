@@ -12,5 +12,6 @@ public class Location {
 	private Location_Id id; // global identity
 	private Location_Name name;
 	private Location_Type date;
+	private Location location;
 
 }

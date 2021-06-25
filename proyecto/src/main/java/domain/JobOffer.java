@@ -23,5 +23,7 @@ public class JobOffer {
 	private Age min_age;
 	
 	private Age max_age;
+	
+	private Location location;
 
 }
