@@ -5,8 +5,6 @@ import domain.valueobjects.*;
 public class StaffMember extends User{
 		
 	private Staff_Member_Name name;
-		
-	private Location location;
 	
 	private Gender gender;
 	
