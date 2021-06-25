@@ -4,3 +4,4 @@ drop table staff_member;
 drop table employee;
 drop table employer;
 drop table users;
+drop table location;
