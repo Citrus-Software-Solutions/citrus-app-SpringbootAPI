@@ -1,6 +1,9 @@
 package domain;
 
+import javax.persistence.Entity;
+
 import domain.valueobjects.*;
+
 
 public class StaffMember extends User{
 		

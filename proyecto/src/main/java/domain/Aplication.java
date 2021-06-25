@@ -9,7 +9,7 @@ import domain.valueobjects.User_Id;
 import domain.valueobjects.Job_Offer_Id;
 
 
-@Entity
+
 public class Aplication {
 
 	private Aplication_Id id; // global identity

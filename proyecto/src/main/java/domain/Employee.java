@@ -2,6 +2,9 @@ package domain;
 import domain.valueobjects.*;
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+
+
 public class Employee extends User{
 	
 	private Employee_Name name;

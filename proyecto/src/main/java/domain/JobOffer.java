@@ -1,4 +1,6 @@
 package domain;
+import javax.persistence.Entity;
+
 import domain.valueobjects.*;
 
 

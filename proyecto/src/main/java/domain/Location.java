@@ -6,7 +6,7 @@ import domain.valueobjects.Location_Id;
 import domain.valueobjects.Location_Name;
 import domain.valueobjects.Location_Type;
 
-@Entity
+
 public class Location {
 
 	private Location_Id id; // global identity
