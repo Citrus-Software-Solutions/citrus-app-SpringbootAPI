@@ -6,4 +6,15 @@ public class Price {
 	
 	private String moneda;
 
+	public Integer getPrice() {
+		return price;
+	}
+
+
+	public String getMoneda() {
+		return moneda;
+	}
+
+
+
 }
