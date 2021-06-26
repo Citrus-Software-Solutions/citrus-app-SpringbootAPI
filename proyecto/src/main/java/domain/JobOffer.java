@@ -3,7 +3,7 @@ import javax.persistence.Entity;
 
 import domain.valueobjects.*;
 
-
+@Entity
 public class JobOffer {
 	
 	private Job_Offer_Id id;

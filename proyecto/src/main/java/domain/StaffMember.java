@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 import domain.valueobjects.*;
 
-
+@Entity
 public class StaffMember extends User{
 		
 	private Staff_Member_Name name;

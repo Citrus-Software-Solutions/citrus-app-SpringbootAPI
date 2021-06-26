@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 
-
+@Entity
 public class Employee extends User{
 	
 	private Employee_Name name;
