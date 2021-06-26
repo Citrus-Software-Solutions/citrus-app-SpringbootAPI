@@ -15,22 +15,22 @@ import domain.valueobjects.User_Status;
 
 
 public class User {
-	private User_Id id; 
-	private Document document;
-	private Username name;
-	private Password password;
-	private Email email;
-	private User_Status status;
-	private Location location;
+	 private User_Id id; 
+	 private Document document;
+	 private Username name;
+	 private Password password;
+	 private Email email;
+	 private User_Status status;
+	 private Location location;
 
 
-	public User(User_Id id, 
-				Document document,
-				Username name,
-				Password password,
-				Email email,
-				User_Status status,
-				Location location)
+	public User(@JsonProperty("id") User_Id id, 
+				@JsonProperty("document")Document document,
+				@JsonProperty("name")Username name,
+				@JsonProperty("password") Password password,
+				@JsonProperty("email") Email email,
+				@JsonProperty("status") User_Status status,
+				@JsonProperty("location") Location location)
 	{
 		super();
 		this.id= id;
