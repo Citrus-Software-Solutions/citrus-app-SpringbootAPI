@@ -9,7 +9,7 @@ import domain.valueobjects.Password;
 import domain.valueobjects.Email;
 import domain.valueobjects.User_Status;
 
-
+@Entity
 public class User {
 
 	private User_Id id; // global identity
