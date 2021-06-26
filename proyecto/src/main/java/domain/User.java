@@ -2,6 +2,8 @@ package domain;
 
 import javax.persistence.Entity;
 
+import javax.validation.constraints.NotBlank;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import domain.valueobjects.User_Id;
@@ -13,7 +15,7 @@ import domain.valueobjects.User_Status;
 
 
 public class User {
-
+	@NotNull
 	private User_Id id; // global identity
 	private Document document;
 	@NotBlank
@@ -22,6 +24,7 @@ public class User {
 	private Email email;
 	private User_Status status;
 	private Location location;
+
 
 	public User(@JsonProperty("id") User_Id id, 
 				Document document,
