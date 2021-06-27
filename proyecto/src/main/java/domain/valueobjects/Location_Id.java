@@ -7,5 +7,9 @@ public class Location_Id {
 	public Long getValue() {
 		return value;
 	}
-	
+
+	public void setValue(Long value) {
+		this.value = value;
+	}
+
 }

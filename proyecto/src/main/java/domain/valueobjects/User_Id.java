@@ -8,4 +8,9 @@ public class User_Id {
 		return value;
 	}
 
+
+	public void setValue(Long value) {
+		this.value = value;
+	}
+
 }

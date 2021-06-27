@@ -6,6 +6,9 @@ public class Gender {
 
 	public char getGender() {
 		return gender;
-	} 
+	}
 
+	public void setGender(char gender) {
+		this.gender = gender;
+	} 
 }

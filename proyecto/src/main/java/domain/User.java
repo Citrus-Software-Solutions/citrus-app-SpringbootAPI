@@ -1,5 +1,11 @@
 package domain;
 
+import javax.persistence.Entity;
+
+//import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import domain.valueobjects.User_Id;
 import domain.valueobjects.Document;
 import domain.valueobjects.Username;
@@ -8,7 +14,6 @@ import domain.valueobjects.Email;
 import domain.valueobjects.User_Status;
 
 public class User {
-
 	private User_Id id; // global identity
 	private Document document;
 	private Username username;
@@ -59,8 +64,5 @@ public class User {
 	public void setLocation(Location location) {
 		this.location = location;
 	}
-	
-	
-	
-	
+
 }

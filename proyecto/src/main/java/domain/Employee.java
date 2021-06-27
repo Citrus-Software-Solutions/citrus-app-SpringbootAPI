@@ -6,6 +6,12 @@ import domain.valueobjects.Gender;
 
 public class Employee extends User{
 	
+	public Employee(User_Id id, Document document, Username name, Password password, Email email, User_Status status,
+			Location location) {
+		super(id, document, name, password, email, status, location);
+		// TODO Auto-generated constructor stub
+	}
+
 	private Employee_Name name;
 	
 	private Gender gender;

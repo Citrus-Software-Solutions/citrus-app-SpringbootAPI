@@ -9,4 +9,9 @@ public class Date_Format {
 	public Date getValue() {
 		return value;
 	}
+
+	public void setValue(Date value) {
+		this.value = value;
+	}
+
 }
