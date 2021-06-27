@@ -14,13 +14,16 @@ public class Employee_Name {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
+
 	public String getSecondname() {
 		return secondname;
 	}
+
 
 	public void setSecondname(String secondname) {
 		this.secondname = secondname;
@@ -29,6 +32,7 @@ public class Employee_Name {
 	public String getLastname() {
 		return lastname;
 	}
+
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
@@ -40,8 +44,8 @@ public class Employee_Name {
 
 	public void setSecondLastname(String secondLastname) {
 		this.secondLastname = secondLastname;
-	}
+	}	
 
 	
-	
+
 }

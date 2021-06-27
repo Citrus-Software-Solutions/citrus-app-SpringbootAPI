@@ -11,7 +11,4 @@ public class Gender {
 	public void setGender(char gender) {
 		this.gender = gender;
 	} 
-	
-	
-
 }

@@ -11,4 +11,5 @@ public class Password {
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 }

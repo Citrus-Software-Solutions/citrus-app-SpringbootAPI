@@ -10,5 +10,21 @@ public class Staff_Member_Name {
 	
 	private String secondLastname;
 
-	
+	public String getName() {
+		return name;
+	}
+
+	public String getSecondname() {
+		return secondname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public String getSecondLastname() {
+		return secondLastname;
+	}
+
+
 }

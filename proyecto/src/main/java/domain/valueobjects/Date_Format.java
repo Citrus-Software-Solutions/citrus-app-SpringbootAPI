@@ -13,6 +13,5 @@ public class Date_Format {
 	public void setValue(Date value) {
 		this.value = value;
 	}
-	
-	
+
 }

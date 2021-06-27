@@ -10,10 +10,8 @@ public class Date_Application {
 	public Date getValue() {
 		return value;
 	}
-
 	public void setValue(Date value) {
 		this.value = value;
 	}
-	
-	
+
 }

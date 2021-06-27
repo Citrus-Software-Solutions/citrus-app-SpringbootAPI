@@ -11,5 +11,6 @@ public class User_Status {
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 	
 }

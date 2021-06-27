@@ -1,5 +1,11 @@
 package domain.valueobjects;
 
 public class Aplication_Id {
-	private Long value; 
+	private Long value;
+
+	public Long getValue() {
+		return value;
+	} 
+	
+	
 }

@@ -11,6 +11,5 @@ public class Email {
 	public void setValue(String value) {
 		this.value = value;
 	}
-	
-	
+
 }
