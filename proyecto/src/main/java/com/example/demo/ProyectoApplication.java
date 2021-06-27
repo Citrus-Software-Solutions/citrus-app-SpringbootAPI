@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.boot.SpringApplication;
@@ -7,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,5 +34,10 @@ public class ProyectoApplication {
     public Iterable<Job_Offer> ListJob_Offer(ModelMap mp){
         mp.put("job_offer", uc.findAll());
         return uc.findAll();
+    }
+    
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+    public Optional<Job_Offer> nuevo(@PathVariable("id") Long id){
+        return uc.findById(id);
     }
 }
