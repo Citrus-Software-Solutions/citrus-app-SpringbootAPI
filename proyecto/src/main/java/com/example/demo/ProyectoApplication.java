@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.adapter.out.persistance.Job_Offer;
+import com.example.demo.adapter.out.persistance.StaffMemberJpaEntity;
 import com.example.demo.application.port.IJob_OfferJPA;
+import com.example.demo.application.port.IStaffMemberJPA;
 
 @ComponentScan
 @SpringBootApplication
@@ -26,24 +28,5 @@ public class ProyectoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoApplication.class, args);
-	}
-
-	@Autowired
-    private IJob_OfferJPA jo;
-	
-	@RequestMapping(value="", method = RequestMethod.GET)
-    public Iterable<Job_Offer> ListJob_Offer(ModelMap mp){
-        mp.put("job_offer", jo.findAll());
-        return jo.findAll();
-    }
-    
-	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public Optional<Job_Offer> FindByIdJob_Offer(@PathVariable("id") Long id){
-        return jo.findById(id);
-    }
-    
-    @RequestMapping(value="", method=RequestMethod.POST)
-	public Job_Offer createJob_Offer(@RequestBody Job_Offer job_offer) {
-		return jo.save(job_offer);
 	}
 }

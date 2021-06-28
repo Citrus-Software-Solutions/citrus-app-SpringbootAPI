@@ -26,7 +26,7 @@ public class StaffMemberController {
 		return staffm.findAll();
 	}
     
-	@RequestMapping(value="{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/view/{id}",method=RequestMethod.GET)
 	public Optional<StaffMemberJpaEntity> FindIdStaffMember(@PathVariable("id") Long id){
 		return staffm.findById(id);
 	}
