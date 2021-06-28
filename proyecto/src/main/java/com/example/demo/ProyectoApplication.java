@@ -28,22 +28,4 @@ public class ProyectoApplication {
 		SpringApplication.run(ProyectoApplication.class, args);
 	}
 
-	@Autowired
-    private IJob_OfferJPA jo;
-	
-	@RequestMapping(value="", method = RequestMethod.GET)
-    public Iterable<Job_OfferJpa> ListJob_Offer(ModelMap mp){
-        mp.put("job_offer", jo.findAll());
-        return jo.findAll();
-    }
-    
-	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public Optional<Job_OfferJpa> FindByIdJob_Offer(@PathVariable("id") Long id){
-        return jo.findById(id);
-    }
-    
-    @RequestMapping(value="", method=RequestMethod.POST)
-	public Job_OfferJpa createJob_Offer(@RequestBody Job_OfferJpa job_offer) {
-		return jo.save(job_offer);
-	}
 }

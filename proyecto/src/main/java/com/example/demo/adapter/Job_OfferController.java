@@ -12,24 +12,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.adapter.out.persistance.Job_OfferJpa;
 import com.example.demo.application.port.IJob_OfferJPA;
 
-@Controller
+@RestController
 @RequestMapping("/JobOffer")
 public class Job_OfferController {
 
 	@Autowired
     private IJob_OfferJPA jo;
 	
-	@RequestMapping(value="", method = RequestMethod.GET)
+	@RequestMapping(value="/view", method = RequestMethod.GET)
     public Iterable<Job_OfferJpa> ListJob_Offer(ModelMap mp){
         mp.put("job_offer", jo.findAll());
         return jo.findAll();
     }
     
-	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/view/{id}", method=RequestMethod.GET)
     public Optional<Job_OfferJpa> FindByIdJob_Offer(@PathVariable("id") Long id){
         return jo.findById(id);
     }
