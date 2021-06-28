@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.adapter.out.persistance.JobApplicationJpaEntity;
 import com.example.demo.application.port.IJobApplicationJPA;
 
-@Controller
+@RestController
 @RequestMapping("/JobApplication")
 public class Job_ApplicationController {
 	
