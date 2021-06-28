@@ -16,7 +16,7 @@ import org.hibernate.validator.NotEmpty;
 @Entity
 @Table(name="Job_Application")
 
-public class JobAplicationJpaEntity {
+public class JobApplicationJpaEntity {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -30,11 +30,11 @@ public class JobAplicationJpaEntity {
     @NotEmpty
     @Column private Long job_offer_id;
 
-    public JobAplicationJpaEntity(){
+    public JobApplicationJpaEntity(){
         super();
     }
 
-	public JobAplicationJpaEntity(long id, String status, Date date_application, Long employee_id, Long job_offer_id) {
+	public JobApplicationJpaEntity(long id, String status, Date date_application, Long employee_id, Long job_offer_id) {
 		super();
 		this.id = id;
 		this.status = status;
