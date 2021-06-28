@@ -12,20 +12,13 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 @Table(name="Employer")
 public class EmployerJpaEntity {
-    /*
-    CREATE TABLE Employer (
-    id serial PRIMARY KEY,
-    name VARCHAR (25) NOT NULL,
-    user_id integer not null,
-    constraint Fk_fk_user FOREIGN KEY (user_id) REFERENCES Users (id) ON DELETE CASCADE
-    );
-    */
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column private long id;
     @NotEmpty
     @Column private String name;
-    @NotEmpty
+    
     @Column private long user_id;
     
     public EmployerJpaEntity() {

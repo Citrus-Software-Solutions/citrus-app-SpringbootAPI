@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.adapter.out.persistance.EmployerJpaEntity;
 import com.example.demo.application.port.IEmployerJPA;
 
-@Controller
+@RestController
 @RequestMapping("api/v1/employer")
 public class EmployerController {
     @Autowired
@@ -30,7 +31,7 @@ public class EmployerController {
         return emp.findById(id);
     }
 
-    @RequestMapping(value="/view/{id}", method = RequestMethod.POST)
+    @RequestMapping(value="/", method = RequestMethod.POST)
     public EmployerJpaEntity createEmployer(@RequestBody EmployerJpaEntity employer){
         return emp.save(employer);
     }
