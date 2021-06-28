@@ -5,9 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.adapter.out.persistance.Job_Offer;
+import com.example.demo.adapter.out.persistance.Job_OfferJpa;
 
 @Repository
-public interface IJob_OfferJPA extends JpaRepository<Job_Offer, Long> {
+public interface IJob_OfferJPA extends JpaRepository<Job_OfferJpa, Long> {
 
 }

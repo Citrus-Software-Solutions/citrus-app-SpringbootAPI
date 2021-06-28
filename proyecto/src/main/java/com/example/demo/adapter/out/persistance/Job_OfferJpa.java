@@ -8,12 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
 import org.hibernate.validator.NotEmpty;
 
 @Entity
-public class Job_Offer {
-
+@Table(name = "job_offer")
+public class Job_OfferJpa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column private long id;
@@ -37,11 +37,11 @@ public class Job_Offer {
     @NotEmpty
     @Column private Long location_id;
 
-    public Job_Offer() {
+    public Job_OfferJpa() {
     	super();
     }
     
-    public Job_Offer(String name, String description, Long available_vacans, Date date_begin, Date date_end, String gender, Float salary, Long min_age, Long max_age, Long employer_id, Long location_id) {
+    public Job_OfferJpa(String name, String description, Long available_vacans, Date date_begin, Date date_end, String gender, Float salary, Long min_age, Long max_age, Long employer_id, Long location_id) {
         this.name = name;
         this.description = description;
         this.available_vacans = available_vacans;
