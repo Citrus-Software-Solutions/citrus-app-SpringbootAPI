@@ -15,7 +15,7 @@ import org.hibernate.validator.NotEmpty;
 public class Job_Offer {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column private long id;
     @NotEmpty
     @Column private String name;
