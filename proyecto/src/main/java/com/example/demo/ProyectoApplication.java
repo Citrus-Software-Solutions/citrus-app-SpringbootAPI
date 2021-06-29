@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.adapter.out.persistance.Job_OfferJpa;
 import com.example.demo.adapter.out.persistance.JobApplicationJpaEntity;
 import com.example.demo.adapter.out.persistance.Job_Offer;
 import com.example.demo.application.port.IJobApplicationJPA;
@@ -36,4 +37,5 @@ public class ProyectoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoApplication.class, args);
 	}
+
 }
