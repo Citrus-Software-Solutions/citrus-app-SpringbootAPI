@@ -17,10 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.adapter.out.persistance.Job_OfferJpa;
 import com.example.demo.adapter.out.persistance.JobApplicationJpaEntity;
-import com.example.demo.adapter.out.persistance.Job_Offer;
 import com.example.demo.application.port.IJobApplicationJPA;
 import com.example.demo.adapter.out.persistance.EmployerJpaEntity;
-import com.example.demo.adapter.out.persistance.Job_Offer;
 import com.example.demo.adapter.out.persistance.StaffMemberJpaEntity;
 import com.example.demo.application.port.IEmployerJPA;
 

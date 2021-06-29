@@ -16,4 +16,6 @@ import com.example.demo.adapter.out.persistance.Job_OfferJpa;
 public interface IJob_OfferJPA extends JpaRepository<Job_OfferJpa, Long> {
 
 	public List<Job_OfferJpa> findByEmployerId(@Param("EmployerId") Long EmployerId);
+	public List<Job_OfferJpa> findByStatus(@Param("status") String status);
+	
 }
