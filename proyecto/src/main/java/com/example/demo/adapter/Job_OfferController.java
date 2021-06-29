@@ -52,7 +52,7 @@ public class Job_OfferController {
 			
 			Job_OfferJpa oldStatus = jo.getOne(id);
 			
-			oldStatus.setStatus(status.getStatus());
+			oldStatus.setStatus("Published");
 			
 			return jo.save(oldStatus);
 		}
