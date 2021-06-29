@@ -8,8 +8,9 @@
 * [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 * [Spring Boot](https://spring.io/tools)
 * [Maven](https://maven.apache.org/download.cgi)
-* [Postgre SQL13](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+* [PostgreSQL 13](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 * [Eclipse IDE 2021-06](https://www.eclipse.org/downloads/)
+* [Postman](https://www.postman.com/)
 
 
 
@@ -34,6 +35,11 @@ echo $JAVA_HOME
 ```sh
 mvn -v
 ```
+
+* Install the lastest version of [Postman](https://www.postman.com/). This will be necesary if you want to try the API without using the front end implementation.
+
+* Install PostgreSQL 13, its needed for the correct usage of the spring/java dependencies. And also is needed for local testing.
+
 ### Instalation
 1. Download a Zip or Clone the repository into your system.
 2. Open the project folder with Eclipse as a "Proyect".
@@ -53,6 +59,7 @@ mvn clean compile
 ```bash
 mvn spring-boot:run
 ```
+9. (Optiona) You can test the API functionality using [postmant](https://www.postman.com/) and [postgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 ## Usage
 
 For the correct usage of this api please read our [Documentation](https://lucid.app/lucidchart/invitations/accept/inv_27ec144e-7ccf-4e62-9d1f-02b0bfe96e3f)
