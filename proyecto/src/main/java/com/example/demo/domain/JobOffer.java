@@ -8,6 +8,7 @@ import com.example.demo.domain.valueobjects.Job_Offer_Id;
 import com.example.demo.domain.valueobjects.Job_Offer_Name;
 import com.example.demo.domain.valueobjects.Price;
 import com.example.demo.domain.valueobjects.Quota;
+import com.example.demo.domain.valueobjects.Job_Status;
 
 public class JobOffer {
 	
@@ -24,6 +25,8 @@ public class JobOffer {
 	private Date_Format date_end;
 	
 	private Price salary;
+	
+	private Job_Status status;
 	
 	private Gender gender;
 	
@@ -87,6 +90,14 @@ public class JobOffer {
 
 	public void setSalary(Price salary) {
 		this.salary = salary;
+	}
+	
+	public Job_Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Job_Status status) {
+		this.status = status;
 	}
 
 	public Gender getGender() {

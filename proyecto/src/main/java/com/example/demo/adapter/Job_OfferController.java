@@ -39,4 +39,24 @@ public class Job_OfferController {
 	public Job_OfferJpa createJob_Offer(@RequestBody Job_OfferJpa job_offer) {
 		return jo.save(job_offer);
 	}
+    
+	@RequestMapping(value="/view/status/{status}", method=RequestMethod.GET)
+    public Iterable<Job_OfferJpa> findByPublishedStatus(@PathVariable("status") String status){
+        return jo.findByStatus(status);
+    }
+    
+    @RequestMapping(method=RequestMethod.PUT, value = "/change/status/{id}")
+	public Job_OfferJpa updateJob_Status(@PathVariable("id") Long id, @RequestBody Job_OfferJpa status){
+		
+		if (status != null && jo.existsById(id)){
+			
+			Job_OfferJpa oldStatus = jo.getOne(id);
+			
+			oldStatus.setStatus(status.getStatus());
+			
+			return jo.save(oldStatus);
+		}
+		return null;
+	}
+    
 }
