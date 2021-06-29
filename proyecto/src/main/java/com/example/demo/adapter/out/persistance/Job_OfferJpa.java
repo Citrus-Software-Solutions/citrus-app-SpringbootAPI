@@ -27,6 +27,8 @@ public class Job_OfferJpa {
     @Column private Date date_begin;
     @NotEmpty
     @Column private Date date_end;
+    @NotEmpty
+    @Column private String status;
     @Column private String gender;
     @NotEmpty
     @Column private Float salary;
@@ -41,12 +43,13 @@ public class Job_OfferJpa {
     	super();
     }
     
-    public Job_OfferJpa(String name, String description, Long available_vacans, Date date_begin, Date date_end, String gender, Float salary, Long min_age, Long max_age, Long employerId, Long location_id) {
+    public Job_OfferJpa(String name, String description, Long available_vacans, Date date_begin, Date date_end, String status, String gender, Float salary, Long min_age, Long max_age, Long employerId, Long location_id) {
         this.name = name;
         this.description = description;
         this.available_vacans = available_vacans;
         this.date_begin = date_begin;
         this.date_end = date_end;
+        this.status = status;
         this.gender = gender;
         this.salary = salary;
         this.min_age = min_age;
@@ -102,6 +105,15 @@ public class Job_OfferJpa {
     public void setDate_End(Date date_end) {
         this.date_end = date_end;
     }
+    
+    public String getStatus() {
+        return status;
+    }
+ 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+ 
     
     public String getGender() {
         return gender;
