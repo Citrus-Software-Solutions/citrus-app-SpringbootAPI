@@ -56,6 +56,7 @@ CREATE TABLE Job_Offer (
     available_vacans integer NOT NULL,
     date_begin date not null,
     date_end date not null,
+    status varchar(10) CHECK (status='Oculta' or status='Publicada'),
     gender varchar(2) CHECK (gender = 'M' or gender = 'F'),
     salary float NOT NULL,
     min_age integer,
