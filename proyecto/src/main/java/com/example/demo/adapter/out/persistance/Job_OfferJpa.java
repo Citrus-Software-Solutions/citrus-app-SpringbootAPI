@@ -33,7 +33,7 @@ public class Job_OfferJpa {
     @Column private Long min_age;
     @Column private Long max_age;
     @NotEmpty
-    @Column private Long employer_id;
+    @Column private Long employerId;
     @NotEmpty
     @Column private Long location_id;
 
@@ -41,7 +41,7 @@ public class Job_OfferJpa {
     	super();
     }
     
-    public Job_OfferJpa(String name, String description, Long available_vacans, Date date_begin, Date date_end, String gender, Float salary, Long min_age, Long max_age, Long employer_id, Long location_id) {
+    public Job_OfferJpa(String name, String description, Long available_vacans, Date date_begin, Date date_end, String gender, Float salary, Long min_age, Long max_age, Long employerId, Long location_id) {
         this.name = name;
         this.description = description;
         this.available_vacans = available_vacans;
@@ -51,7 +51,7 @@ public class Job_OfferJpa {
         this.salary = salary;
         this.min_age = min_age;
         this.max_age = max_age;
-        this.employer_id = employer_id;
+        this.employerId = employerId;
         this.location_id = location_id;
     }
     
@@ -136,11 +136,11 @@ public class Job_OfferJpa {
     }
     
     public Long getEmployer_Id() {
-        return employer_id;
+        return employerId;
     }
  
-    public void setEmployer_Id(Long employer_id) {
-        this.employer_id = employer_id;
+    public void setEmployer_Id(Long employerId) {
+        this.employerId = employerId;
     }
  
     public Long getLocation_Id() {
