@@ -23,7 +23,7 @@ public class Job_OfferController {
 	@Autowired
     private IJob_OfferJPA jo;
 	
-	@RequestMapping(value="", method = RequestMethod.GET)
+	@RequestMapping(value="/view", method = RequestMethod.GET)
     public Iterable<Job_Offer> ListJob_Offer(ModelMap mp){
         mp.put("job_offer", jo.findAll());
         return jo.findAll();
