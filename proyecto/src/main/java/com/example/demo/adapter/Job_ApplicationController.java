@@ -21,12 +21,12 @@ public class Job_ApplicationController {
 	@Autowired
 	private IJobApplicationJPA ja; 
 	
-	@RequestMapping(value="/view/all", method = RequestMethod.GET)
+	@RequestMapping(value="", method = RequestMethod.GET)
 	public Iterable<JobApplicationJpaEntity> ListAplications(ModelMap mp){
 		return ja.findAll();
 	}
     
-	@RequestMapping(value="{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public Optional<JobApplicationJpaEntity> FindIdApplication(@PathVariable("id") Long id){
 		return ja.findById(id);
 	}

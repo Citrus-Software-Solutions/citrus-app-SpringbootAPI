@@ -15,18 +15,18 @@ import com.example.demo.application.port.IEmployerJPA;
 import com.example.demo.application.port.ILocationJPA;
 
 @RestController
-@RequestMapping("api/v1/location")
+@RequestMapping("/location")
 public class LocationController {
 
 	@Autowired
     private ILocationJPA lo;
 	
-    @RequestMapping(value="/view/all", method = RequestMethod.GET)
+    @RequestMapping(value="", method = RequestMethod.GET)
     public Iterable<LocationJpaEntity> ListLocation(ModelMap em){
         return lo.findAll();
     }
     
-    @RequestMapping(value="/view/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/{id}", method = RequestMethod.GET)
     public Optional<LocationJpaEntity> FindLocation(@PathVariable("id") Long id)
     {
         return lo.findById(id);

@@ -24,13 +24,13 @@ public class Job_OfferController {
 	@Autowired
     private IJob_OfferJPA jo;
 	
-	@RequestMapping(value="/view", method = RequestMethod.GET)
+	@RequestMapping(value="", method = RequestMethod.GET)
     public Iterable<Job_OfferJpa> ListJob_Offer(ModelMap mp){
         mp.put("job_offer", jo.findAll());
         return jo.findAll();
     }
     
-	@RequestMapping(value="/view/{employer_id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{employer_id}", method=RequestMethod.GET)
     public Iterable<Job_OfferJpa> FindByIdJob_Offer(@PathVariable("employer_id") Long employer_id){
         return jo.findByEmployerId(employer_id);
     }
@@ -40,12 +40,12 @@ public class Job_OfferController {
 		return jo.save(job_offer);
 	}
     
-	@RequestMapping(value="/view/status/{status}", method=RequestMethod.GET)
+	@RequestMapping(value="ByStatus/{status}", method=RequestMethod.GET)
     public Iterable<Job_OfferJpa> findByPublishedStatus(@PathVariable("status") String status){
         return jo.findByStatus(status);
     }
     
-    @RequestMapping(method=RequestMethod.PUT, value = "/change/status/{id}")
+    @RequestMapping(method=RequestMethod.PUT, value = "/{id}")
 	public Job_OfferJpa updateJob_Status(@PathVariable("id") Long id, @RequestBody Job_OfferJpa status){
 		
 		if (status != null && jo.existsById(id)){

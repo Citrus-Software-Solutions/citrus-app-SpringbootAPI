@@ -15,17 +15,17 @@ import com.example.demo.adapter.out.persistance.EmployerJpaEntity;
 import com.example.demo.application.port.IEmployerJPA;
 
 @RestController
-@RequestMapping("api/v1/employer")
+@RequestMapping("employer")
 public class EmployerController {
     @Autowired
     private IEmployerJPA emp;
 
-    @RequestMapping(value="/view/all", method = RequestMethod.GET)
+    @RequestMapping(value="", method = RequestMethod.GET)
     public Iterable<EmployerJpaEntity> ListEmployer(ModelMap em){
         return emp.findAll();
     }
 
-    @RequestMapping(value="/view/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/{id}", method = RequestMethod.GET)
     public Optional<EmployerJpaEntity> FindEmployer(@PathVariable("id") Long id)
     {
         return emp.findById(id);

@@ -21,12 +21,12 @@ public class EmployeeController {
     private IEmployeeJPA empl;
     
     
-	@RequestMapping(value="/view/all", method = RequestMethod.GET)
+	@RequestMapping(value="", method = RequestMethod.GET)
 	public Iterable<EmployeeJpaEntity> ListEmployee(ModelMap sm){
 		return empl.findAll();
 	}
     
-	@RequestMapping(value="/view/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public Optional<EmployeeJpaEntity> FindIdEmployee(@PathVariable("id") Long id){
 		return empl.findById(id);
 	}
