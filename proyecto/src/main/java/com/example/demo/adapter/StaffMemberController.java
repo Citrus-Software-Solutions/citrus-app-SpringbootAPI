@@ -21,12 +21,12 @@ public class StaffMemberController {
     private IStaffMemberJPA staffm;
     
     
-	@RequestMapping(value="/view/all", method = RequestMethod.GET)
+	@RequestMapping(value="", method = RequestMethod.GET)
 	public Iterable<StaffMemberJpaEntity> ListStaffMember(ModelMap sm){
 		return staffm.findAll();
 	}
     
-	@RequestMapping(value="/view/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public Optional<StaffMemberJpaEntity> FindIdStaffMember(@PathVariable("id") Long id){
 		return staffm.findById(id);
 	}
