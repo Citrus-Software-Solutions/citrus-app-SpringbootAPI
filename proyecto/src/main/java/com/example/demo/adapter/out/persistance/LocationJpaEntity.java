@@ -23,12 +23,6 @@ import com.example.demo.adapter.out.persistance.EmployerJpaEntity;;
 @Entity
 @Table(name = "location")
 public class LocationJpaEntity {
-
-    @Column private long user_id;
-    
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="Job_Location", nullable=true)
-	private EmployerJpaEntity employerjpaEntity;
     
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
