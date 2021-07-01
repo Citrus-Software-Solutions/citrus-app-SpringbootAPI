@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
@@ -21,15 +23,20 @@ public class EmployerJpaEntity {
     
     @Column private long user_id;
     
+    @OneToOne
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    private LocationJpaEntity locationjpaEntity;
+    
     public EmployerJpaEntity() {
     	super();
     }
 
-	public EmployerJpaEntity(long id, @NotEmpty String name, @NotEmpty long user_id) {
+	public EmployerJpaEntity(long id, @NotEmpty String name, @NotEmpty long user_id, LocationJpaEntity locationjpaEntity) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.user_id = user_id;
+		this.locationjpaEntity = locationjpaEntity;
 	}
 
 	public long getId() {
@@ -56,5 +63,12 @@ public class EmployerJpaEntity {
 		this.user_id = user_id;
 	}
     
+	public LocationJpaEntity getLocationJpaEntity() {
+		return locationjpaEntity;
+	}
+
+	public void setLocationJpaEntity(LocationJpaEntity LocationJpaEntity) {
+		this.locationjpaEntity = LocationJpaEntity;
+	}
     
 }

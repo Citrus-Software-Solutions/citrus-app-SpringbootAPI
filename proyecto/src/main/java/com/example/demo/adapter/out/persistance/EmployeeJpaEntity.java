@@ -7,10 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.NotEmpty;
+
+import com.example.demo.adapter.out.persistance.LocationJpaEntity;
+import com.example.demo.adapter.out.persistance.UserJpaEntity;
 
 @Entity
 @Table(name="Employee")
@@ -36,13 +41,21 @@ public class EmployeeJpaEntity {
     @NotEmpty 
     @NotNull
     @Column private long user_id;
+    
+    @OneToOne
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    private UserJpaEntity userjpaEntity;
+    
+    @OneToOne
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    private LocationJpaEntity locationjpaEntity;
 
     public EmployeeJpaEntity() {
     	super();
     }
 
 	public EmployeeJpaEntity(long id, String name, String gender, String second_name, String lastname,
-			String second_lastname, @NotNull Date birth_date, @NotNull long user_id) {
+			String second_lastname, @NotNull Date birth_date, @NotNull long user_id, LocationJpaEntity locationjpaEntity) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -52,6 +65,7 @@ public class EmployeeJpaEntity {
 		this.second_lastname = second_lastname;
 		this.birth_date = birth_date;
 		this.user_id = user_id;
+		this.locationjpaEntity = locationjpaEntity;
 	}
 
 	public long getId() {
@@ -116,6 +130,14 @@ public class EmployeeJpaEntity {
 
 	public void setUser_id(long user_id) {
 		this.user_id = user_id;
+	}
+	
+	public LocationJpaEntity getLocationJpaEntity() {
+		return locationjpaEntity;
+	}
+
+	public void setLocationJpaEntity(LocationJpaEntity locationjpaEntity) {
+		this.locationjpaEntity = locationjpaEntity;
 	}
 	
 }
