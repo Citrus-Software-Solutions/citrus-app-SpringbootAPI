@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.validator.NotEmpty;
 
@@ -38,12 +40,16 @@ public class Job_OfferJpa {
     @Column private Long employerId;
     @NotEmpty
     @Column private Long location_id;
+    
+    @OneToOne
+    @JoinColumn(name = "location_id", insertable = false, updatable = false)
+    private LocationJpaEntity locationjpaEntity;
 
     public Job_OfferJpa() {
     	super();
     }
     
-    public Job_OfferJpa(String name, String description, Long available_vacans, Date date_begin, Date date_end, String status, String gender, Float salary, Long min_age, Long max_age, Long employerId, Long location_id) {
+    public Job_OfferJpa(String name, String description, Long available_vacans, Date date_begin, Date date_end, String status, String gender, Float salary, Long min_age, Long max_age, Long employerId, Long location_id, LocationJpaEntity locationjpaEntity) {
         this.name = name;
         this.description = description;
         this.available_vacans = available_vacans;
@@ -56,6 +62,7 @@ public class Job_OfferJpa {
         this.max_age = max_age;
         this.employerId = employerId;
         this.location_id = location_id;
+        this.locationjpaEntity = locationjpaEntity;
     }
     
     public long getId() {
@@ -162,4 +169,12 @@ public class Job_OfferJpa {
     public void setLocation_Id(Long location_id) {
         this.location_id = location_id;
     }
+    
+	public LocationJpaEntity getLocationJpaEntity() {
+		return locationjpaEntity;
+	}
+
+	public void setLocationJpaEntity(LocationJpaEntity locationjpaEntity) {
+		this.locationjpaEntity = locationjpaEntity;
+	}
 }
