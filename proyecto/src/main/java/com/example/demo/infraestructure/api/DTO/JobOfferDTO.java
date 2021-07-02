@@ -2,14 +2,17 @@ package com.example.demo.infraestructure.api.DTO;
 
 import java.util.Date;
 
+import com.example.demo.domain.Employer;
+import com.example.demo.domain.Location;
+
 
 
 public class JobOfferDTO {
 	
 	
 	public JobOfferDTO(Long id, String name, String description, Long available_vacans, Date date_begin, Date date_end,
-			String status, String gender, Float salary, Integer min_age, Integer max_age, String employer,
-			String location) {
+			String status, String gender, Float salary, Integer min_age, Integer max_age, EmployerDTO employer,
+			LocationDTO location) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -41,8 +44,8 @@ public class JobOfferDTO {
     Float salary;
     Integer min_age;
     Integer max_age;
-    String employer;
-    String location;
+    EmployerDTO employer;
+    LocationDTO location;
     
     
 	public Long getId() {
@@ -111,16 +114,16 @@ public class JobOfferDTO {
 	public void setMax_age(Integer max_age) {
 		this.max_age = max_age;
 	}
-	public String getEmployer() {
+	public EmployerDTO getEmployer() {
 		return employer;
 	}
-	public void setEmployer(String employer) {
+	public void setEmployer(EmployerDTO employer) {
 		this.employer = employer;
 	}
-	public String getLocation() {
+	public LocationDTO getLocation() {
 		return location;
 	}
-	public void setLocation(String location) {
+	public void setLocation(LocationDTO location) {
 		this.location = location;
 	}
 	

@@ -8,12 +8,11 @@ public class Location {
 
 	
 	
-	public Location(Location_Id id, Location_Name name, Location_Type type, Location location) {
+	public Location(Location_Id id, Location_Name name, Location_Type type) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.type = type;
-		this.location = location;
 	}
 	
 	public Location() {
@@ -38,17 +37,10 @@ public class Location {
 	public void setType(Location_Type type) {
 		this.type = type;
 	}
-	public Location getLocation() {
-		return location;
-	}
-	public void setLocation(Location location) {
-		this.location = location;
-	}
 	
 	private Location_Id id;
 	private Location_Name name;
 	private Location_Type type;
-	private Location location;
 	
 	
 

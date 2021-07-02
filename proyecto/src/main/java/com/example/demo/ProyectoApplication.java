@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 @EnableJpaRepositories
-public class ConexiondbApplication {
+public class ProyectoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ConexiondbApplication.class, args);
+		SpringApplication.run(ProyectoApplication.class, args);
 	}
 
 }

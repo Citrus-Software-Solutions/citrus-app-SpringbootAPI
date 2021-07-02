@@ -12,9 +12,9 @@ public class LocationMapperJPA {
 		Location_Id id = new Location_Id(jpa.getId());
 		Location_Name name = new Location_Name(jpa.getName());
 		Location_Type type = new Location_Type(jpa.getType());
-		Location location = new Location();
+	
 		
-		return new Location (id, name, type, location);
+		return new Location (id, name, type);
 	}
 
 

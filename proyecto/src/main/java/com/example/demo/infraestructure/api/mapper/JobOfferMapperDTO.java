@@ -11,23 +11,36 @@ import com.example.demo.domain.JobOffer;
 import com.example.demo.domain.Location;
 import com.example.demo.domain.valueObjects.Age;
 import com.example.demo.domain.valueObjects.Gender;
+import com.example.demo.infraestructure.api.DTO.EmployerDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
+import com.example.demo.infraestructure.api.DTO.LocationDTO;
 
 public class JobOfferMapperDTO {
 	
 	public JobOfferDTO toDTO(JobOffer jobOffer) {
-		String location;
-		String employer;
+		LocationDTO location;
+		EmployerDTO employer;
 		String gender;
 		Integer min_age;
 		Integer max_age;
 		String status;
 		
-		location = (jobOffer.getLocation().getName() == null)? null : jobOffer.getLocation().getName().getValue();
+		if (jobOffer.getLocation()== null) {
+			location = null;
+		}else {
+			LocationDTO locationd = new LocationDTO();
+			locationd.name = (jobOffer.getLocation().getName() == null)? null : jobOffer.getLocation().getName().getValue();
+			locationd.id = (jobOffer.getLocation().getId() == null)? null : jobOffer.getLocation().getId().getValue();
+			locationd.type = (jobOffer.getLocation().getType() == null)? null : jobOffer.getLocation().getType().getValue();
+			location = locationd;
+		}
 		if (jobOffer.getEmployer() == null) {
 			employer = null;
 		} else {
-			employer = (jobOffer.getEmployer().getName() == null)? null : jobOffer.getEmployer().getName().getValue();
+			EmployerDTO employerd = new EmployerDTO();
+			employerd.name = (jobOffer.getEmployer().getName() == null)? null : jobOffer.getEmployer().getName().getValue();
+			employerd.id = (jobOffer.getEmployer().getId() == null)? null : jobOffer.getEmployer().getId().getValue();
+			employer=employerd;
 
 		}
 		gender = (jobOffer.getGender() == null)? null : jobOffer.getGender().getGender();
