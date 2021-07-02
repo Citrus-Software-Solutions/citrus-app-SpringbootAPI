@@ -1,6 +1,11 @@
-package com.example.demo.domain.valueobjects;
+package com.example.demo.domain.valueObjects;
 
 public class Location_Name {
+
+	public Location_Name(String value) {
+		super();
+		this.value = value;
+	}
 
 	private String value;
 
@@ -8,8 +13,5 @@ public class Location_Name {
 		return value;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
-	}
 
 }

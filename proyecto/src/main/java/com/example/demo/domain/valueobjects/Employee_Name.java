@@ -1,4 +1,4 @@
-package com.example.demo.domain.valueobjects;
+package com.example.demo.domain.valueObjects;
 
 public class Employee_Name {
 	
@@ -15,18 +15,8 @@ public class Employee_Name {
 	}
 
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
 	public String getSecondname() {
 		return secondname;
-	}
-
-
-	public void setSecondname(String secondname) {
-		this.secondname = secondname;
 	}
 
 	public String getLastname() {
@@ -34,17 +24,10 @@ public class Employee_Name {
 	}
 
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
 	public String getSecondLastname() {
 		return secondLastname;
 	}
-
-	public void setSecondLastname(String secondLastname) {
-		this.secondLastname = secondLastname;
-	}	
+	
 
 	
 

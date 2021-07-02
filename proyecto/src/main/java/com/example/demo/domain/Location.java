@@ -1,18 +1,25 @@
 package com.example.demo.domain;
 
-
-import com.example.demo.domain.valueobjects.Location_Id;
-import com.example.demo.domain.valueobjects.Location_Name;
-import com.example.demo.domain.valueobjects.Location_Type;
-
+import com.example.demo.domain.valueObjects.Location_Id;
+import com.example.demo.domain.valueObjects.Location_Name;
+import com.example.demo.domain.valueObjects.Location_Type;
 
 public class Location {
 
-	private Location_Id id; // global identity
-	private Location_Name name;
-	private Location_Type type;
-	private Location location;
 	
+	
+	public Location(Location_Id id, Location_Name name, Location_Type type, Location location) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.location = location;
+	}
+	
+	public Location() {
+		super();
+	}
+
 	public Location_Id getId() {
 		return id;
 	}
@@ -37,6 +44,12 @@ public class Location {
 	public void setLocation(Location location) {
 		this.location = location;
 	}
+	
+	private Location_Id id;
+	private Location_Name name;
+	private Location_Type type;
+	private Location location;
+	
 	
 
 }

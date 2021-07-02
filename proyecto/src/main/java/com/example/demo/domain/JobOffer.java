@@ -1,17 +1,36 @@
 package com.example.demo.domain;
 
-import com.example.demo.domain.valueobjects.Age;
-import com.example.demo.domain.valueobjects.Date_Format;
-import com.example.demo.domain.valueobjects.Gender;
-import com.example.demo.domain.valueobjects.Job_Offer_Description;
-import com.example.demo.domain.valueobjects.Job_Offer_Id;
-import com.example.demo.domain.valueobjects.Job_Offer_Name;
-import com.example.demo.domain.valueobjects.Price;
-import com.example.demo.domain.valueobjects.Quota;
-import com.example.demo.domain.valueobjects.Job_Status;
+import com.example.demo.domain.valueObjects.Age;
+import com.example.demo.domain.valueObjects.Date_Format;
+import com.example.demo.domain.valueObjects.Gender;
+import com.example.demo.domain.valueObjects.Job_Offer_Description;
+import com.example.demo.domain.valueObjects.Job_Offer_Id;
+import com.example.demo.domain.valueObjects.Job_Offer_Name;
+import com.example.demo.domain.valueObjects.Job_Status;
+import com.example.demo.domain.valueObjects.Price;
+import com.example.demo.domain.valueObjects.Quota;
 
 public class JobOffer {
 	
+	public JobOffer(Job_Offer_Id id, Job_Offer_Name name, Job_Offer_Description description, Quota available_vacans,
+			Date_Format date_begin, Date_Format date_end, Price salary, Job_Status status, Gender gender, Age min_age,
+			Age max_age, Location location, Employer employer) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.available_vacans = available_vacans;
+		this.date_begin = date_begin;
+		this.date_end = date_end;
+		this.salary = salary;
+		this.status = status;
+		this.gender = gender;
+		this.min_age = min_age;
+		this.max_age = max_age;
+		this.location = location;
+		this.employer = employer;
+	}
+
 	private Job_Offer_Id id;
 	
 	private Job_Offer_Name name;
@@ -32,8 +51,11 @@ public class JobOffer {
 	
 	private Age min_age;
 	
+	private Age max_age;
+	
 	private Location location;
 
+	private Employer employer;
 	
 	
 	public Job_Offer_Id getId() {
@@ -122,6 +144,22 @@ public class JobOffer {
 
 	public void setLocation(Location location) {
 		this.location = location;
+	}
+
+	public Age getMax_age() {
+		return max_age;
+	}
+
+	public void setMax_age(Age max_age) {
+		this.max_age = max_age;
+	}
+
+	public Employer getEmployer() {
+		return employer;
+	}
+
+	public void setEmployer(Employer employer) {
+		this.employer = employer;
 	}
 	
 	

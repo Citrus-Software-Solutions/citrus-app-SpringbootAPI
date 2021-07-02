@@ -1,15 +1,17 @@
-package com.example.demo.domain.valueobjects;
+package com.example.demo.domain.valueObjects;
 
 public class Job_Offer_Name {
 	
 	private String name;
+
+
 
 	public String getName() {
 		return name;
 	}
 
 
-	public void setName(String name) {
+	public Job_Offer_Name(String name) {
 		this.name = name;
 	}
 

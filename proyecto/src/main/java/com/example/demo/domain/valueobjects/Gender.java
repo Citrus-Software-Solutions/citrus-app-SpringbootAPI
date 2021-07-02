@@ -1,14 +1,18 @@
-package com.example.demo.domain.valueobjects;
+package com.example.demo.domain.valueObjects;
 
 public class Gender {
 	
-	private char gender;
+	private String gender;
 
-	public char getGender() {
+	public Gender(String gender) {
+		super();
+		this.gender = gender;
+	}
+	
+	
+
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(char gender) {
-		this.gender = gender;
-	} 
 }

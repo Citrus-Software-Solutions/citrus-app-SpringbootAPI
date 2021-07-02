@@ -1,4 +1,4 @@
-package com.example.demo.domain.valueobjects;
+package com.example.demo.domain.valueObjects;
 
 public class Username {
 

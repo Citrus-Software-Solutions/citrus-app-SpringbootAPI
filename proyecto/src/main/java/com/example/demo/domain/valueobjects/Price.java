@@ -1,12 +1,18 @@
-package com.example.demo.domain.valueobjects;
+package com.example.demo.domain.valueObjects;
 
 public class Price {
 	
-	private Integer price;
+	private Float price;
 	
-	private String moneda;
+	private String moneda = "usd";
 
-	public Integer getPrice() {
+	public Price(Float salary) {
+		super();
+		this.price = salary;
+	}
+
+
+	public Float getPrice() {
 		return price;
 	}
 

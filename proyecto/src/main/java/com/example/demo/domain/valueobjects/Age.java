@@ -1,14 +1,17 @@
-package com.example.demo.domain.valueobjects;
+package com.example.demo.domain.valueObjects;
+
 
 public class Age {
 	
-	private Integer age;
-
-	public Integer getAge() {
-		return age;
-	}
-	public void setAge(Integer age) {
+	public Age(Integer age) {
+		super();
 		this.age = age;
 	}
+
+	public Integer getValue() {
+		return age;
+	}
+
+	private Integer age;
 
 }

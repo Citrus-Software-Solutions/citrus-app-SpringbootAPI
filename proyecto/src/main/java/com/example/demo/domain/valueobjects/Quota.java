@@ -1,11 +1,21 @@
-package com.example.demo.domain.valueobjects;
+package com.example.demo.domain.valueObjects;
 
 public class Quota {
 	
-	private Integer quota;
 
-	public Integer getQuota() {
+	private Long quota;
+
+	
+
+	public Long getQuota() {
 		return quota;
+	}
+
+
+
+	public Quota(Long quota) {
+		super();
+		this.quota = quota;
 	}
 
 }
