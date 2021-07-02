@@ -20,7 +20,7 @@ public class EmployerController {
     @Autowired
     private IEmployerJPA emp;
 
-    @RequestMapping(value="", method = RequestMethod.GET)
+    @RequestMapping(value="/", method = RequestMethod.GET)
     public Iterable<EmployerJpaEntity> ListEmployer(ModelMap em){
         return emp.findAll();
     }

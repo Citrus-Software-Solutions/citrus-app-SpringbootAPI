@@ -15,13 +15,13 @@ import com.example.demo.adapter.out.persistance.JobApplicationJpaEntity;
 import com.example.demo.application.port.IJobApplicationJPA;
 
 @RestController
-@RequestMapping("/JobApplication")
+@RequestMapping("/jobapplication")
 public class Job_ApplicationController {
 	
 	@Autowired
 	private IJobApplicationJPA ja; 
 	
-	@RequestMapping(value="", method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public Iterable<JobApplicationJpaEntity> ListAplications(ModelMap mp){
 		return ja.findAll();
 	}

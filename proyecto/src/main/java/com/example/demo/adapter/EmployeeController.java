@@ -14,14 +14,14 @@ import com.example.demo.adapter.out.persistance.EmployeeJpaEntity;
 import com.example.demo.application.port.IEmployeeJPA;
 
 @RestController
-@RequestMapping("/Employee")
+@RequestMapping("/employee")
 public class EmployeeController {
 
 	@Autowired
     private IEmployeeJPA empl;
     
     
-	@RequestMapping(value="", method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public Iterable<EmployeeJpaEntity> ListEmployee(ModelMap sm){
 		return empl.findAll();
 	}

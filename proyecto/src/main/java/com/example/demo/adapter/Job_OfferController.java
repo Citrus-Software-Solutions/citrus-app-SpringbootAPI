@@ -18,13 +18,13 @@ import com.example.demo.adapter.out.persistance.Job_OfferJpa;
 import com.example.demo.application.port.IJob_OfferJPA;
 
 @RestController
-@RequestMapping("/JobOffer")
+@RequestMapping("/joboffer")
 public class Job_OfferController {
 
 	@Autowired
     private IJob_OfferJPA jo;
 	
-	@RequestMapping(value="", method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.GET)
     public Iterable<Job_OfferJpa> ListJob_Offer(ModelMap mp){
         mp.put("job_offer", jo.findAll());
         return jo.findAll();

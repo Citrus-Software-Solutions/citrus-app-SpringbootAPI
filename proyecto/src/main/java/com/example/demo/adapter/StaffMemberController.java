@@ -14,14 +14,14 @@ import com.example.demo.adapter.out.persistance.StaffMemberJpaEntity;
 import com.example.demo.application.port.IStaffMemberJPA;
 
 @RestController
-@RequestMapping("/StaffMember")
+@RequestMapping("/staffmember")
 public class StaffMemberController {
 
     @Autowired
     private IStaffMemberJPA staffm;
     
     
-	@RequestMapping(value="", method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public Iterable<StaffMemberJpaEntity> ListStaffMember(ModelMap sm){
 		return staffm.findAll();
 	}

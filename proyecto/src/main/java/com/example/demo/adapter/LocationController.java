@@ -21,7 +21,7 @@ public class LocationController {
 	@Autowired
     private ILocationJPA lo;
 	
-    @RequestMapping(value="", method = RequestMethod.GET)
+    @RequestMapping(value="/", method = RequestMethod.GET)
     public Iterable<LocationJpaEntity> ListLocation(ModelMap em){
         return lo.findAll();
     }
