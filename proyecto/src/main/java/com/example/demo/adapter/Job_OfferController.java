@@ -30,7 +30,12 @@ public class Job_OfferController {
         return jo.findAll();
     }
     
-	@RequestMapping(value="/{employer_id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+    public Optional<Job_OfferJpa> FindById(@PathVariable("id") Long id){
+        return jo.findById(id);
+    }
+    
+	@RequestMapping(value="/ByEmployerId/{employer_id}", method=RequestMethod.GET)
     public Iterable<Job_OfferJpa> FindByIdJob_Offer(@PathVariable("employer_id") Long employer_id){
         return jo.findByEmployerId(employer_id);
     }
