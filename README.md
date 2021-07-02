@@ -13,7 +13,6 @@
 * [Postman](https://www.postman.com/)
 
 
-
 ## Getting Started
 
 Please make sure to have all the previouse mentioned technologies properly installed, with their respective Eviroment Variables if needed:
@@ -60,6 +59,11 @@ mvn clean compile
 mvn spring-boot:run
 ```
 9. (Optiona) You can test the API functionality using [postmant](https://www.postman.com/) and [postgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+
+10. (Optional) If you need to create a new version of the API's jar to export it, run in the cmd:
+```
+mvn clean package
+```
 ## Usage
 
 For the correct usage of this api please read our [Documentation](https://lucid.app/lucidchart/invitations/accept/inv_27ec144e-7ccf-4e62-9d1f-02b0bfe96e3f)
@@ -74,4 +78,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-* {Pending} [MIT](https://choosealicense.com/licenses/mit/)
+* [MIT](https://choosealicense.com/licenses/mit/)
+
+## Aknowledges
+* [Eclipse Spring Tools 4.11.0.RELEASE](https://marketplace.eclipse.org/content/spring-tools-4-aka-spring-tool-suite-4)
+* [TM Terminal 10.2](https://marketplace.eclipse.org/content/tm-terminal) 
+* [API's practices](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api#requirements)
