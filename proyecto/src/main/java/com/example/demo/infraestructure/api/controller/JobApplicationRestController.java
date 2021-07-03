@@ -24,7 +24,7 @@ import com.example.demo.infraestructure.database.mapper.JobApplicationMapperJPA;
 import com.example.demo.infraestructure.database.mapper.JobOfferMapperJPA;
 
 @RestController
-@RequestMapping("/JobApplication")
+@RequestMapping("/job-application")
 public class JobApplicationRestController {
 	
 	@Autowired
@@ -40,7 +40,7 @@ public class JobApplicationRestController {
 			return(mapperDTO.toDTO(jobApplicationService.findJobApplication()));
   }
 	
-	@RequestMapping(value="/ByEmployee/{employee_id}", method=RequestMethod.GET)
+	@RequestMapping(value="/employee/{employee_id}", method=RequestMethod.GET)
     public List<JobApplicationDTO> FindByIdEmployee(@PathVariable("employee_id") Long id){
 		return(mapperDTO.toDTO(jobApplicationService.findJobApplication(new  User_Id(id))));
  }

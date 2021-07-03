@@ -64,5 +64,10 @@ public class PersistanceAdapterJobOffer implements IJobOfferService{
 		JobOfferJPA result = jobRepo.save(jobOfferMapper.toJPA(jobOffer));
 		return jobOfferMapper.toDomain(result);
 	}
+	@Override
+	public JobOffer findJobOffer(Job_Offer_Id id) {
+		Long idJobOffer = id.getValue();
+		return(jobOfferMapper.toDomain(jobRepo.getById(idJobOffer)));
+	}
 
 }

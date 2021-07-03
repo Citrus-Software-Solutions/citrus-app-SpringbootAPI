@@ -15,11 +15,12 @@ import com.example.demo.infraestructure.database.JPAClasses.JobOfferJPA;
 import com.example.demo.infraestructure.database.mapper.JobOfferMapperJPA;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 import com.example.demo.infraestructure.api.mapper.JobOfferMapperDTO;
+import com.example.demo.domain.valueObjects.Job_Offer_Id;
 import com.example.demo.domain.valueObjects.Job_Status;
 import com.example.demo.domain.valueObjects.User_Id;
 
 @RestController
-@RequestMapping("/JobOffer")
+@RequestMapping("/job-offer")
 public class JobOfferRestController {
 	
 	@Autowired
@@ -34,13 +35,19 @@ public class JobOfferRestController {
 	 public List<JobOfferDTO> findAll(){
 			return(mapperDTO.toDTO(jobOfferService.findJobOffer()));
   }
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+    public JobOfferDTO findByIdJob_Offer(@PathVariable ("id")Long jobOffer){
+		return(mapperDTO.toDTO(jobOfferService.findJobOffer(new  Job_Offer_Id(jobOffer))));
+ }
+	
 	//finds job offers by employer id
-	@RequestMapping(value="/{employer_id}", method=RequestMethod.GET)
-    public List<JobOfferDTO> findByIdJob_Offer(@PathVariable("employer_id") Long employer_id){
+	@RequestMapping(value="/employer/{employer_id}", method=RequestMethod.GET)
+    public List<JobOfferDTO> findByIdEmployer(@PathVariable("employer_id") Long employer_id){
 		return(mapperDTO.toDTO(jobOfferService.findJobOffer(new  User_Id(employer_id))));
  }
 	//finds job offer by status
-	@RequestMapping(value="/ByStatus/{status}", method=RequestMethod.GET)
+	@RequestMapping(value="/status/{status}", method=RequestMethod.GET)
     public  List<JobOfferDTO> findByPublishedStatus(@PathVariable("status") String status){
 		return(mapperDTO.toDTO(jobOfferService.findJobOffer(new  Job_Status(status))));
     }
@@ -52,9 +59,9 @@ public class JobOfferRestController {
 		
 	}
 	//set status of a job offer
-	 @RequestMapping(method=RequestMethod.PUT, value = "/SetStatus/{status}")
-		public JobOfferDTO updateJob_Status(@RequestBody JobOfferJPA jobOffer, @PathVariable("status") String status){
-		return(mapperDTO.toDTO(jobOfferService.updateJobOfferStatus(mapperJPA.toDomain(jobOffer), new Job_Status(status))));
+	 @RequestMapping(method=RequestMethod.PUT, value = "/{id}/{status}")
+		public JobOfferDTO updateJob_Status(@PathVariable ("id")Long jobOffer, @PathVariable("status") String status){
+		return(mapperDTO.toDTO(jobOfferService.updateJobOfferStatus(jobOfferService.findJobOffer(new  Job_Offer_Id(jobOffer)), new Job_Status(status))));
 	 }
 	
 
