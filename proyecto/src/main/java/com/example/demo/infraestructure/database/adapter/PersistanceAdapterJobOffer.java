@@ -60,8 +60,8 @@ public class PersistanceAdapterJobOffer implements IJobOfferService{
 	}
 	@Override
 	public JobOffer updateJob(JobOffer jobOffer, Job_Status status) {
-		// TODO Auto-generated method stub
-		return null;
+		jobOffer.setStatus(status);
+		return jobOffer;
 	}
 
 }

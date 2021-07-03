@@ -9,6 +9,14 @@ public class Employee_Name {
 	private String lastname;
 	
 	private String secondLastname;
+	
+	public Employee_Name(String name, String secondn, String lastname, String slastname) {
+		super();
+		this.name=name;
+		this.lastname=lastname;
+		this.secondLastname=slastname;
+		this.secondname=secondn;
+	}
 
 	public String getName() {
 		return name;
