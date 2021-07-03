@@ -16,13 +16,17 @@ public class JobApplicationService {
 	}
 	
 	public List<Application> findJobApplication(){
-		return repo.findJobApplication();
-		
+		return repo.findJobApplication();	
 	}
+	
+	public List<Application> findJobOffer(User_Id employee){
+		return repo.findJobApplication(employee);
+	}
+	
 	public Application findJobApplication(Aplication_Id id){
-		
 		return repo.findJobApplication(id);
 	}
+	
 	public Application newJobApplication(Application jobApplication) {
 		
 		return repo.newJobApplication(jobApplication);

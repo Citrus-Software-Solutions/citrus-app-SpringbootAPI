@@ -41,5 +41,10 @@ public class PersistanceAdapterJobApplication implements IJobApplication{
 		JobApplicationJPA result = jobRepo.save(jobApplicationMapper.toJPA(jobApplication));
 		return jobApplicationMapper.toDomain(result);
 	}
+	@Override
+	public List<Application> findJobApplication(User_Id employee) {
+		long employeeid = employee.getValue();
+		return (jobApplicationMapper.toDomain(jobRepo.findByEmployeeId(employeeid)));
+	}
 	
 }

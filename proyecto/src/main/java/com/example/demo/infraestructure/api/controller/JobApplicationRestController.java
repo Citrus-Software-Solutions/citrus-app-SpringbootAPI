@@ -40,6 +40,11 @@ public class JobApplicationRestController {
 			return(mapperDTO.toDTO(jobApplicationService.findJobApplication()));
   }
 	
+	@RequestMapping(value="/ByEmployee/{employee_id}", method=RequestMethod.GET)
+    public List<JobApplicationDTO> FindByIdEmployee(@PathVariable("employee_id") Long id){
+		return(mapperDTO.toDTO(jobApplicationService.findJobApplication(new  User_Id(id))));
+ }
+	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
     public JobApplicationDTO FindByIdJob_Application(@PathVariable("id") Long id){
 		return(mapperDTO.toDTO(jobApplicationService.findJobApplication(new  Aplication_Id(id))));

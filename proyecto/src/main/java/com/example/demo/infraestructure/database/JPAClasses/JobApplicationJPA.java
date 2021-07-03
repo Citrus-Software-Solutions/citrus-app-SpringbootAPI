@@ -22,7 +22,7 @@ public class JobApplicationJPA {
     @Column private Date date_application;
 
     @NotEmpty
-    @Column private Long employee_id;
+    @Column(name="employee_id") private Long employeeId;
 	
     @NotEmpty
     @Column private Long job_offer_id;
@@ -36,7 +36,7 @@ public class JobApplicationJPA {
 		this.id = id;
 		this.status = status;
 		this.date_application = date_application;
-		this.employee_id = employee_id;
+		this.employeeId = employee_id;
 		this.job_offer_id = job_offer_id;
 	}
 	
@@ -44,7 +44,7 @@ public class JobApplicationJPA {
 		super();
 		this.status = status;
 		this.date_application = date_application;
-		this.employee_id = employee_id;
+		this.employeeId = employee_id;
 		this.job_offer_id = job_offer_id;
 	}
 
@@ -73,11 +73,11 @@ public class JobApplicationJPA {
 	}
 
 	public Long getEmployee_id() {
-		return employee_id;
+		return employeeId;
 	}
 
 	public void setEmployee_id(Long employee_id) {
-		this.employee_id = employee_id;
+		this.employeeId = employee_id;
 	}
 
 	public Long getJob_offer_id() {
