@@ -11,29 +11,48 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.validator.NotEmpty;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 @Entity
 @Table(name = "job_offer")
 public class JobOfferJPA {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column private long id;
+
     @NotEmpty
     @Column private String name;
+
     @NotEmpty
+    @Size(min = 10, message = "The description should have atleast 10 characters.")
     @Column private String description;
+
     @NotEmpty
+    @NotNull
     @Column private Long available_vacans;
+
     @NotEmpty
+    @NotNull
     @Column private Date date_begin;
+
     @NotEmpty
+    @NotNull
     @Column private Date date_end;
+
     @NotEmpty
+    @NotNull
     @Column private String status;
+
+    @NotNull
+    @NotEmpty
     @Column private String gender;
     @NotEmpty
+    @NotNull
     @Column private Float salary;
     @Column private Integer min_age;
     @Column private Integer max_age;
+    
     @NotEmpty
     @Column private Long employerId;
     @NotEmpty

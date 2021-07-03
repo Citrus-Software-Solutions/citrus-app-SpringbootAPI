@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="Employer")
@@ -15,7 +16,9 @@ public class EmployerJPA {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column private long id;
+
     @NotEmpty
+	@NotNull
     @Column private String name;
     
     @Column private long user_id;

@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.validator.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "location")
@@ -17,6 +18,7 @@ public class LocationJPA {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column private long id;
     @NotEmpty
+    @Size(min = 3, message = "The name should have atleast 3 characters.")
     @Column private String name;
     @NotEmpty
     @Column private String type;

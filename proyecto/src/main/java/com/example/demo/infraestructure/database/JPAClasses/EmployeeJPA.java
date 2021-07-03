@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.NotEmpty;
 
@@ -21,14 +22,23 @@ public class EmployeeJPA {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column private long id;
     @NotEmpty
+	@NotNull
+	@Size(min=3, message = "Name should have atleast 3 characters")
     @Column private String name;
     @NotEmpty
+	@NotNull
     @Column private String gender;
     @NotEmpty
+	@NotNull
+	@Size(min=3, message = "Second name should have atleast 3 characters")
     @Column private String second_name;
     @NotEmpty
+	@NotNull
+	@Size(min=3, message = "Last name should have atleast 3 characters")
     @Column private String lastname;
     @NotEmpty
+	@NotNull
+	@Size(min=3, message = "Second last-name should have atleast 3 characters")
     @Column private String second_lastname;
     @NotEmpty
     @NotNull

@@ -14,12 +14,16 @@ public class JobApplicationJPA {
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column private long id;
+
     @NotEmpty
     @Column private String status;
+
     @NotEmpty
     @Column private Date date_application;
+
     @NotEmpty
     @Column private Long employee_id;
+	
     @NotEmpty
     @Column private Long job_offer_id;
 
