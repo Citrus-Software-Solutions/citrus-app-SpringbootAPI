@@ -21,7 +21,7 @@ public class Application {
 		this.status =status;
 		this.date = date;
 		this.employee= employee;
-		this.joboffer = joboffer;
+		this.joboffer = job;
 		
 	}
 	
