@@ -37,7 +37,7 @@ public class PersistanceAdapterJobApplication implements IJobApplication{
 		return (jobApplicationMapper.toDomain(jobRepo.getById(apid)));
 	}
 	@Override
-	public Application newJobOffer(Application jobApplication) {
+	public Application newJobApplication(Application jobApplication) {
 		JobApplicationJPA result = jobRepo.save(jobApplicationMapper.toJPA(jobApplication));
 		return jobApplicationMapper.toDomain(result);
 	}

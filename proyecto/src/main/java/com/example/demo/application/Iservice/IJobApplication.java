@@ -9,6 +9,6 @@ import com.example.demo.domain.valueObjects.User_Id;
 public interface IJobApplication {
 	List<Application> findJobApplication();
 	Application findJobApplication(Aplication_Id id);
-	Application newJobOffer(Application jobApplication);
+	Application newJobApplication(Application jobApplication);
 
 }

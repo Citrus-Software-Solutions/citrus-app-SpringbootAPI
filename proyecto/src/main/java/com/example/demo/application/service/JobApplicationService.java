@@ -23,9 +23,9 @@ public class JobApplicationService {
 		
 		return repo.findJobApplication(id);
 	}
-	public Application newJobOffer(Application jobApplication) {
+	public Application newJobApplication(Application jobApplication) {
 		
-		return repo.newJobOffer(jobApplication);
+		return repo.newJobApplication(jobApplication);
 	}
 
 }

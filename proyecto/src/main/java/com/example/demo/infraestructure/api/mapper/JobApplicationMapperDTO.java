@@ -1,8 +1,11 @@
 package com.example.demo.infraestructure.api.mapper;
 
 import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.Application;
 import com.example.demo.domain.JobOffer;
@@ -12,6 +15,7 @@ import com.example.demo.infraestructure.api.DTO.JobApplicationDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 import com.example.demo.infraestructure.api.DTO.LocationDTO;
 
+@Service
 public class JobApplicationMapperDTO {
 	
 	public JobApplicationDTO toDTO(Application application){
@@ -38,7 +42,6 @@ public class JobApplicationMapperDTO {
 	    	employeed.setBirthdate((application.getEmployee().getBirthdate()==null) ? null: application.getEmployee().getBirthdate().getValue());
 	    	employee = employeed;
 	    }
-	    System.out.println(application.getJoboffer());
 	    if (application.getJoboffer()==null) {
 	    	jobOffer = null;
 	    }else {

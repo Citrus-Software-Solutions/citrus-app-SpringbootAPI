@@ -29,9 +29,10 @@ public class JobApplicationRestController {
 	
 	@Autowired
 	private IJobApplication jobApplicationService;
-	
-	private JobApplicationMapperDTO mapperDTO = new JobApplicationMapperDTO();
-    private JobApplicationMapperJPA mapperJPA = new JobApplicationMapperJPA();
+	@Autowired
+	private JobApplicationMapperDTO mapperDTO;
+	@Autowired
+    private JobApplicationMapperJPA mapperJPA;
 
 	
 	@RequestMapping(value="", method = RequestMethod.GET)
@@ -46,9 +47,9 @@ public class JobApplicationRestController {
 	
 	
 	@RequestMapping(value="", method=RequestMethod.POST)
-	public JobOfferDTO newJobOffer(@RequestBody JobApplicationJPA job_appliaction) {
-		//return(mapperDTO.toDTO(jobOfferService.newJobOffer(mapperJPA.toDomain(job_offer))));
-		return null;
+	public JobApplicationDTO newJobApplication(@RequestBody JobApplicationJPA job_appliaction) {
+		return(mapperDTO.toDTO(jobApplicationService.newJobApplication(mapperJPA.toDomain(job_appliaction))));
+
 		
 	}
 

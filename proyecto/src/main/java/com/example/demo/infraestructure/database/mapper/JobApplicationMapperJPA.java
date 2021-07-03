@@ -60,7 +60,7 @@ public class JobApplicationMapperJPA {
 	JobOfferRepository jobOfferRepo;
 	
 	public Application toDomain(JobApplicationJPA jobapplication) {
-		
+		System.out.println(jobapplication.getEmployee_id());
 		EmployeeJPA employeeJPA = employeeRepo.findById(jobapplication.getEmployee_id()).orElseThrow(EntityNotFoundException::new);
 		JobOfferJPA jobOfferJPA = jobOfferRepo.findById(jobapplication.getJob_offer_id()).orElseThrow(EntityNotFoundException::new);
 		
