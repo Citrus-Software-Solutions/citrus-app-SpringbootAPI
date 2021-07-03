@@ -31,4 +31,9 @@ public class JobOfferValidation {
 		if((Jobofferdto.getStatus() == "Published") && ((LocalDate.now().isBefore(Jobofferdto.getDate_begin()).toDate()))))
 	}*/
 
+	public boolean IsAvailableVacans() {
+		if( Jobofferdto.getAvailable_vacans() > 0 && Jobofferdto.getAvailable_vacans() != null)
+			return true;
+		else return false;
+	}
 }
