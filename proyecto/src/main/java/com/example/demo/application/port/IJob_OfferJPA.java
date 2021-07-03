@@ -19,3 +19,4 @@ public interface IJob_OfferJPA extends JpaRepository<Job_OfferJpa, Long> {
 	public List<Job_OfferJpa> findByStatus(@Param("status") String status);
 	
 }
+
