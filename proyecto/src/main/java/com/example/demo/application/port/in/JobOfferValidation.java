@@ -6,29 +6,29 @@ import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 
 public class JobOfferValidation {
 	
-	private JobOfferDTO JobOfferDto;
+	private JobOfferDTO Jobofferdto;
 	
-	public JobOfferValidation(JobOfferDTO JobOfferDto) {
-		this.JobOfferDto = JobOfferDto;
+	public JobOfferValidation(JobOfferDTO Jobofferdto) {
+		this.Jobofferdto = Jobofferdto;
 	}
 	
 	public boolean AgeGood() {
-		return JobOfferDto.getMin_age() < JobOfferDto.getMax_age();
+		return Jobofferdto.getMin_age() < Jobofferdto.getMax_age();
 	}
 	
 	public boolean GoodDate() {
 		
-		if (JobOfferDto.getDate_begin().before(JobOfferDto.getDate_end()))
+		if (Jobofferdto.getDate_begin().before(Jobofferdto.getDate_end()))
 			return true;
 		else return false;
 	}
 	
 	public boolean IsPublished() {
-		return JobOfferDto.getStatus() == "Published";
+		return Jobofferdto.getStatus() == "Published";
 	}
 	
 /*	public boolean GoodDatePublished() {
-		if((JobOfferDto.getStatus() == "Published") && ((LocalDate.now().isBefore(JobOfferDto.getDate_begin()).toDate()))))
+		if((Jobofferdto.getStatus() == "Published") && ((LocalDate.now().isBefore(Jobofferdto.getDate_begin()).toDate()))))
 	}*/
 
 }
