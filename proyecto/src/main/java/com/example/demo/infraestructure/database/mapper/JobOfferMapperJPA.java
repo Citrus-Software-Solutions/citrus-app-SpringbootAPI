@@ -1,7 +1,7 @@
 
 package com.example.demo.infraestructure.database.mapper;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
 
+import org.springframework.stereotype.Service;
+
 import com.example.demo.domain.Employer;
 import com.example.demo.domain.JobOffer;
 import com.example.demo.domain.Location;
@@ -15,6 +17,7 @@ import com.example.demo.infraestructure.api.DTO.EmployerDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 import com.example.demo.infraestructure.api.DTO.LocationDTO;
 
+@Service
 public class JobOfferMapperDTO {
 	
 	public JobOfferDTO toDTO(JobOffer jobOffer) {

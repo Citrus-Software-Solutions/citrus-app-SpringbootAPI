@@ -34,17 +34,18 @@ public class JobOfferRestController {
 	@Autowired
 	private IJobOfferService jobOfferService;
 	
-	private JobOfferMapperDTO mapperDTO = new JobOfferMapperDTO();
-    private JobOfferMapperJPA mapperJPA = new JobOfferMapperJPA();
+	@Autowired JobOfferMapperDTO mapperDTO;
+    
+	@Autowired private JobOfferMapperJPA mapperJPA;
 
 	
 	@RequestMapping(value="", method = RequestMethod.GET)
-	 public List<JobOfferDTO> hey(){
+	 public List<JobOfferDTO> findAll(){
 			return(mapperDTO.toDTO(jobOfferService.findJobOffer()));
   }
 	
 	@RequestMapping(value="/{employer_id}", method=RequestMethod.GET)
-    public List<JobOfferDTO> FindByIdJob_Offer(@PathVariable("employer_id") Long employer_id){
+    public List<JobOfferDTO> findByIdJob_Offer(@PathVariable("employer_id") Long employer_id){
 		return(mapperDTO.toDTO(jobOfferService.findJobOffer(new  User_Id(employer_id))));
  }
 	@RequestMapping(value="ByStatus/{status}", method=RequestMethod.GET)
@@ -54,8 +55,7 @@ public class JobOfferRestController {
 	
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public JobOfferDTO newJobOffer(@RequestBody JobOfferJPA job_offer) {
-		//return(mapperDTO.toDTO(jobOfferService.newJobOffer(mapperJPA.toDomain(job_offer))));
-		return null;
+		return(mapperDTO.toDTO(jobOfferService.newJobOffer(mapperJPA.toDomain(job_offer))));
 		
 	}
 	 @RequestMapping(method=RequestMethod.PUT, value = "/{id}")

@@ -44,8 +44,7 @@ public class JobOfferJPA {
     @NotNull
     @Column private String status;
 
-    @NotNull
-    @NotEmpty
+    
     @Column private String gender;
     @NotEmpty
     @NotNull
