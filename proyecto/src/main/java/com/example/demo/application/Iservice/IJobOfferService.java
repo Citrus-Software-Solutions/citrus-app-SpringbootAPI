@@ -12,5 +12,5 @@ public interface IJobOfferService {
 	List<JobOffer> findJobOffer(User_Id employer);
 	JobOffer newJobOffer(JobOffer jobOffer);
 	List<JobOffer> findJobOffer(Job_Status status);
-	JobOffer updateJob(JobOffer jobOffer, Job_Status status);
+	JobOffer updateJobOfferStatus(JobOffer jobOffer, Job_Status status);
 }

@@ -59,9 +59,10 @@ public class PersistanceAdapterJobOffer implements IJobOfferService{
 		return(jobOfferMapper.toDomain(jobRepo.findByStatus(status)));
 	}
 	@Override
-	public JobOffer updateJob(JobOffer jobOffer, Job_Status status) {
+	public JobOffer updateJobOfferStatus(JobOffer jobOffer, Job_Status status) {
 		jobOffer.setStatus(status);
-		return jobOffer;
+		JobOfferJPA result = jobRepo.save(jobOfferMapper.toJPA(jobOffer));
+		return jobOfferMapper.toDomain(result);
 	}
 
 }

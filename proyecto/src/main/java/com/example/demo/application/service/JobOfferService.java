@@ -27,8 +27,9 @@ public class JobOfferService {
 	public List<JobOffer> findJobOffer(Job_Status status) {
 		return repo.findJobOffer(status);
 	}
-	public JobOffer updateJob(JobOffer jobOffer, Job_Status status) {
-		return repo.updateJob(jobOffer, status);
+	public JobOffer updateJobOfferStatus(JobOffer jobOffer, Job_Status status) {
+		jobOffer.setStatus(status);
+		return repo.updateJobOfferStatus(jobOffer, status);
 	}
 
 }
