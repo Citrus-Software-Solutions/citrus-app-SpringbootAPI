@@ -66,8 +66,7 @@ public class PersistanceAdapterJobOffer implements IJobOfferService{
 	}
 	@Override
 	public JobOffer findJobOffer(Job_Offer_Id id) {
-		Long idJobOffer = id.getValue();
-		return(jobOfferMapper.toDomain(jobRepo.getById(idJobOffer)));
+		return jobOfferMapper.toDomain(jobRepo.findById(id.getValue()).orElseThrow(EntityNotFoundException::new));
 	}
 
 }

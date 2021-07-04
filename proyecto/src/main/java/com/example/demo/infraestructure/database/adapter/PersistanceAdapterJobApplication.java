@@ -2,6 +2,8 @@ package com.example.demo.infraestructure.database.adapter;
 
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Service;
@@ -34,7 +36,7 @@ public class PersistanceAdapterJobApplication implements IJobApplication{
 	@Override
 	public Application findJobApplication(Aplication_Id id) {
 		Long apid = id.getValue();
-		return (jobApplicationMapper.toDomain(jobRepo.getById(apid)));
+		return jobApplicationMapper.toDomain(jobRepo.findById(apid).orElseThrow(EntityNotFoundException::new));
 	}
 	@Override
 	public Application newJobApplication(Application jobApplication) {
