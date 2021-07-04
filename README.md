@@ -60,6 +60,33 @@ mvn clean package
 ```
 ## Test 
 * [Routes and endpoints](https://docs.google.com/document/d/1JcTT2CHUaDCkFoKkd_NRmqmBzVGW7hJf53aKvgqzCto/edit?usp=sharing)
+* You can test the application within the eclipse IDE with: «Rigthclick->Run as ->JUnit Test».
+* You can also use mvn command lines to test the program:
+
+# Run all the unit test classes
+```bash
+$ mvn test
+```
+
+# Run a single test class
+```bash
+$mvn -Dtest=TestApp1 test
+```
+
+# Run a single test method from a test class
+```bash
+$mvn -Dtest=TestApp1#methodname test
+```
+
+# Run all test method that match pattern 'TestHello*' from a test class
+```bash
+$mvn -Dtest=testApp1#testHello* test
+```
+
+# Run all test method that match pattern 'TestHello*' and 'testMagic*'from a test class
+```bash
+$mvn -Dtest=testApp1#testHello*+testMagic* test
+```
 
 ## Routes
 * [Routes and endpoints](https://docs.google.com/document/d/1JcTT2CHUaDCkFoKkd_NRmqmBzVGW7hJf53aKvgqzCto/edit?usp=sharing)
