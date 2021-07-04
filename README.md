@@ -1,9 +1,11 @@
 # Citrus App: SpringbootAPI
 
-«SpringBootAPI» is the nest API for the back end procedures and functions of "Citrus" APP.
+### Description
+Citrus App is a job finder app created and developed by Citrus Software Solutions.
 
+This repository contain our API developed in the SpringBoot framework using CLEAN or Hexagonal Architecture.
 
-### Built with
+### Installation & Requirements
 
 * [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 * [Spring Boot](https://spring.io/tools)
@@ -11,14 +13,6 @@
 * [PostgreSQL 13](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 * [Eclipse IDE 2021-06](https://www.eclipse.org/downloads/)
 * [Postman](https://www.postman.com/)
-
-
-## Getting Started
-
-Please make sure to have all the previouse mentioned technologies properly installed, with their respective Eviroment Variables if needed:
-
-### Prerequisites
-
 
 * Please check that you have properly instaleld Java [java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) in your pc. Run the following commands to check your Java version:
 ```sh
@@ -39,7 +33,7 @@ mvn -v
 
 * Install PostgreSQL 13, its needed for the correct usage of the spring/java dependencies. And also is needed for local testing.
 
-### Instalation
+### Running the app
 1. Download a Zip or Clone the repository into your system.
 2. Open the project folder with Eclipse as a "Proyect".
 3. Using the [Spring Tools 4](https://marketplace.eclipse.org/content/spring-tools-4-aka-spring-tool-suite-4) do the following steps in order in the IDE:
@@ -64,23 +58,58 @@ mvn spring-boot:run
 ```
 mvn clean package
 ```
-## Usage
+## Test 
+* [Routes and endpoints](https://docs.google.com/document/d/1JcTT2CHUaDCkFoKkd_NRmqmBzVGW7hJf53aKvgqzCto/edit?usp=sharing)
+* You can test the application within the eclipse IDE with: «Rigthclick->Run as ->JUnit Test».
+* You can also use mvn command lines to test the program:
 
-For the correct usage of this api please read our [Documentation](https://lucid.app/lucidchart/invitations/accept/inv_27ec144e-7ccf-4e62-9d1f-02b0bfe96e3f)
+# Run all the unit test classes
+```bash
+$ mvn test
+```
 
-## Roadmap
+# Run a single test class
+```bash
+$mvn -Dtest=TestApp1 test
+```
 
-See the [open issues](https://github.com/Citrus-Software-Solutions/citrus-app-SpringbootAPI/issues) for a list of proposed features (and known issues).
+# Run a single test method from a test class
+```bash
+$mvn -Dtest=TestApp1#methodname test
+```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+# Run all test method that match pattern 'TestHello*' from a test class
+```bash
+$mvn -Dtest=testApp1#testHello* test
+```
 
-Please make sure to update tests as appropriate.
+# Run all test method that match pattern 'TestHello*' and 'testMagic*'from a test class
+```bash
+$mvn -Dtest=testApp1#testHello*+testMagic* test
+```
 
-## License
-* [MIT](https://choosealicense.com/licenses/mit/)
+## Routes
+* [Routes and endpoints](https://docs.google.com/document/d/1JcTT2CHUaDCkFoKkd_NRmqmBzVGW7hJf53aKvgqzCto/edit?usp=sharing)
 
-## Aknowledges
+## Citrus BackEnd Developers
+* [Carlos Sánchez](https://github.com/cafesaro)
+* [Mariana Rodriguez](https://github.com/marianangelic)
+* [Mario Avena](https://github.com/Mariosor12)
+* [Victor Vasquez](https://github.com/ImMamey)
+
+## References
 * [Eclipse Spring Tools 4.11.0.RELEASE](https://marketplace.eclipse.org/content/spring-tools-4-aka-spring-tool-suite-4)
 * [TM Terminal 10.2](https://marketplace.eclipse.org/content/tm-terminal) 
 * [API's practices](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api#requirements)
+* [Example Implementation of a Hexagonal Architecture](https://github.com/thombergs/buckpal/tree/f5a9be50771e77ca66a153bc83c383b32cab738e)
+* [Hexagonal Architecture with Spring Data Example](https://github.com/refactorizando-web/spring-data-hexagonal-architecture)
+* [Validation in Spring Boot](https://www.baeldung.com/spring-boot-bean-validation)
+* [Spring REST Validation Example](https://mkyong.com/spring-boot/spring-rest-validation-example/) 
+* [Implementing Validation for RESTful Services with Spring Boot](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api#requirements)
+* [Complete Guide to Validation With Spring Boot](https://reflectoring.io/bean-validation-with-spring-boot/)
+* [Testing in Spring Boot](https://www.baeldung.com/spring-boot-testing)
+* [Spring Boot CRUD REST APIs Validation Example](https://www.javaguides.net/2018/09/spring-boot-crud-rest-apis-validation-example.html)
+* [SpringBootHibernateJPA](https://github.com/minnela/SpringBootHibernateJPA/tree/master/src/main/java/com/covid/info) 
+* [Spring Boot — Accessing Data with JPA Hibernate and PostgreSQL](https://medium.com/analytics-vidhya/spring-boot-accessing-data-with-jpa-hibernate-and-postgresql-af68386363a4)
+* [Connecting to Heroku Postgres from Spring Boot](https://stackoverflow.com/questions/33633243/connecting-to-heroku-postgres-from-spring-boot/49978310)
+* [Spring Boot Tutorial for Beginners (Java Framework)](https://www.youtube.com/watch?v=vtPkZShrvXQ&t=202s)
