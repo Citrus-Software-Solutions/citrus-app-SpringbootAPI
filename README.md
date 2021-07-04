@@ -72,6 +72,9 @@ For the correct usage of this api please read our [Documentation](https://lucid.
 
 See the [open issues](https://github.com/Citrus-Software-Solutions/citrus-app-SpringbootAPI/issues) for a list of proposed features (and known issues).
 
+## Routes
+* [Routes and endpoints](https://docs.google.com/document/d/1JcTT2CHUaDCkFoKkd_NRmqmBzVGW7hJf53aKvgqzCto/edit?usp=sharing)
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
