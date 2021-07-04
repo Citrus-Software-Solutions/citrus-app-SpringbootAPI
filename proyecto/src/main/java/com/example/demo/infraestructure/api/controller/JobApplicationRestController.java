@@ -54,8 +54,6 @@ public class JobApplicationRestController {
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public JobApplicationDTO newJobApplication(@RequestBody JobApplicationJPA job_appliaction) {
 		return(mapperDTO.toDTO(jobApplicationService.newJobApplication(mapperJPA.toDomain(job_appliaction))));
-
-		
 	}
 
 }
