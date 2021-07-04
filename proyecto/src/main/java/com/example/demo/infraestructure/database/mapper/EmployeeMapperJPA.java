@@ -1,5 +1,9 @@
 package com.example.demo.infraestructure.database.mapper;
 
+import javax.validation.Valid;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
 import com.example.demo.domain.Employee;
 import com.example.demo.domain.valueObjects.Date_Format;
 import com.example.demo.domain.valueObjects.Employee_Name;
@@ -11,7 +15,7 @@ import com.example.demo.infraestructure.database.JPAClasses.EmployerJPA;
 
 public class EmployeeMapperJPA {
 	
-	public Employee toDomain(EmployeeJPA jpa){
+	public Employee toDomain(@Valid @RequestBody EmployeeJPA jpa){
 		User_Id id = new User_Id(jpa.getId());
 		Employee_Name name = new Employee_Name(jpa.getName(), jpa.getSecond_name(), jpa.getLastname(), jpa.getSecond_lastname());
 		Gender gender= new Gender(jpa.getGender());

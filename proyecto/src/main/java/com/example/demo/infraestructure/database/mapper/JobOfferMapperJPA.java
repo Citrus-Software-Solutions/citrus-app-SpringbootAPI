@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.demo.domain.Employer;
 import com.example.demo.domain.JobOffer;
@@ -45,7 +47,7 @@ public class JobOfferMapperJPA {
 	@Autowired
 	JobOfferRepository jobRepo;
 	
-	public JobOffer toDomain(JobOfferJPA jobOfferJPA) {
+	public JobOffer toDomain(@Valid @RequestBody JobOfferJPA jobOfferJPA) {
 		EmployerJPA employerJPA = employerRepo.findById(jobOfferJPA.getEmployer_Id()).orElseThrow(EntityNotFoundException::new);
 		LocationJPA locationJPA = locationRepo.findById(jobOfferJPA.getLocation_Id()).orElseThrow(EntityNotFoundException::new);
 		Location location;
