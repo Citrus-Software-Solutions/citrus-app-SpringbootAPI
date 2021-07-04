@@ -29,7 +29,6 @@ public class JobOfferValidation {
 	}
 	
 		
-	
 	 public boolean GoodDatePublished() {
 		if((Jobofferdto.getStatus() == "Published") && ((LocalDate.now().isBefore(Jobofferdto.getDate_begin().toInstant().atZone(ZoneId.systemDefault()).toLocalDate())))){
 			return true;
