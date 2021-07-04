@@ -1,42 +1,35 @@
 package com.example.demo;
 
-import java.sql.Date;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
-
-import com.example.demo.application.Iservice.IJobApplication;
 import com.example.demo.infraestructure.api.controller.JobApplicationRestController;
+import com.example.demo.infraestructure.database.repository.JobApplicationRepository;
 import com.example.demo.infraestructure.database.JPAClasses.JobApplicationJPA;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
+import org.junit.jupiter.api.Assertions.*;
+
+
+@SpringBootTest
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(JobApplicationRestController.class)
 public class JobApplicationTest {
+	
+    @Test
+    public void tessStatusJobApplication() {
+    	JobApplicationJPA jobapplicationjpa = new JobApplicationJPA();
+        jobapplicationjpa.setStatus("Pending");
+        assertEquals(jobapplicationjpa.getStatus(), "Pending");
+    }
 
-	@Mock
-	private IJobApplication jobapplicationinterface;
-	
-	@Mock
-	private JobApplicationRestController jobapplicationcontroller;
-	
-	@Mock
-	private JobApplicationJPA jobapplicationjpa;
-	
-	@BeforeEach
-	public void setUp() {
-		MockitoAnnotations.initMocks(jobapplicationcontroller);
-	}
-	
-	@Test
-	public void AllData() {
-		Long id;
-		String status;
-		Date date_application;
-		Long employee_id;
-		Long location_id;
-	}
 }
