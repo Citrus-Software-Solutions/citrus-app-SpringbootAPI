@@ -1,6 +1,7 @@
 package com.example.demo.application.port.in;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 
@@ -27,10 +28,16 @@ public class JobOfferValidation {
 		return Jobofferdto.getStatus() == "Published";
 	}
 	
-/*	public boolean GoodDatePublished() {
-		if((Jobofferdto.getStatus() == "Published") && ((LocalDate.now().isBefore(Jobofferdto.getDate_begin()).toDate()))))
-	}*/
-
+		
+	
+	 public boolean GoodDatePublished() {
+		if((Jobofferdto.getStatus() == "Published") && ((LocalDate.now().isBefore(Jobofferdto.getDate_begin().toInstant().atZone(ZoneId.systemDefault()).toLocalDate())))){
+			return true;
+		}
+		return false;
+	 }
+	 
+	 
 	public boolean IsAvailableVacans() {
 		if( Jobofferdto.getAvailable_vacans() > 0 && Jobofferdto.getAvailable_vacans() != null)
 			return true;
