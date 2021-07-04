@@ -2,22 +2,14 @@ package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.RequestBuilder;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.example.demo.infraestructure.api.controller.JobApplicationRestController;
-import com.example.demo.infraestructure.database.repository.JobApplicationRepository;
 import com.example.demo.infraestructure.database.JPAClasses.JobApplicationJPA;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertNotNull;
 
 
 @SpringBootTest
@@ -29,7 +21,28 @@ public class JobApplicationTest {
     public void tessStatusJobApplication() {
     	JobApplicationJPA jobapplicationjpa = new JobApplicationJPA();
         jobapplicationjpa.setStatus("Pending");
-        assertEquals(jobapplicationjpa.getStatus(), "Pending");
+        assertNotNull(jobapplicationjpa.getStatus());
+    }
+    
+    @Test
+    public void testIdJobApplication() {
+    	JobApplicationJPA jobapplicationjpa = new JobApplicationJPA();
+        jobapplicationjpa.setId(1);
+        assertNotNull(jobapplicationjpa.getId());
+    }
+    
+    @Test
+    public void testEmployeeIdJobApplication() {
+    	JobApplicationJPA jobapplicationjpa = new JobApplicationJPA();
+        jobapplicationjpa.setEmployee_id((long) 2);
+        assertNotNull(jobapplicationjpa.getEmployee_id());
+    }
+    
+    @Test
+    public void testJobOfferIdJobApplication() {
+    	JobApplicationJPA jobapplicationjpa = new JobApplicationJPA();
+        jobapplicationjpa.setJob_offer_id((long) 2);;
+        assertNotNull(jobapplicationjpa.getJob_offer_id());
     }
 
 }
