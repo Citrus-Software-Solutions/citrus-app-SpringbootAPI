@@ -3,44 +3,48 @@ package com.example.demo.application.port.in;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
-import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
+import com.example.demo.domain.JobOffer;
+
 
 public class JobOfferValidation {
 	
-	private JobOfferDTO Jobofferdto;
 	
-	public JobOfferValidation(JobOfferDTO Jobofferdto) {
-		this.Jobofferdto = Jobofferdto;
+
+	public boolean agesAreOk(JobOffer jobOffer) {
+		return jobOffer.getMin_age().getValue() < jobOffer.getMax_age().getValue();
 	}
 	
-	public boolean AgeGood() {
-		return Jobofferdto.getMin_age() < Jobofferdto.getMax_age();
-	}
-	
-	public boolean GoodDate() {
-		
-		if (Jobofferdto.getDate_begin().before(Jobofferdto.getDate_end()))
+	public boolean dateIsOk(JobOffer jobOffer) {
+		if (jobOffer.getDate_begin().getValue().before(jobOffer.getDate_end().getValue()))
 			return true;
 		else return false;
 	}
 	
-	public boolean IsPublished() {
-		return Jobofferdto.getStatus() == "Published";
+	public boolean isPublished(JobOffer jobOffer) {
+		return jobOffer.getStatus().getValue() == "Published";
 	}
 	
-		
+	public boolean jobOfferIsOk(JobOffer jobOffer) {
+		return agesAreOk(jobOffer) && dateIsOk(jobOffer);
+	}
 	
-	 public boolean GoodDatePublished() {
-		if((Jobofferdto.getStatus() == "Published") && ((LocalDate.now().isBefore(Jobofferdto.getDate_begin().toInstant().atZone(ZoneId.systemDefault()).toLocalDate())))){
+	 public boolean isNotExpired(JobOffer jobOffer) {
+		if( ((LocalDate.now().isBefore(jobOffer.getDate_begin().getValue().toInstant().atZone(ZoneId.systemDefault()).toLocalDate())))){
 			return true;
 		}
 		return false;
 	 }
+	
 	 
-	 
-	public boolean IsAvailableVacans() {
-		if( Jobofferdto.getAvailable_vacans() > 0 && Jobofferdto.getAvailable_vacans() != null)
+	public boolean haveAvailableVacans(JobOffer jobOffer) {
+		if(jobOffer.getAvailable_vacans().getQuota() != null && jobOffer.getAvailable_vacans().getQuota() > 0)
 			return true;
-		else return false;
+		return false;
+	}
+	
+	public boolean isAplicable(JobOffer jobOffer) {
+		if(haveAvailableVacans(jobOffer) && isNotExpired(jobOffer))
+			return true;
+		return false;
 	}
 }

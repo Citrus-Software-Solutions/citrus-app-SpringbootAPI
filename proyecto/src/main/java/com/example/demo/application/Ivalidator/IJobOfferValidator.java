@@ -1,14 +1,21 @@
 package com.example.demo.application.Ivalidator;
 
-public interface IJobOfferValidator {
+import com.example.demo.domain.JobOffer;
 
-	public boolean AgeGood();
+public interface IJobOfferValidator {
 	
-	public boolean GoodDate();
+	public boolean agesAreOk(JobOffer jobOffer);
 	
-	public boolean IsPublished();
-		
-	public boolean GoodDatePublished();
-	 
-	public boolean IsAvailableVacans();
+	public boolean dateIsOk(JobOffer jobOffer);
+	
+	public boolean isPublished(JobOffer jobOffer);
+	
+	public boolean jobOfferIsOk(JobOffer jobOffer);
+	
+	 public boolean isNotExpired(JobOffer jobOffer);
+	
+	public boolean haveAvailableVacans(JobOffer jobOffer);
+	
+	public boolean isAplicable(JobOffer jobOffer);
 }
+

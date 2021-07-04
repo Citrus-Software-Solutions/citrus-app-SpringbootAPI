@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.application.Iservice.IJobOfferService;
+import com.example.demo.application.service.JobOfferService;
 import com.example.demo.infraestructure.database.JPAClasses.JobOfferJPA;
 import com.example.demo.infraestructure.database.mapper.JobOfferMapperJPA;
+import com.example.demo.infraestructure.database.repository.JobOfferRepository;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 import com.example.demo.infraestructure.api.mapper.JobOfferMapperDTO;
 import com.example.demo.domain.valueObjects.Job_Offer_Id;

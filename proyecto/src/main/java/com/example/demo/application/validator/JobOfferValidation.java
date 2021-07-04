@@ -3,48 +3,49 @@ package com.example.demo.application.validator;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
+import com.example.demo.application.Ivalidator.IApplicationValidator;
 import com.example.demo.application.Ivalidator.IJobOfferValidator;
 import com.example.demo.domain.JobOffer;
 
+
 public class JobOfferValidation implements IJobOfferValidator{
 	
-	private JobOffer Joboffer;
 	
-	public JobOfferValidation(JobOffer Joboffer) {
-		this.Joboffer = Joboffer;
+	public boolean agesAreOk(JobOffer jobOffer) {
+		return jobOffer.getMin_age().getValue() < jobOffer.getMax_age().getValue();
 	}
 	
-	public boolean AgeGood() {
-		if (Joboffer.getMin_age().getValue() < Joboffer.getMax_age().getValue()) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean GoodDate() {
-		
-		if (Joboffer.getDate_begin().getValue().before(Joboffer.getDate_end().getValue()))
+	public boolean dateIsOk(JobOffer jobOffer) {
+		if (jobOffer.getDate_begin().getValue().before(jobOffer.getDate_end().getValue()))
 			return true;
 		else return false;
 	}
 	
-	public boolean IsPublished() {
-		return Joboffer.getStatus().getValue() == "Published";
+	public boolean isPublished(JobOffer jobOffer) {
+		return jobOffer.getStatus().getValue() == "Published";
 	}
 	
-		
+	public boolean jobOfferIsOk(JobOffer jobOffer) {
+		return agesAreOk(jobOffer) && dateIsOk(jobOffer);
+	}
 	
-	 public boolean GoodDatePublished() {
-		if((Joboffer.getStatus().getValue() == "Published") && ((LocalDate.now().isBefore(Joboffer.getDate_begin().getValue().toInstant().atZone(ZoneId.systemDefault()).toLocalDate())))){
+	 public boolean isNotExpired(JobOffer jobOffer) {
+		if( ((LocalDate.now().isBefore(jobOffer.getDate_begin().getValue().toInstant().atZone(ZoneId.systemDefault()).toLocalDate())))){
 			return true;
 		}
 		return false;
 	 }
+	
 	 
-	 
-	public boolean IsAvailableVacans() {
-		if( Joboffer.getAvailable_vacans().getQuota() > 0 && Joboffer.getAvailable_vacans().getQuota() != null)
+	public boolean haveAvailableVacans(JobOffer jobOffer) {
+		if(jobOffer.getAvailable_vacans().getQuota() != null && jobOffer.getAvailable_vacans().getQuota() > 0)
 			return true;
-		else return false;
+		return false;
+	}
+	
+	public boolean isAplicable(JobOffer jobOffer) {
+		if(haveAvailableVacans(jobOffer) && isNotExpired(jobOffer))
+			return true;
+		return false;
 	}
 }
