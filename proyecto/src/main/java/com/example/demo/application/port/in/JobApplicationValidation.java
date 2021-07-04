@@ -1,16 +1,14 @@
 package com.example.demo.application.port.in;
 
-import com.example.demo.infraestructure.api.DTO.JobApplicationDTO;
+import com.example.demo.domain.Application;
+
 
 public class JobApplicationValidation {
 
-	private JobApplicationDTO Jobapplicationdto;
+	private JobOfferValidation jobOfferValidator = new JobOfferValidation();
 	
-	public JobApplicationValidation (JobApplicationDTO Jobapplicationdto) {
-		this.Jobapplicationdto = Jobapplicationdto;
-	}
-	
-	public boolean JobApplicationPendingStatus() {
-		return Jobapplicationdto.getStatus() == "Pending";
+
+	public boolean JobApplicationIsOk(Application jobApplication) {
+		return (jobOfferValidator.isAplicable(jobApplication.getJoboffer()));
 	}
 }

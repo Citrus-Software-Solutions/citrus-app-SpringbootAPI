@@ -1,15 +1,16 @@
-package com.example.demo.application.port.in;
+package com.example.demo.application.validator;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 
+import com.example.demo.application.Ivalidator.IApplicationValidator;
+import com.example.demo.application.Ivalidator.IJobOfferValidator;
 import com.example.demo.domain.JobOffer;
 
 
-public class JobOfferValidation {
+public class JobOfferValidation implements IJobOfferValidator{
 	
 	
-
 	public boolean agesAreOk(JobOffer jobOffer) {
 		return jobOffer.getMin_age().getValue() < jobOffer.getMax_age().getValue();
 	}
