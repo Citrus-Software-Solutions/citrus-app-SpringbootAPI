@@ -92,10 +92,14 @@ $mvn -Dtest=testApp1#testHello*+testMagic* test
 * [Routes and endpoints](https://docs.google.com/document/d/1JcTT2CHUaDCkFoKkd_NRmqmBzVGW7hJf53aKvgqzCto/edit?usp=sharing)
 
 ## Citrus BackEnd Developers
-* [Carlos Sánchez](https://github.com/cafesaro)
-* [Mariana Rodriguez](https://github.com/marianangelic)
-* [Mario Avena](https://github.com/Mariosor12)
-* [Victor Vasquez](https://github.com/ImMamey)
+<table align="center">
+  <tbody><tr>
+    <td align="center"><a href="https://github.com/ImMamey" rel="nofollow"><img src="https://avatars.githubusercontent.com/u/32584037?v=4" width="150px;" alt="" style="max-width:100%;"><br><sub><b>Victor Vásquez</b></sub></a><br><a href="https://github.com/Citrus-Software-Solutions/citrus-app-SpringbootAPI/commits?author=ImMamey" title="Commits"><g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji></a></td>
+    <td align="center"><a href="https://github.com/cafesaro"><img src="https://avatars.githubusercontent.com/u/33528930?v=4" width="150px;" alt="" style="max-width:100%;"><br><sub><b>Carlos Sanchéz</b></sub></a><br><a href="https://github.com/Citrus-Software-Solutions/citrus-app-SpringbootAPI/commits?author=cafesaro" title="Documentation"><g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji></a></td>
+    <td align="center"><a href="https://github.com/Mariosor12" rel="nofollow"><img src="https://avatars.githubusercontent.com/u/55864049?v=4" width="150px;" alt="" style="max-width:100%;"><br><sub><b>Mario Avena</b></sub></a><br><a href="https://github.com/Citrus-Software-Solutions/citrus-app-SpringbootAPI/commits?author=Mariosor12" title="Documentation"><g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji></a></td>
+        <td align="center"><a href="https://github.com/marianangelic" rel="nofollow"><img src="https://avatars.githubusercontent.com/u/56178993?v=4" width="150px;" alt="" style="max-width:100%;"><br><sub><b>Mariana Rodríguez</b></sub></a><br><a href="https://github.com/Citrus-Software-Solutions/citrus-app-SpringbootAPI/commits?author=marianangelicb" title="Documentation"><g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji></a></td>
+  </tr>
+</tbody></table>
 
 ## References
 * [Eclipse Spring Tools 4.11.0.RELEASE](https://marketplace.eclipse.org/content/spring-tools-4-aka-spring-tool-suite-4)
