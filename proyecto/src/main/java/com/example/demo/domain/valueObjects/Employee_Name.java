@@ -2,40 +2,18 @@ package com.example.demo.domain.valueObjects;
 
 public class Employee_Name {
 	
-	private String name;
+	private String value;
 	
-	private String secondname;
+
 	
-	private String lastname;
-	
-	private String secondLastname;
-	
-	public Employee_Name(String name, String secondn, String lastname, String slastname) {
+	public Employee_Name(String name) {
 		super();
-		this.name=name;
-		this.lastname=lastname;
-		this.secondLastname=slastname;
-		this.secondname=secondn;
+		this.value=name;
 	}
 
-	public String getName() {
-		return name;
+	public String getValue() {
+		return value;
 	}
-
-
-	public String getSecondname() {
-		return secondname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-
-	public String getSecondLastname() {
-		return secondLastname;
-	}
-	
 
 	
 
