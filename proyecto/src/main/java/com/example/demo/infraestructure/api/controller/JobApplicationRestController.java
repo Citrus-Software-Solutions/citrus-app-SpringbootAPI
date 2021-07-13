@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.application.Iservice.IJobApplication;
 import com.example.demo.application.Iservice.IJobOfferService;
-import com.example.demo.domain.valueObjects.Aplication_Id;
-import com.example.demo.domain.valueObjects.Job_Status;
+import com.example.demo.domain.valueObjects.Application_Id;
+import com.example.demo.domain.valueObjects.Job_Offer_Status;
 import com.example.demo.domain.valueObjects.User_Id;
 import com.example.demo.infraestructure.api.DTO.JobApplicationDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
@@ -47,7 +47,7 @@ public class JobApplicationRestController {
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
     public JobApplicationDTO FindByIdJob_Application(@PathVariable("id") Long id){
-		return(mapperDTO.toDTO(jobApplicationService.findJobApplication(new  Aplication_Id(id))));
+		return(mapperDTO.toDTO(jobApplicationService.findJobApplication(new  Application_Id(id))));
  }
 	
 	

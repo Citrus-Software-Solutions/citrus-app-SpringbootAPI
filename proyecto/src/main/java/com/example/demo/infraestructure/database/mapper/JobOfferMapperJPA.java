@@ -21,8 +21,8 @@ import com.example.demo.domain.valueObjects.Date_Format;
 import com.example.demo.domain.valueObjects.Gender;
 import com.example.demo.domain.valueObjects.Job_Offer_Description;
 import com.example.demo.domain.valueObjects.Job_Offer_Id;
-import com.example.demo.domain.valueObjects.Job_Offer_Name;
-import com.example.demo.domain.valueObjects.Job_Status;
+import com.example.demo.domain.valueObjects.Job_Offer_Title;
+import com.example.demo.domain.valueObjects.Job_Offer_Status;
 import com.example.demo.domain.valueObjects.Price;
 import com.example.demo.domain.valueObjects.Quota;
 import com.example.demo.infraestructure.database.JPAClasses.EmployerJPA;
@@ -63,13 +63,13 @@ public class JobOfferMapperJPA {
 		min_age = (jobOfferJPA.getMin_Age()==null) ? (null): new Age(jobOfferJPA.getMin_Age());
 		max_age = (jobOfferJPA.getMax_Age()==null) ? (null): new Age(jobOfferJPA.getMax_Age());
 		Job_Offer_Id id = new Job_Offer_Id(jobOfferJPA.getId());
-		Job_Offer_Name name = new Job_Offer_Name(jobOfferJPA.getName());
+		Job_Offer_Title name = new Job_Offer_Title(jobOfferJPA.getName());
 		Job_Offer_Description description = new Job_Offer_Description(jobOfferJPA.getDescription());
 		Quota available_vacans = new Quota(jobOfferJPA.getAvailable_Vacans());
 		Date_Format date_begin = new Date_Format(jobOfferJPA.getDate_Begin());
 		Date_Format date_end = new Date_Format(jobOfferJPA.getDate_End());
 		Price salary = new Price(jobOfferJPA.getSalary());
-		Job_Status status = new Job_Status(jobOfferJPA.getStatus());
+		Job_Offer_Status status = new Job_Offer_Status(jobOfferJPA.getStatus());
 		return new JobOffer(id, name, description, available_vacans, date_begin, date_end, salary, status, gender,
 				min_age, max_age, location, employer);
 

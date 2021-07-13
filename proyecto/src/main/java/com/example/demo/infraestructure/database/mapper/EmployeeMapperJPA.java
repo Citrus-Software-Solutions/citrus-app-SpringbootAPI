@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.example.demo.domain.Employee;
 import com.example.demo.domain.valueObjects.Date_Format;
 import com.example.demo.domain.valueObjects.Employee_Name;
-import com.example.demo.domain.valueObjects.Employer_Name;
+import com.example.demo.domain.valueObjects.Employer_Company_Name;
 import com.example.demo.domain.valueObjects.Gender;
 import com.example.demo.domain.valueObjects.User_Id;
 import com.example.demo.infraestructure.database.JPAClasses.EmployeeJPA;

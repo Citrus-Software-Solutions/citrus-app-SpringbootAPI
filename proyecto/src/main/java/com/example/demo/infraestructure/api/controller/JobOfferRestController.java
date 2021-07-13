@@ -18,7 +18,7 @@ import com.example.demo.infraestructure.database.repository.JobOfferRepository;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 import com.example.demo.infraestructure.api.mapper.JobOfferMapperDTO;
 import com.example.demo.domain.valueObjects.Job_Offer_Id;
-import com.example.demo.domain.valueObjects.Job_Status;
+import com.example.demo.domain.valueObjects.Job_Offer_Status;
 import com.example.demo.domain.valueObjects.User_Id;
 
 @RestController
@@ -51,7 +51,7 @@ public class JobOfferRestController {
 	//finds job offer by status
 	@RequestMapping(value="/status/{status}", method=RequestMethod.GET)
     public  List<JobOfferDTO> findByPublishedStatus(@PathVariable("status") String status){
-		return(mapperDTO.toDTO(jobOfferService.findJobOffer(new  Job_Status(status))));
+		return(mapperDTO.toDTO(jobOfferService.findJobOffer(new  Job_Offer_Status(status))));
     }
 	
 	//create a new job offer
@@ -63,7 +63,7 @@ public class JobOfferRestController {
 	//set status of a job offer
 	 @RequestMapping(method=RequestMethod.PUT, value = "/{id}/{status}")
 		public JobOfferDTO updateJob_Status(@PathVariable ("id")Long jobOffer, @PathVariable("status") String status){
-		return(mapperDTO.toDTO(jobOfferService.updateJobOfferStatus(jobOfferService.findJobOffer(new  Job_Offer_Id(jobOffer)), new Job_Status(status))));
+		return(mapperDTO.toDTO(jobOfferService.updateJobOfferStatus(jobOfferService.findJobOffer(new  Job_Offer_Id(jobOffer)), new Job_Offer_Status(status))));
 	 }
 	
 

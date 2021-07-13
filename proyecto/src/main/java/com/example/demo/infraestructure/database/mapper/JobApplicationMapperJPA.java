@@ -18,14 +18,14 @@ import com.example.demo.domain.Employer;
 import com.example.demo.domain.JobOffer;
 import com.example.demo.domain.Location;
 import com.example.demo.domain.valueObjects.Age;
-import com.example.demo.domain.valueObjects.Aplication_Id;
-import com.example.demo.domain.valueObjects.Aplication_Status;
+import com.example.demo.domain.valueObjects.Application_Id;
+import com.example.demo.domain.valueObjects.Application_Status;
 import com.example.demo.domain.valueObjects.Date_Format;
 import com.example.demo.domain.valueObjects.Gender;
 import com.example.demo.domain.valueObjects.Job_Offer_Description;
 import com.example.demo.domain.valueObjects.Job_Offer_Id;
-import com.example.demo.domain.valueObjects.Job_Offer_Name;
-import com.example.demo.domain.valueObjects.Job_Status;
+import com.example.demo.domain.valueObjects.Job_Offer_Title;
+import com.example.demo.domain.valueObjects.Job_Offer_Status;
 import com.example.demo.domain.valueObjects.Price;
 import com.example.demo.domain.valueObjects.Quota;
 import com.example.demo.infraestructure.database.JPAClasses.EmployeeJPA;
@@ -64,11 +64,11 @@ public class JobApplicationMapperJPA {
 		EmployeeJPA employeeJPA = employeeRepo.findById(jobapplication.getEmployee_id()).orElseThrow(EntityNotFoundException::new);
 		JobOfferJPA jobOfferJPA = jobOfferRepo.findById(jobapplication.getJob_offer_id()).orElseThrow(EntityNotFoundException::new);
 		
-		Aplication_Status status = new Aplication_Status(jobapplication.getStatus());
+		Application_Status status = new Application_Status(jobapplication.getStatus());
 		Date_Format date = new Date_Format(jobapplication.getDate_application());
 		Employee employee;
 		;
-		Aplication_Id id = new Aplication_Id(jobapplication.getId());
+		Application_Id id = new Application_Id(jobapplication.getId());
 		
 		employee = (employeeJPA==null) ? (null): employeeMapper.toDomain(employeeJPA);
 		EmployerJPA employerJPA = employerRepo.findById(jobOfferJPA.getEmployer_Id()).orElseThrow(EntityNotFoundException::new);
@@ -86,13 +86,13 @@ public class JobApplicationMapperJPA {
 		min_age = (jobOfferJPA.getMin_Age()==null) ? (null): new Age(jobOfferJPA.getMin_Age());
 		max_age = (jobOfferJPA.getMax_Age()==null) ? (null): new Age(jobOfferJPA.getMax_Age());
 		Job_Offer_Id idjb = new Job_Offer_Id(jobOfferJPA.getId());
-		Job_Offer_Name name = new Job_Offer_Name(jobOfferJPA.getName());
+		Job_Offer_Title name = new Job_Offer_Title(jobOfferJPA.getName());
 		Job_Offer_Description description = new Job_Offer_Description(jobOfferJPA.getDescription());
 		Quota available_vacans = new Quota(jobOfferJPA.getAvailable_Vacans());
 		Date_Format date_begin = new Date_Format(jobOfferJPA.getDate_Begin());
 		Date_Format date_end = new Date_Format(jobOfferJPA.getDate_End());
 		Price salary = new Price(jobOfferJPA.getSalary());
-		Job_Status statusjb = new Job_Status(jobOfferJPA.getStatus());
+		Job_Offer_Status statusjb = new Job_Offer_Status(jobOfferJPA.getStatus());
 		JobOffer joboffer = new JobOffer(idjb, name, description, available_vacans, date_begin, date_end, salary, statusjb, gender,
 				min_age, max_age, location, employer);
 	

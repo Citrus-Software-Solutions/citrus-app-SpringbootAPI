@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.application.Iservice.IJobApplication;
 import com.example.demo.domain.Application;
-import com.example.demo.domain.valueObjects.Aplication_Id;
+import com.example.demo.domain.valueObjects.Application_Id;
 import com.example.demo.domain.valueObjects.User_Id;
 import com.example.demo.infraestructure.database.JPAClasses.JobApplicationJPA;
 import com.example.demo.infraestructure.database.JPAClasses.JobOfferJPA;
@@ -34,7 +34,7 @@ public class PersistanceAdapterJobApplication implements IJobApplication{
 		return (jobApplicationMapper.toDomain(jobRepo.findAll()));
 	}
 	@Override
-	public Application findJobApplication(Aplication_Id id) {
+	public Application findJobApplication(Application_Id id) {
 		Long apid = id.getValue();
 		return jobApplicationMapper.toDomain(jobRepo.findById(apid).orElseThrow(EntityNotFoundException::new));
 	}

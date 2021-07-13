@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.demo.application.Iservice.IJobOfferService;
 import com.example.demo.domain.JobOffer;
 import com.example.demo.domain.valueObjects.Job_Offer_Id;
-import com.example.demo.domain.valueObjects.Job_Status;
+import com.example.demo.domain.valueObjects.Job_Offer_Status;
 import com.example.demo.domain.valueObjects.User_Id;
 
 public class JobOfferService {
@@ -28,10 +28,10 @@ public class JobOfferService {
 	public JobOffer newJobOffer(JobOffer jobOffer){
 		return repo.newJobOffer(jobOffer);
 	}
-	public List<JobOffer> findJobOffer(Job_Status status) {
+	public List<JobOffer> findJobOffer(Job_Offer_Status status) {
 		return repo.findJobOffer(status);
 	}
-	public JobOffer updateJobOfferStatus(JobOffer jobOffer, Job_Status status) {
+	public JobOffer updateJobOfferStatus(JobOffer jobOffer, Job_Offer_Status status) {
 		jobOffer.setStatus(status);
 		return repo.updateJobOfferStatus(jobOffer, status);
 	}

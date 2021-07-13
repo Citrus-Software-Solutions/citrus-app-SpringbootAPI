@@ -14,8 +14,8 @@ import org.springframework.stereotype.Service;
 import com.example.demo.application.Iservice.IJobOfferService;
 import com.example.demo.domain.JobOffer;
 import com.example.demo.domain.valueObjects.Job_Offer_Id;
-import com.example.demo.domain.valueObjects.Job_Offer_Name;
-import com.example.demo.domain.valueObjects.Job_Status;
+import com.example.demo.domain.valueObjects.Job_Offer_Title;
+import com.example.demo.domain.valueObjects.Job_Offer_Status;
 import com.example.demo.domain.valueObjects.User_Id;
 import com.example.demo.infraestructure.database.JPAClasses.EmployerJPA;
 import com.example.demo.infraestructure.database.JPAClasses.JobOfferJPA;
@@ -54,12 +54,12 @@ public class PersistanceAdapterJobOffer implements IJobOfferService{
 		return jobOfferMapper.toDomain(result);
 	}
 	@Override
-	public List<JobOffer> findJobOffer(Job_Status s) {
+	public List<JobOffer> findJobOffer(Job_Offer_Status s) {
 		String status = s.getValue();
 		return(jobOfferMapper.toDomain(jobRepo.findByStatus(status)));
 	}
 	@Override
-	public JobOffer updateJobOfferStatus(JobOffer jobOffer, Job_Status status) {
+	public JobOffer updateJobOfferStatus(JobOffer jobOffer, Job_Offer_Status status) {
 		jobOffer.setStatus(status);
 		JobOfferJPA result = jobRepo.save(jobOfferMapper.toJPA(jobOffer));
 		return jobOfferMapper.toDomain(result);
