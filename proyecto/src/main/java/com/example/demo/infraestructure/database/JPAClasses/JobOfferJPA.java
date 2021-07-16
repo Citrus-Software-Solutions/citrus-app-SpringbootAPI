@@ -9,7 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 import org.hibernate.validator.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -22,40 +25,42 @@ public class JobOfferJPA {
     @Column private long id;
 
     @NotEmpty
-    @Column private String name;
+    @Column(name = "name") private String name;
 
     @NotEmpty
-    @Size(min = 10, message = "The description should have atleast 10 characters.")
-    @Column private String description;
-
-    @NotEmpty
-    @NotNull
-    @Column private Long available_vacans;
+    @Size(min = 10, message = "The description should have at least 10 characters.")
+    @Column(name = "description") private String description;
 
     @NotEmpty
     @NotNull
-    @Column private Date date_begin;
+    @Column(name = "available_vacans") private Long available_vacans;
 
     @NotEmpty
     @NotNull
-    @Column private Date date_end;
+    @JsonFormat(pattern="yyyy-MM-dd")
+    @Column(name = "date_begin") private Date date_begin;
 
     @NotEmpty
     @NotNull
-    @Column private String status;
+    @JsonFormat(pattern="yyyy-MM-dd")
+    @Column(name = "date_end") private Date date_end;
+
+    @NotEmpty
+    @NotNull
+    @Column(name = "status") private String status;
 
     
-    @Column private String gender;
+    @Column(name = "gender") private String gender;
     @NotEmpty
     @NotNull
-    @Column private Float salary;
-    @Column private Integer min_age;
-    @Column private Integer max_age;
+    @Column(name = "salary") private Float salary;
+    @Column(name = "min_age") private Integer min_age;
+    @Column(name = "max_age") private Integer max_age;
     
     @NotEmpty
-    @Column private Long employerId;
+    @Column(name = "employer_id") private Long employerId;
     @NotEmpty
-    @Column private Long location_id;
+    @Column(name = "location_id")  private Long location_id;
 
     public JobOfferJPA() {
     	super();

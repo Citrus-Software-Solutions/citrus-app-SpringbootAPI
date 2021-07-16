@@ -7,6 +7,9 @@ import com.example.demo.domain.Application;
 import com.example.demo.domain.valueObjects.Aplication_Id;
 import com.example.demo.domain.valueObjects.User_Id;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 public class JobApplicationService {
 	
 	private IJobApplication repo;

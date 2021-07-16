@@ -12,6 +12,10 @@ import com.example.demo.domain.valueObjects.Quota;
 
 public class JobOffer {
 	
+	public JobOffer() {
+		super();
+	}
+	
 	public JobOffer(Job_Offer_Id id, Job_Offer_Name name, Job_Offer_Description description, Quota available_vacans,
 			Date_Format date_begin, Date_Format date_end, Price salary, Job_Status status, Gender gender, Age min_age,
 			Age max_age, Location location, Employer employer) {

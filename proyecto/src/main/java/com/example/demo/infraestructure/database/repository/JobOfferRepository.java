@@ -14,5 +14,5 @@ import com.example.demo.infraestructure.database.JPAClasses.JobOfferJPA;
 public interface JobOfferRepository extends JpaRepository<JobOfferJPA, Long> {
 	public List<JobOfferJPA> findByEmployerId(@Param("EmployerId") Long EmployerId);
 	public List<JobOfferJPA> findByStatus(@Param("status") String status);
-
+	public JobOfferJPA findByName(String name);
 }

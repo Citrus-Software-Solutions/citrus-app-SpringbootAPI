@@ -2,6 +2,7 @@ package com.example.demo.infraestructure.api.controller;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import com.example.demo.infraestructure.api.mapper.JobOfferMapperDTO;
 import com.example.demo.domain.valueObjects.Job_Offer_Id;
 import com.example.demo.domain.valueObjects.Job_Status;
 import com.example.demo.domain.valueObjects.User_Id;
+
 
 @RestController
 @RequestMapping("/job-offer")

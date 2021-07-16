@@ -8,6 +8,9 @@ import com.example.demo.domain.valueObjects.Job_Offer_Id;
 import com.example.demo.domain.valueObjects.Job_Status;
 import com.example.demo.domain.valueObjects.User_Id;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 public class JobOfferService {
 	
 	private IJobOfferService repo;
