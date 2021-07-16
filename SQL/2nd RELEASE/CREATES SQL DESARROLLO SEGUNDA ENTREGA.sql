@@ -2,16 +2,16 @@ CREATE TABLE Interview (
     id serial PRIMARY KEY,
     startDate date NOT NULL,
     duration integer not null,
-    accessURL varchar(200) not null,
-    status VARCHAR (30) NOT NULL CHECK (status = 'Created' or status = 'Scheduled' or status = 'Approved' or status = 'Rejected'),
+    accessURL varchar (700) ,
+    status integer NOT NULL CHECK (status = 0 or status = 1 or status = 2 or status = 3),
     employee_id integer not null,
     staff_member_id integer not null,
     job_application_id integer not null
 );
 
-CREATE TABLE Job_Application (
+CREATE TABLE Application (
     id serial PRIMARY KEY,
-    status VARCHAR (30) NOT NULL CHECK (status = 'Pending Review' or status = 'Accepted' or status = 'Rejected'),
+    status integer NOT NULL CHECK (status = 0 or status = 1 or status = 2),
     date_application date not null,
     employee_id integer not null,
     job_offer_id integer not null
@@ -20,7 +20,7 @@ CREATE TABLE Job_Application (
 
 CREATE TABLE Review (
     id serial PRIMARY KEY,
-    totalScore integer NOT NULL,
+    totalScore integer ,
     employee_id integer not null,
     employer_id integer not null,
     application_id integer not null
@@ -28,8 +28,8 @@ CREATE TABLE Review (
 
 CREATE TABLE Question (
     id serial PRIMARY KEY,
-    name VARCHAR (30) NOT NULL ,
-    score integer not null,
+    name VARCHAR (500) NOT NULL ,
+    score integer ,
     review_id integer not null
 );
 
