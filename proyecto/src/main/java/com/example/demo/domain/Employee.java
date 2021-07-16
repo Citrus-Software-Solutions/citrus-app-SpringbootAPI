@@ -13,9 +13,8 @@ public class Employee {
 	Address address;
 	Employee_EducationLevel educationLevel;
 	WorkExperience[] workExperience;
-	//Skill[] skills;
-	//Course[] trainings;
-	//Reference[] references;
+	Skill[] skills;
+	Reference[] references;
 	Employee_rating rating;
 	Employee_Status status;
 	

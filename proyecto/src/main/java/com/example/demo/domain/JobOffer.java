@@ -12,7 +12,6 @@ import com.example.demo.domain.valueObjects.Job_Offer_Status;
 import com.example.demo.domain.valueObjects.Special_Requirements;
 
 public class JobOffer {
-	
 	Job_Offer_Id id;
 	Job_Offer_Title title;
 	Employer employer;
@@ -21,7 +20,7 @@ public class JobOffer {
 	Date_Format[] schedules;
 	Skill[] skills;
 	Special_Requirements sprecialRequirements;
-	Certification[] certifications;
+	//Certification[] certifications;
 	Job_Offer_Duration duration;
 	Job_Offer_Hourly_Rate hourlyRate;
 	Employee employee;

@@ -1,6 +1,6 @@
 package com.example.demo.domain.valueObjects;
 
-public class Review_Questions {
+public class Review_Question {
 	
 	String value;
 

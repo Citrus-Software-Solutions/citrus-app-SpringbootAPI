@@ -7,7 +7,7 @@ public class Employer{
 	Address address;
 	//ContactInformation[] contacts;
 	Employer_Logo logo;
-	//Skill[] skills;
+	Skill[] skills;
 	Special_Requirements specialRequeriments;
 	Employer_Status status;
 }
