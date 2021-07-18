@@ -1,9 +1,11 @@
 package com.example.demo.infraestructure.api.mapper;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.stereotype.Service;
 
@@ -13,54 +15,39 @@ import com.example.demo.infraestructure.api.DTO.EmployeeDTO;
 import com.example.demo.infraestructure.api.DTO.EmployerDTO;
 import com.example.demo.infraestructure.api.DTO.ApplicationDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
-import com.example.demo.infraestructure.api.DTO.LocationDTO;
 
 @Service
 public class JobApplicationMapperDTO {
 	
 	public ApplicationDTO toDTO(Application application){
-		String status;
-		Date date;
-		Long id;
-		EmployeeDTO employee;
-	    JobOfferDTO jobOffer;
+		Integer status;
+		String date;
+		Integer id;
+		EmployeeDTO employee = new EmployeeDTO();
+	    JobOfferDTO jobOffer = new JobOfferDTO();
 	    
 	    if(application.getEmployee()==null) {
 	    	employee= null;
 	    }else {
-	    	EmployeeDTO employeed = new EmployeeDTO();
-	    	employeed.setName((application.getEmployee().getName().getName() == null)? null : application.getEmployee().getName().getName());
-	    	employeed.setSecondname((application.getEmployee().getName().getSecondname() == null)? null : application.getEmployee().getName().getSecondname());
-	    	employeed.setLastname((application.getEmployee().getName().getLastname() == null)? null : application.getEmployee().getName().getLastname());
-	    	employeed.setSecondLastName((application.getEmployee().getName().getSecondLastname() == null)? null : application.getEmployee().getName().getSecondLastname());
-	    	if (application.getEmployee().getId()==null) { 
-	    		employeed.id= 0;
-	    	}else {
-	    		employeed.id= application.getEmployee().getId().getValue();
-	    	}
-	    	employeed.setGender((application.getEmployee().getGender()== null) ? null: application.getEmployee().getGender().getGender());
-	    	employeed.setBirthdate((application.getEmployee().getBirthdate()==null) ? null: application.getEmployee().getBirthdate().getValue());
-	    	employee = employeed;
+	    	//Faltan los demas value objects pero me dio fastidio
+	    	//De todas maneras meintras el bus no este funcinal no entra aca
+	    	/**EmployeeDTO employeed = new EmployeeDTO();
+	    	employeed.setFirstName((application.getEmployee().getFirstName().getValue() == null)? null : application.getEmployee().getFirstName().getValue());
+	    	employeed.setMiddleName((application.getEmployee().getMiddleName().getValue() == null)? null : application.getEmployee().getMiddleName().getValue());
+	    	employeed.setLastName((application.getEmployee().getLastName().getValue() == null)? null : application.getEmployee().getLastName().getValue());
+	    	
+	    	employee = employeed;**/
 	    }
-	    if (application.getJoboffer()==null) {
+	    if (application.getJobOffer()==null) {
 	    	jobOffer = null;
 	    }else {
-	    	LocationDTO location;
-			EmployerDTO employer;
+	    	//Al igual que employee pero PEOR porque es mas larga
+			/**EmployerDTO employer;
 			String gender;
 			Integer min_age;
 			Integer max_age;
 			String statusjb;
 			
-			if (application.getJoboffer().getLocation()== null) {
-				location = null;
-			}else {
-				LocationDTO locationd = new LocationDTO();
-				locationd.name = (application.getJoboffer().getLocation().getName() == null)? null : application.getJoboffer().getLocation().getName().getValue();
-				locationd.id = (application.getJoboffer().getLocation().getId() == null)? null :application.getJoboffer().getLocation().getId().getValue();
-				locationd.type = (application.getJoboffer().getLocation().getType() == null)? null : application.getJoboffer().getLocation().getType().getValue();
-				location = locationd;
-			}
 			if (application.getJoboffer().getEmployer() == null) {
 				employer = null;
 			} else {
@@ -86,13 +73,14 @@ public class JobApplicationMapperDTO {
 		    jobOffer = new JobOfferDTO(idjp, name, description, available_vacans, date_begin, date_end,
 		    		statusjb, gender, salary, min_age, max_age, employer,
 					 location);
-	    	
+	    **/	
 	    }
+	    
 	    status = (application.getStatus()==null) ? null:application.getStatus().getValue();
 	    date = (application.getDate()==null) ? null:application.getDate().getValue();
 	    id = (application.getId()==null) ? null:application.getId().getValue();
 	    
-	    return new ApplicationDTO(id,status, date, employee, jobOffer);
+	    return new ApplicationDTO(id, date, employee, jobOffer,status);
 	}
 	public List<ApplicationDTO> toDTO(List<Application> application) {
 		List<ApplicationDTO> dto = new ArrayList<ApplicationDTO>();

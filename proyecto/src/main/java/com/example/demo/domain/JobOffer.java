@@ -20,7 +20,6 @@ public class JobOffer {
 	Date_Format[] schedules;
 	Skill[] skills;
 	Special_Requirements sprecialRequirements;
-	//Certification[] certifications;
 	Job_Offer_Duration duration;
 	Job_Offer_Hourly_Rate hourlyRate;
 	Employee employee;

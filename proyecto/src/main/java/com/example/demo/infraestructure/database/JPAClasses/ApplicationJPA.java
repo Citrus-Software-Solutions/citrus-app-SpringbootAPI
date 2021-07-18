@@ -9,29 +9,29 @@ import org.hibernate.validator.NotEmpty;
 import java.util.Date;
 
 @Entity
-@Table(name="Job_Application")
+@Table(name="Application")
 public class ApplicationJPA {
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column private long id;
+    @Column private Integer id;
 
     @NotEmpty
-    @Column private String status;
+    @Column private Integer status;
 
     @NotEmpty
     @Column private Date date_application;
 
     @NotEmpty
-    @Column(name="employee_id") private Long employeeId;
+    @Column(name="employee_id") private Integer employeeId;
 	
     @NotEmpty
-    @Column private Long job_offer_id;
+    @Column private Integer job_offer_id;
 
     public ApplicationJPA(){
         super();
     }
 
-	public ApplicationJPA(long id, String status, Date date_application, Long employee_id, Long job_offer_id) {
+	public ApplicationJPA(Integer id, Integer status, Date date_application, Integer employee_id, Integer job_offer_id) {
 		super();
 		this.id = id;
 		this.status = status;
@@ -40,7 +40,7 @@ public class ApplicationJPA {
 		this.job_offer_id = job_offer_id;
 	}
 	
-	public ApplicationJPA(String status, Date date_application, Long employee_id, Long job_offer_id) {
+	public ApplicationJPA(Integer status, Date date_application, Integer employee_id, Integer job_offer_id) {
 		super();
 		this.status = status;
 		this.date_application = date_application;
@@ -48,19 +48,19 @@ public class ApplicationJPA {
 		this.job_offer_id = job_offer_id;
 	}
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 
@@ -72,19 +72,19 @@ public class ApplicationJPA {
 		this.date_application = date_application;
 	}
 
-	public Long getEmployee_id() {
+	public Integer getEmployee_id() {
 		return employeeId;
 	}
 
-	public void setEmployee_id(Long employee_id) {
+	public void setEmployee_id(Integer employee_id) {
 		this.employeeId = employee_id;
 	}
 
-	public Long getJob_offer_id() {
+	public Integer getJob_offer_id() {
 		return job_offer_id;
 	}
 
-	public void setJob_offer_id(Long job_offer_id) {
+	public void setJob_offer_id(Integer job_offer_id) {
 		this.job_offer_id = job_offer_id;
 	}
 	

@@ -7,7 +7,7 @@ import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 
 public class JobOfferValidation {
 	
-	private JobOfferDTO Jobofferdto;
+	/**private JobOfferDTO Jobofferdto;
 	
 	public JobOfferValidation(JobOfferDTO Jobofferdto) {
 		this.Jobofferdto = Jobofferdto;
@@ -41,5 +41,5 @@ public class JobOfferValidation {
 		if( Jobofferdto.getAvailable_vacans() > 0 && Jobofferdto.getAvailable_vacans() != null)
 			return true;
 		else return false;
-	}
+	}**/
 }
