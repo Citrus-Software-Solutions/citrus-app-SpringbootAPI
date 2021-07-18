@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.demo.application.Iservice.IJobApplication;
 import com.example.demo.domain.Application;
-import com.example.demo.domain.valueObjects.Aplication_Id;
+import com.example.demo.domain.valueObjects.Application_Id;
 import com.example.demo.domain.valueObjects.User_Id;
 
 public class JobApplicationService {
@@ -23,7 +23,7 @@ public class JobApplicationService {
 		return repo.findJobApplication(employee);
 	}
 	
-	public Application findJobApplication(Aplication_Id id){
+	public Application findJobApplication(Application_Id id){
 		return repo.findJobApplication(id);
 	}
 	
