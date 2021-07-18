@@ -30,7 +30,7 @@ import com.example.demo.domain.valueObjects.Price;
 import com.example.demo.domain.valueObjects.Quota;
 import com.example.demo.infraestructure.database.JPAClasses.EmployeeJPA;
 import com.example.demo.infraestructure.database.JPAClasses.EmployerJPA;
-import com.example.demo.infraestructure.database.JPAClasses.JobApplicationJPA;
+import com.example.demo.infraestructure.database.JPAClasses.ApplicationJPA;
 import com.example.demo.infraestructure.database.JPAClasses.JobOfferJPA;
 import com.example.demo.infraestructure.database.JPAClasses.LocationJPA;
 import com.example.demo.infraestructure.database.repository.EmployeeRepository;
@@ -41,7 +41,7 @@ import com.example.demo.infraestructure.database.repository.LocationRepository;
 
 @Service
 @Configurable
-public class JobApplicationMapperJPA {
+public class ApplicationMapperJPA {
 	
 	EmployeeMapperJPA employeeMapper = new EmployeeMapperJPA();
 	JobOfferMapperJPA jobOfferMapper = new JobOfferMapperJPA();
@@ -59,15 +59,13 @@ public class JobApplicationMapperJPA {
 	@Autowired
 	JobOfferRepository jobOfferRepo;
 	
-	public Application toDomain(JobApplicationJPA jobapplication) {
-		System.out.println(jobapplication.getEmployee_id());
+	public Application toDomain(ApplicationJPA jobapplication) {
 		EmployeeJPA employeeJPA = employeeRepo.findById(jobapplication.getEmployee_id()).orElseThrow(EntityNotFoundException::new);
 		JobOfferJPA jobOfferJPA = jobOfferRepo.findById(jobapplication.getJob_offer_id()).orElseThrow(EntityNotFoundException::new);
 		
 		Application_Status status = new Application_Status(jobapplication.getStatus());
 		Date_Format date = new Date_Format(jobapplication.getDate_application());
 		Employee employee;
-		;
 		Application_Id id = new Application_Id(jobapplication.getId());
 		
 		employee = (employeeJPA==null) ? (null): employeeMapper.toDomain(employeeJPA);
@@ -99,7 +97,7 @@ public class JobApplicationMapperJPA {
 	return new Application(id, status, date, employee, joboffer);
 	}
 	
-	public JobApplicationJPA toJPA(Application app) {
+	public ApplicationJPA toJPA(Application app) {
 		String status;
 		Date date;
 		Long id;
@@ -112,16 +110,16 @@ public class JobApplicationMapperJPA {
 	    date = (app.getDate()==null) ? (null): app.getDate().getValue();
 	    status = (app.getStatus()==null) ? (null): app.getStatus().getValue();
 	    
-	    return new JobApplicationJPA (id, status,date, employee_id, job_offer_id);
+	    return new ApplicationJPA (id, status,date, employee_id, job_offer_id);
 	}
 	
-	public List<JobApplicationJPA> toJPAs(Application jobApplication) {
-		List<JobApplicationJPA> list = new ArrayList<JobApplicationJPA>();
+	public List<ApplicationJPA> toJPAs(Application jobApplication) {
+		List<ApplicationJPA> list = new ArrayList<ApplicationJPA>();
 		list.add(toJPA(jobApplication));
 		return list;
 	}
 	
-	public List<Application> toDomain(List<JobApplicationJPA> jpas){
+	public List<Application> toDomain(List<ApplicationJPA> jpas){
 		List<Application> jobApplications = new ArrayList<Application>();
 		for (int i = 0; i < jpas.size(); i++) {
 			jobApplications.add(toDomain(jpas.get(i)));

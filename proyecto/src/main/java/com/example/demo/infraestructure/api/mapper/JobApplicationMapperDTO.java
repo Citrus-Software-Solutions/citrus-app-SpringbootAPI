@@ -11,14 +11,14 @@ import com.example.demo.domain.Application;
 import com.example.demo.domain.JobOffer;
 import com.example.demo.infraestructure.api.DTO.EmployeeDTO;
 import com.example.demo.infraestructure.api.DTO.EmployerDTO;
-import com.example.demo.infraestructure.api.DTO.JobApplicationDTO;
+import com.example.demo.infraestructure.api.DTO.ApplicationDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 import com.example.demo.infraestructure.api.DTO.LocationDTO;
 
 @Service
 public class JobApplicationMapperDTO {
 	
-	public JobApplicationDTO toDTO(Application application){
+	public ApplicationDTO toDTO(Application application){
 		String status;
 		Date date;
 		Long id;
@@ -92,10 +92,10 @@ public class JobApplicationMapperDTO {
 	    date = (application.getDate()==null) ? null:application.getDate().getValue();
 	    id = (application.getId()==null) ? null:application.getId().getValue();
 	    
-	    return new JobApplicationDTO(id,status, date, employee, jobOffer);
+	    return new ApplicationDTO(id,status, date, employee, jobOffer);
 	}
-	public List<JobApplicationDTO> toDTO(List<Application> application) {
-		List<JobApplicationDTO> dto = new ArrayList<JobApplicationDTO>();
+	public List<ApplicationDTO> toDTO(List<Application> application) {
+		List<ApplicationDTO> dto = new ArrayList<ApplicationDTO>();
 		for (int i = 0; i < application.size(); i++) {
 			dto.add(toDTO(application.get(i)));
         }

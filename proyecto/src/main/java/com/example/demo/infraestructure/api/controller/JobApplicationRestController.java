@@ -14,13 +14,13 @@ import com.example.demo.application.Iservice.IJobOfferService;
 import com.example.demo.domain.valueObjects.Application_Id;
 import com.example.demo.domain.valueObjects.Job_Offer_Status;
 import com.example.demo.domain.valueObjects.User_Id;
-import com.example.demo.infraestructure.api.DTO.JobApplicationDTO;
+import com.example.demo.infraestructure.api.DTO.ApplicationDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 import com.example.demo.infraestructure.api.mapper.JobApplicationMapperDTO;
 import com.example.demo.infraestructure.api.mapper.JobOfferMapperDTO;
-import com.example.demo.infraestructure.database.JPAClasses.JobApplicationJPA;
+import com.example.demo.infraestructure.database.JPAClasses.ApplicationJPA;
 import com.example.demo.infraestructure.database.JPAClasses.JobOfferJPA;
-import com.example.demo.infraestructure.database.mapper.JobApplicationMapperJPA;
+import com.example.demo.infraestructure.database.mapper.ApplicationMapperJPA;
 import com.example.demo.infraestructure.database.mapper.JobOfferMapperJPA;
 
 @RestController
@@ -32,27 +32,27 @@ public class JobApplicationRestController {
 	@Autowired
 	private JobApplicationMapperDTO mapperDTO;
 	@Autowired
-    private JobApplicationMapperJPA mapperJPA;
+    private ApplicationMapperJPA mapperJPA;
 
 	
 	@RequestMapping(value="", method = RequestMethod.GET)
-	 public List<JobApplicationDTO> hey(){
+	 public List<ApplicationDTO> hey(){
 			return(mapperDTO.toDTO(jobApplicationService.findJobApplication()));
   }
 	
 	@RequestMapping(value="/employee/{employee_id}", method=RequestMethod.GET)
-    public List<JobApplicationDTO> FindByIdEmployee(@PathVariable("employee_id") Long id){
+    public List<ApplicationDTO> FindByIdEmployee(@PathVariable("employee_id") Long id){
 		return(mapperDTO.toDTO(jobApplicationService.findJobApplication(new  User_Id(id))));
  }
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public JobApplicationDTO FindByIdJob_Application(@PathVariable("id") Long id){
+    public ApplicationDTO FindByIdJob_Application(@PathVariable("id") Long id){
 		return(mapperDTO.toDTO(jobApplicationService.findJobApplication(new  Application_Id(id))));
  }
 	
 	
 	@RequestMapping(value="", method=RequestMethod.POST)
-	public JobApplicationDTO newJobApplication(@RequestBody JobApplicationJPA job_appliaction) {
+	public ApplicationDTO newJobApplication(@RequestBody ApplicationJPA job_appliaction) {
 		return(mapperDTO.toDTO(jobApplicationService.newJobApplication(mapperJPA.toDomain(job_appliaction))));
 	}
 

@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="Job_Application")
-public class JobApplicationJPA {
+public class ApplicationJPA {
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column private long id;
@@ -27,11 +27,11 @@ public class JobApplicationJPA {
     @NotEmpty
     @Column private Long job_offer_id;
 
-    public JobApplicationJPA(){
+    public ApplicationJPA(){
         super();
     }
 
-	public JobApplicationJPA(long id, String status, Date date_application, Long employee_id, Long job_offer_id) {
+	public ApplicationJPA(long id, String status, Date date_application, Long employee_id, Long job_offer_id) {
 		super();
 		this.id = id;
 		this.status = status;
@@ -40,7 +40,7 @@ public class JobApplicationJPA {
 		this.job_offer_id = job_offer_id;
 	}
 	
-	public JobApplicationJPA(String status, Date date_application, Long employee_id, Long job_offer_id) {
+	public ApplicationJPA(String status, Date date_application, Long employee_id, Long job_offer_id) {
 		super();
 		this.status = status;
 		this.date_application = date_application;
