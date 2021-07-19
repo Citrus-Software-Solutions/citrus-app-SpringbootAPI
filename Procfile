@@ -1,0 +1,1 @@
+web: java -cp proyecto/target/classes/com/example/demo* com.example.demo.ProyectoApplication
