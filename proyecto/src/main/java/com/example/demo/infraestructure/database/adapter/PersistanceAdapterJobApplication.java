@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.application.Iservice.IJobApplication;
 import com.example.demo.domain.Application;
 import com.example.demo.domain.valueObjects.Application_Id;
+import com.example.demo.domain.valueObjects.Employee_Id;
 import com.example.demo.infraestructure.database.JPAClasses.ApplicationJPA;
 import com.example.demo.infraestructure.database.mapper.ApplicationMapperJPA;
 import com.example.demo.infraestructure.database.repository.JobApplicationRepository;
@@ -17,8 +18,12 @@ import com.example.demo.infraestructure.database.repository.JobApplicationReposi
 @Configurable
 public class PersistanceAdapterJobApplication implements IJobApplication{
 	
-	@Autowired
-	JobApplicationRepository jobRepo;
+	public PersistanceAdapterJobApplication(JobApplicationRepository jobRepo) {
+		this.jobRepo = jobRepo;
+	}
+	
+	final JobApplicationRepository jobRepo;	
+	
 	@Autowired
 	ApplicationMapperJPA jobApplicationMapper;
 	@Override
@@ -36,8 +41,8 @@ public class PersistanceAdapterJobApplication implements IJobApplication{
 		return jobApplicationMapper.toDomain(result);
 	}
 	@Override
-	public List<Application> findJobApplication(Integer employee) {
-		return (jobApplicationMapper.toDomain(jobRepo.findByEmployeeId(employee)));
+	public List<Application> findJobApplication(Employee_Id employee) {
+		return (jobApplicationMapper.toDomain(jobRepo.findByEmployeeId(employee.getValue())));
 	}
 	
 }
