@@ -1,9 +1,6 @@
 package com.example.demo.domain;
 
-import com.example.demo.domain.valueObjects.Age;
 import com.example.demo.domain.valueObjects.Date_Format;
-import com.example.demo.domain.valueObjects.Gender;
-import com.example.demo.domain.valueObjects.Job_Offer_Description;
 import com.example.demo.domain.valueObjects.Job_Offer_Duration;
 import com.example.demo.domain.valueObjects.Job_Offer_Hourly_Rate;
 import com.example.demo.domain.valueObjects.Job_Offer_Id;

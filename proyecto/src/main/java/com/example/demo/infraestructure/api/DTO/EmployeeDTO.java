@@ -1,19 +1,6 @@
 package com.example.demo.infraestructure.api.DTO;
 import java.util.Date;
 
-import com.example.demo.domain.Address;
-import com.example.demo.domain.Reference;
-import com.example.demo.domain.Skill;
-import com.example.demo.domain.WorkExperience;
-import com.example.demo.domain.valueObjects.Date_Format;
-import com.example.demo.domain.valueObjects.Employee_EducationLevel;
-import com.example.demo.domain.valueObjects.Employee_Name;
-import com.example.demo.domain.valueObjects.Employee_SSN;
-import com.example.demo.domain.valueObjects.Employee_Status;
-import com.example.demo.domain.valueObjects.Employee_rating;
-import com.example.demo.domain.valueObjects.Gender;
-import com.example.demo.domain.valueObjects.Phone_Number;
-
 public class EmployeeDTO {
 	
 	String firstName;

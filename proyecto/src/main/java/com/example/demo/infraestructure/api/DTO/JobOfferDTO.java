@@ -2,18 +2,6 @@ package com.example.demo.infraestructure.api.DTO;
 
 import java.util.Date;
 
-import com.example.demo.domain.Address;
-import com.example.demo.domain.Employee;
-import com.example.demo.domain.Employer;
-import com.example.demo.domain.Skill;
-import com.example.demo.domain.valueObjects.Date_Format;
-import com.example.demo.domain.valueObjects.Job_Offer_Duration;
-import com.example.demo.domain.valueObjects.Job_Offer_Hourly_Rate;
-import com.example.demo.domain.valueObjects.Job_Offer_Id;
-import com.example.demo.domain.valueObjects.Job_Offer_Status;
-import com.example.demo.domain.valueObjects.Job_Offer_Title;
-import com.example.demo.domain.valueObjects.Special_Requirements;
-
 
 
 public class JobOfferDTO {

@@ -4,6 +4,7 @@ import com.example.demo.domain.valueObjects.*;
 
 public class Employee {
 	
+	Employee_Id id;
 	Employee_Name firstName;
 	Employee_Name middleName;
 	Employee_Name LastName;

@@ -1,18 +1,12 @@
 package com.example.demo.infraestructure.api.mapper;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.Application;
-import com.example.demo.domain.JobOffer;
 import com.example.demo.infraestructure.api.DTO.EmployeeDTO;
-import com.example.demo.infraestructure.api.DTO.EmployerDTO;
 import com.example.demo.infraestructure.api.DTO.ApplicationDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 

@@ -5,11 +5,12 @@ import java.util.List;
 import com.example.demo.application.Iservice.IJobApplication;
 import com.example.demo.domain.Application;
 import com.example.demo.domain.valueObjects.Application_Id;
+import com.example.demo.domain.valueObjects.Employee_Id;
 import com.example.demo.infraestructure.database.JPAClasses.ApplicationJPA;
 
 public class JobApplicationService {
 	
-	private IJobApplication repo;
+	final IJobApplication repo;
 	
 	public JobApplicationService (IJobApplication repo) {
 		this.repo = repo;
@@ -19,7 +20,7 @@ public class JobApplicationService {
 		return repo.findJobApplication();	
 	}
 	
-	public List<Application> findJobOffer(Integer employee){
+	public List<Application> findJobApplication(Employee_Id employee){
 		return repo.findJobApplication(employee);
 	}
 	
@@ -31,5 +32,6 @@ public class JobApplicationService {
 		
 		return repo.newJobApplication(jobApplication);
 	}
+
 
 }
