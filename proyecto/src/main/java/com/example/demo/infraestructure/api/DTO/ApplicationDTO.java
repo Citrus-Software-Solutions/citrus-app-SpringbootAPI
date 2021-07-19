@@ -1,7 +1,5 @@
 package com.example.demo.infraestructure.api.DTO;
 
-import java.util.Date;
-
 public class ApplicationDTO {
 	Integer id;
 	String Application_Date;

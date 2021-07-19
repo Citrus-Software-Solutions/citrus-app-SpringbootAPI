@@ -15,7 +15,6 @@ import com.example.demo.infraestructure.database.mapper.ApplicationMapperJPA;
 import com.example.demo.infraestructure.database.repository.JobApplicationRepository;
 
 @Service
-@Configurable
 public class PersistanceAdapterJobApplication implements IJobApplication{
 	
 	public PersistanceAdapterJobApplication(JobApplicationRepository jobRepo) {

@@ -1,33 +1,19 @@
 package com.example.demo.infraestructure.database.mapper;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.EntityNotFoundException;
-import org.hibernate.validator.NotEmpty;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Service;
 import com.example.demo.domain.Application;
 import com.example.demo.domain.Employee;
-import com.example.demo.domain.Employer;
 import com.example.demo.domain.JobOffer;
-import com.example.demo.domain.valueObjects.Age;
 import com.example.demo.domain.valueObjects.Application_Date;
 import com.example.demo.domain.valueObjects.Application_Id;
 import com.example.demo.domain.valueObjects.Application_Status;
-import com.example.demo.domain.valueObjects.Date_Format;
-import com.example.demo.domain.valueObjects.Gender;
-import com.example.demo.domain.valueObjects.Job_Offer_Description;
-import com.example.demo.domain.valueObjects.Job_Offer_Id;
-import com.example.demo.domain.valueObjects.Job_Offer_Title;
-import com.example.demo.domain.valueObjects.Job_Offer_Status;
 import com.example.demo.infraestructure.database.JPAClasses.ApplicationJPA;
-import com.example.demo.infraestructure.database.repository.JobApplicationRepository;
+
 
 @Service
-@Configurable
 public class ApplicationMapperJPA {
 	
 	

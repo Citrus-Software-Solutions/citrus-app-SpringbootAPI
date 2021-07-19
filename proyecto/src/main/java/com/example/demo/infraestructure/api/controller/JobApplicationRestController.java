@@ -1,28 +1,21 @@
 package com.example.demo.infraestructure.api.controller;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.demo.application.Iservice.IJobApplication;
 import com.example.demo.application.service.JobApplicationService;
 import com.example.demo.domain.valueObjects.Application_Id;
 import com.example.demo.domain.valueObjects.Employee_Id;
 import com.example.demo.infraestructure.api.DTO.ApplicationDTO;
-import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 import com.example.demo.infraestructure.api.mapper.JobApplicationMapperDTO;
 import com.example.demo.infraestructure.database.JPAClasses.ApplicationJPA;
 import com.example.demo.infraestructure.database.adapter.PersistanceAdapterJobApplication;
 import com.example.demo.infraestructure.database.mapper.ApplicationMapperJPA;
-import com.example.demo.infraestructure.database.repository.JobApplicationRepository;
-
 
 @RestController
-@Configurable
 @RequestMapping("/job-application")
 public class JobApplicationRestController {
 	
