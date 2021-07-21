@@ -10,7 +10,15 @@ import com.example.demo.application.service.JobApplicationService;
 import com.example.demo.domain.valueObjects.Application_Id;
 import com.example.demo.domain.valueObjects.Employee_Id;
 import com.example.demo.infraestructure.api.DTO.ApplicationDTO;
+import com.example.demo.infraestructure.api.mapper.AddressMapperDTO;
+import com.example.demo.infraestructure.api.mapper.ContactInformationMapperDTO;
+import com.example.demo.infraestructure.api.mapper.EmployeeMapperDTO;
+import com.example.demo.infraestructure.api.mapper.EmployerMapperDTO;
 import com.example.demo.infraestructure.api.mapper.JobApplicationMapperDTO;
+import com.example.demo.infraestructure.api.mapper.JobOfferMapperDTO;
+import com.example.demo.infraestructure.api.mapper.ReferenceMapperDTO;
+import com.example.demo.infraestructure.api.mapper.SkillMapperDTO;
+import com.example.demo.infraestructure.api.mapper.WorkExperienceMapperDTO;
 import com.example.demo.infraestructure.database.JPAClasses.ApplicationJPA;
 import com.example.demo.infraestructure.database.adapter.PersistanceAdapterJobApplication;
 import com.example.demo.infraestructure.database.mapper.ApplicationMapperJPA;
@@ -21,13 +29,26 @@ public class JobApplicationRestController {
 	
 	
 	final PersistanceAdapterJobApplication repo;
-	JobApplicationMapperDTO mapperDTO = new JobApplicationMapperDTO();
+	
+	AddressMapperDTO Address = new AddressMapperDTO();
+	WorkExperienceMapperDTO work= new WorkExperienceMapperDTO(); 
+	SkillMapperDTO skill= new SkillMapperDTO();
+	ReferenceMapperDTO reference = new ReferenceMapperDTO();
+	EmployeeMapperDTO employee = new EmployeeMapperDTO(Address, work, skill, reference);
+	
+	ContactInformationMapperDTO contact = new ContactInformationMapperDTO();
+	EmployerMapperDTO employer = new EmployerMapperDTO(Address, skill, contact);
+	
+	JobOfferMapperDTO jobOfferDTO = new JobOfferMapperDTO(employee, Address, skill, employer);
+	
+	JobApplicationMapperDTO mapperDTO = new JobApplicationMapperDTO(employee, jobOfferDTO);
+	
 	ApplicationMapperJPA mapperJPA =  new ApplicationMapperJPA();
 	
 	public JobApplicationRestController(PersistanceAdapterJobApplication repo) {
 	super();
 	this.repo = repo;
-}
+	}
 
 
 

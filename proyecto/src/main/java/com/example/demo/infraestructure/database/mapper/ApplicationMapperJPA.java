@@ -2,7 +2,6 @@ package com.example.demo.infraestructure.database.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Service;
 import com.example.demo.domain.Application;
 import com.example.demo.domain.Employee;

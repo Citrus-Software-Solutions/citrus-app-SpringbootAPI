@@ -3,6 +3,7 @@ import java.util.Date;
 
 public class EmployeeDTO {
 	
+	Integer id;
 	String firstName;
 	String middleName;
 	String LastName;
@@ -12,11 +13,18 @@ public class EmployeeDTO {
 	Integer educationLevel;
 	Float rating;
 	Integer status;
-	//AddressJPA address;
-	//WorkExperienceJPA[] workExperience;
-	//SkillJPA[] skills;
-	//ReferenceJPA[] references;
+	AddressDTO address;
+	WorkExperienceDTO[] workExperience;
+	SkillDTO[] skills;
+	ReferenceDTO[] references;
 	
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -73,30 +81,30 @@ public class EmployeeDTO {
 	}
 	
 	
-	/**public AddressJPA getAddress() {
+	public AddressDTO getAddress() {
 		return address;
 	}
-	public void setAddress(AddressJPA address) {
+	public void setAddress(AddressDTO address) {
 		this.address = address;
 	}
-	public WorkExperienceJPA[] getWorkExperience() {
+	public WorkExperienceDTO[] getWorkExperience() {
 		return workExperience;
 	}
-	public void setWorkExperience(WorkExperienceJPA[] workExperience) {
+	public void setWorkExperience(WorkExperienceDTO[] workExperience) {
 		this.workExperience = workExperience;
 	}
-	public SkillJPA[] getSkills() {
+	public SkillDTO[] getSkills() {
 		return skills;
 	}
-	public void setSkills(SkillJPA[] skills) {
+	public void setSkills(SkillDTO[] skills) {
 		this.skills = skills;
 	}
-	public ReferenceJPA[] getReferences() {
+	public ReferenceDTO[] getReferences() {
 		return references;
 	}
-	public void setReferences(ReferenceJPA[] references) {
+	public void setReferences(ReferenceDTO[] references) {
 		this.references = references;
-	}**/
+	}
 
 	
 	

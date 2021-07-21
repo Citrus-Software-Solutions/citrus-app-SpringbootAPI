@@ -18,6 +18,14 @@ public class Employee {
 	Reference[] references;
 	Employee_rating rating;
 	Employee_Status status;
+	
+	
+	public Employee_Id getId() {
+		return id;
+	}
+	public void setId(Employee_Id id) {
+		this.id = id;
+	}
 	public Employee_Name getFirstName() {
 		return firstName;
 	}

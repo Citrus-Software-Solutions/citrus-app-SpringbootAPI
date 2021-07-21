@@ -2,6 +2,10 @@ package com.example.demo.domain.valueObjects;
 
 public class Employee_EducationLevel {
 	
-	Number value;
+	Integer value;
+
+	public Integer getValue() {
+		return this.value;
+	}
 
 }

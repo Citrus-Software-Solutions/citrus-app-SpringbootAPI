@@ -10,14 +10,14 @@ public class JobOfferDTO {
 	String title;
 	EmployerDTO employer;
 	Date deadline;
-	String sprecialRequirements;
+	String[] sprecialRequirements;
 	Float duration;
 	Float hourlyRate;
 	EmployeeDTO employee;
 	Integer status;
-	//AddressDTO location;
-	//Date[] schedules;
-	//Skill[] skills;
+	AddressDTO location;
+	Date[] schedules;
+	SkillDTO[] skills;
 	
 	public Integer getId() {
 		return id;
@@ -43,10 +43,10 @@ public class JobOfferDTO {
 	public void setDeadline(Date deadline) {
 		this.deadline = deadline;
 	}
-	public String getSprecialRequirements() {
+	public String[] getSprecialRequirements() {
 		return sprecialRequirements;
 	}
-	public void setSprecialRequirements(String sprecialRequirements) {
+	public void setSprecialRequirements(String[] sprecialRequirements) {
 		this.sprecialRequirements = sprecialRequirements;
 	}
 	public Float getDuration() {
@@ -73,7 +73,7 @@ public class JobOfferDTO {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-	/**public AddressDTO getLocation() {
+	public AddressDTO getLocation() {
 		return location;
 	}
 	public void setLocation(AddressDTO location) {
@@ -85,12 +85,12 @@ public class JobOfferDTO {
 	public void setSchedules(Date[] schedules) {
 		this.schedules = schedules;
 	}
-	public Skill[] getSkills() {
+	public SkillDTO[] getSkills() {
 		return skills;
 	}
-	public void setSkills(Skill[] skills) {
+	public void setSkills(SkillDTO[] skills) {
 		this.skills = skills;
-	}**/
+	}
 	
 	
 
