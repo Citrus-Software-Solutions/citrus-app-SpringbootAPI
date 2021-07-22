@@ -4,4 +4,8 @@ public class Address_Zip {
 	
 	String value;
 
+	public String getValue() {
+		return value;
+	}
+
 }

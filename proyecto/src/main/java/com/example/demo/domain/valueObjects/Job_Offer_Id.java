@@ -2,17 +2,15 @@ package com.example.demo.domain.valueObjects;
 
 public class Job_Offer_Id {
 
-	private Long value;
+	private Integer value;
 	
-	public Job_Offer_Id(long id) {
+	public Job_Offer_Id(Integer id) {
 		this.value = id;
 	}
 
-	public Long getValue() {
+	public Integer getValue() {
 		return value;
 	}
 
-	public void setValue(Long value) {
-		this.value = value;
-	}
+
 }

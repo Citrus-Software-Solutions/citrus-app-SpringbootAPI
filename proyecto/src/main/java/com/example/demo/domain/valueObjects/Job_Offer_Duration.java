@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 
 public class Job_Offer_Duration {
 	
-	BigDecimal value;
+	Float value;
+
+	public Float getValue() {
+		// TODO Auto-generated method stub
+		return value;
+	}
 
 }

@@ -2,15 +2,15 @@ package com.example.demo.domain.valueObjects;
 
 public class Job_Offer_Status {
 
-	private String value;
+	private Integer value;
 
 
-	public Job_Offer_Status(String status) {
+	public Job_Offer_Status(Integer status) {
 		super();
 		this.value = status;
 	}
 
-	public String getValue() {
+	public Integer getValue() {
 		return value;
 	}
 }

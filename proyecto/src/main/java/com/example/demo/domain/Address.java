@@ -12,7 +12,36 @@ public class Address {
 	Address_City city;
 	Address_State state;
 	Address_Zip zip;
-	
+	public Address_Street getStreet1() {
+		return street1;
+	}
+	public void setStreet1(Address_Street street1) {
+		this.street1 = street1;
+	}
+	public Address_Street getStreet2() {
+		return street2;
+	}
+	public void setStreet2(Address_Street street2) {
+		this.street2 = street2;
+	}
+	public Address_City getCity() {
+		return city;
+	}
+	public void setCity(Address_City city) {
+		this.city = city;
+	}
+	public Address_State getState() {
+		return state;
+	}
+	public void setState(Address_State state) {
+		this.state = state;
+	}
+	public Address_Zip getZip() {
+		return zip;
+	}
+	public void setZip(Address_Zip zip) {
+		this.zip = zip;
+	}
 	
 
 }

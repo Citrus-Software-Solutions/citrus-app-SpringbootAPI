@@ -1,99 +1,111 @@
 package com.example.demo.infraestructure.api.DTO;
 import java.util.Date;
 
-import com.example.demo.domain.valueObjects.Date_Format;
-import com.example.demo.domain.valueObjects.Employee_Name;
-import com.example.demo.domain.valueObjects.Gender;
-import com.example.demo.domain.valueObjects.User_Id;
-
 public class EmployeeDTO {
 	
-	public EmployeeDTO (Long id, String name,String secondname, String lastname,
-			String secondlastname,Date birthdate, String gender) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.secondname = secondname;
-		this.lastname = lastname;
-		this.secondLastName = secondlastname;
-		this.birthdate = birthdate;
-		this.gender = gender;
-		
-	}
+	Integer id;
+	String firstName;
+	String middleName;
+	String LastName;
+	String phoneNumber;
+	Date dateOfBirth;
+	String ssn;
+	Integer educationLevel;
+	Float rating;
+	Integer status;
+	AddressDTO address;
+	WorkExperienceDTO[] workExperience;
+	SkillDTO[] skills;
+	ReferenceDTO[] references;
 	
-	public EmployeeDTO() {
-		super();
-		
-	}
-	public long getId() {
+	
+	public Integer getId() {
 		return id;
 	}
-
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-
-	public String getSecondname() {
-		return secondname;
+	public String getMiddleName() {
+		return middleName;
 	}
-
-	public void setSecondname(String secondname) {
-		this.secondname = secondname;
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
 	}
-
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return LastName;
 	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		LastName = lastName;
 	}
-
-	public String getSecondLastName() {
-		return secondLastName;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
-
-	public void setSecondLastName(String secondLastName) {
-		this.secondLastName = secondLastName;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
-
-	public String getGender() {
-		return gender;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
-
-	public Date getBirthdate() {
-		return birthdate;
+	public String getSsn() {
+		return ssn;
 	}
-
-	public void setBirthdate(Date birthdate) {
-		this.birthdate = birthdate;
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
 	}
-
-	public long id;
+	public Integer getEducationLevel() {
+		return educationLevel;
+	}
+	public void setEducationLevel(Integer educationLevel) {
+		this.educationLevel = educationLevel;
+	}
+	public Float getRating() {
+		return rating;
+	}
+	public void setRating(Float rating) {
+		this.rating = rating;
+	}
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 	
-	private String name;
 	
-	private String secondname;
-	
-	private String lastname;
-	
-	private String secondLastName;
-	
-	private String gender;
-	
-	private Date birthdate;
+	public AddressDTO getAddress() {
+		return address;
+	}
+	public void setAddress(AddressDTO address) {
+		this.address = address;
+	}
+	public WorkExperienceDTO[] getWorkExperience() {
+		return workExperience;
+	}
+	public void setWorkExperience(WorkExperienceDTO[] workExperience) {
+		this.workExperience = workExperience;
+	}
+	public SkillDTO[] getSkills() {
+		return skills;
+	}
+	public void setSkills(SkillDTO[] skills) {
+		this.skills = skills;
+	}
+	public ReferenceDTO[] getReferences() {
+		return references;
+	}
+	public void setReferences(ReferenceDTO[] references) {
+		this.references = references;
+	}
+
 	
 	
 

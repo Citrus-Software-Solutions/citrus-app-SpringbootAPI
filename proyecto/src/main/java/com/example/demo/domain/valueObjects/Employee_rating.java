@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 
 public class Employee_rating {
 	
-	BigDecimal value;
+	Float value;
+
+	public Float getValue() {
+		
+		return value;
+	}
 
 }
