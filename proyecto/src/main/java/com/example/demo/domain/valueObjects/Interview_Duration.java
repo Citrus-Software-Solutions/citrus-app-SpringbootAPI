@@ -2,6 +2,14 @@ package com.example.demo.domain.valueObjects;
 
 public class Interview_Duration {
 	
-	Number value;;
+	public int getValue() {
+		return value;
+	}
+
+	public Interview_Duration(int duration) {
+		this.value=duration;
+	}
+
+	int value;;
 
 }

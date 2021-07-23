@@ -2,10 +2,15 @@ package com.example.demo.domain.valueObjects;
 
 public class Interview_Status {
 	
-	public Interview_Status(Number status) {
+	public int getValue() {
+		return value;
+	}
+
+	public Interview_Status(int status) {
 		this.value=status;
 	}
 
-	Number value;
+
+	int value;
 
 }

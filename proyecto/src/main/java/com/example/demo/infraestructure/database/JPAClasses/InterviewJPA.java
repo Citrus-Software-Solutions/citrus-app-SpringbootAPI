@@ -16,6 +16,54 @@ import org.hibernate.validator.NotEmpty;
 @Table(name="Interview")
 public class InterviewJPA {
 
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Date getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+	public Integer getDuration() {
+		return duration;
+	}
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+	}
+	public String getAccessURL() {
+		return accessURL;
+	}
+	public void setAccessURL(String accessURL) {
+		this.accessURL = accessURL;
+	}
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	public Integer getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(Integer employeeId) {
+		this.employeeId = employeeId;
+	}
+	public Integer getStaffMemberId() {
+		return staffMemberId;
+	}
+	public void setStaffMemberId(Integer staffMemberId) {
+		this.staffMemberId = staffMemberId;
+	}
+	public Integer getJobApplicationId() {
+		return jobApplicationId;
+	}
+	public void setJobApplicationId(Integer jobApplicationId) {
+		this.jobApplicationId = jobApplicationId;
+	}
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column private Integer id;
@@ -33,13 +81,12 @@ public class InterviewJPA {
     @Column private Integer status;
 
     @NotEmpty
-    @Column private Date date_application;
-
-    @NotEmpty
     @Column(name="employee_id") private Integer employeeId;
     @NotEmpty
     @Column(name="staff_member_id") private Integer staffMemberId;
     @NotEmpty
     @Column(name="job_application_id") private Integer jobApplicationId;
 	
+    
+    
 }
