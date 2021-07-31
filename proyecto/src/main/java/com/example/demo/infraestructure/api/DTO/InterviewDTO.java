@@ -16,12 +16,6 @@ public class InterviewDTO {
 	public void setEmployee(EmployeeDTO employee) {
 		this.employee = employee;
 	}
-	public StaffMemberDTO getStaffMember() {
-		return staffMember;
-	}
-	public void setStaffMember(StaffMemberDTO staffMember) {
-		this.staffMember = staffMember;
-	}
 	public ApplicationDTO getApplication() {
 		return application;
 	}

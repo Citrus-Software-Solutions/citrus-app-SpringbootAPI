@@ -6,22 +6,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
 import com.example.demo.application.service.JobApplicationService;
 import com.example.demo.domain.valueObjects.Application_Id;
 import com.example.demo.domain.valueObjects.Employee_Id;
 import com.example.demo.infraestructure.api.DTO.ApplicationDTO;
-import com.example.demo.infraestructure.api.mapper.AddressMapperDTO;
-import com.example.demo.infraestructure.api.mapper.ContactInformationMapperDTO;
-import com.example.demo.infraestructure.api.mapper.EmployeeMapperDTO;
-import com.example.demo.infraestructure.api.mapper.EmployerMapperDTO;
 import com.example.demo.infraestructure.api.mapper.JobApplicationMapperDTO;
-import com.example.demo.infraestructure.api.mapper.JobOfferMapperDTO;
-import com.example.demo.infraestructure.api.mapper.ReferenceMapperDTO;
-import com.example.demo.infraestructure.api.mapper.SkillMapperDTO;
-import com.example.demo.infraestructure.api.mapper.WorkExperienceMapperDTO;
 import com.example.demo.infraestructure.database.JPAClasses.ApplicationJPA;
 import com.example.demo.infraestructure.database.adapter.PersistanceAdapterJobApplication;
 import com.example.demo.infraestructure.database.mapper.ApplicationMapperJPA;
+import com.example.demo.infraestructure.http.mapper.EmployeeMapperHTTP;
+import com.example.demo.infraestructure.http.mapper.JobOfferMapperHTTP;
 
 @RestController
 @RequestMapping("/job-application")
@@ -30,18 +26,12 @@ public class JobApplicationRestController {
 	
 	final PersistanceAdapterJobApplication repo;
 	
-	AddressMapperDTO Address = new AddressMapperDTO();
-	WorkExperienceMapperDTO work= new WorkExperienceMapperDTO(); 
-	SkillMapperDTO skill= new SkillMapperDTO();
-	ReferenceMapperDTO reference = new ReferenceMapperDTO();
-	EmployeeMapperDTO employee = new EmployeeMapperDTO(Address, work, skill, reference);
 	
-	ContactInformationMapperDTO contact = new ContactInformationMapperDTO();
-	EmployerMapperDTO employer = new EmployerMapperDTO(Address, skill, contact);
 	
-	JobOfferMapperDTO jobOfferDTO = new JobOfferMapperDTO(employee, Address, skill, employer);
-	
-	JobApplicationMapperDTO mapperDTO = new JobApplicationMapperDTO(employee, jobOfferDTO);
+	RestTemplate resttemplate = new RestTemplate();
+	JobOfferMapperHTTP jobOfferDTO = new JobOfferMapperHTTP(resttemplate);
+	EmployeeMapperHTTP EmployeeDTO = new EmployeeMapperHTTP(resttemplate);
+	JobApplicationMapperDTO mapperDTO = new JobApplicationMapperDTO( jobOfferDTO,EmployeeDTO );
 	
 	ApplicationMapperJPA mapperJPA =  new ApplicationMapperJPA();
 	

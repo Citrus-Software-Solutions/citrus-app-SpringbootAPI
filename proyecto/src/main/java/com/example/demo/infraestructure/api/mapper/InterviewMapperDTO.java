@@ -16,10 +16,7 @@ public class InterviewMapperDTO {
 	
 	@Autowired
 	JobApplicationMapperDTO applicationMapper;
-	@Autowired
-	EmployeeMapperDTO employeeMapper;
-	@Autowired
-	StaffMemberMapperDTO staffMemberMapper;
+
 
 	public InterviewDTO toDTO (Interview domain) 
 	{
@@ -27,9 +24,9 @@ public class InterviewMapperDTO {
 		dto.setAccessURL((domain.getAccessURL()==null)? null:domain.getAccessURL().getValue());
 		dto.setApplication((domain.getApplication()== null)? null: applicationMapper.toDTO(domain.getApplication()));
 		dto.setDuration((domain.getDuration()==null)? null:domain.getDuration().getValue());
-		dto.setEmployee((domain.getEmployee()== null)? null: employeeMapper.toDTO(domain.getEmployee()));
+		//dto.setEmployee((domain.getEmployee()== null)? null: employeeMapper.toDTO(domain.getEmployee()));
 		dto.setId((domain.getId()==null)? null:domain.getId().getValue());
-		dto.setStaffMember((domain.getStaffMember()== null)? null: staffMemberMapper.toDTO(domain.getStaffMember()));
+		//dto.setStaffMember((domain.getStaffMember()== null)? null: staffMemberMapper.toDTO(domain.getStaffMember()));
 		dto.setStartDate((domain.getStartDate()==null)? null:domain.getStartDate().getValue());
 		dto.setStatus((domain.getStatus()==null)? null:domain.getStatus().getValue());
 		

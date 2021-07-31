@@ -17,8 +17,8 @@ public class ApplicationMapperJPA {
 	
 	
 	public Application toDomain(ApplicationJPA jobapplication) {
-		Employee employee = new Employee();
-		JobOffer joboffer = new JobOffer();
+		Employee employee = new Employee(jobapplication.getEmployee_id());
+		JobOffer joboffer = new JobOffer(jobapplication.getId());
 		Application_Id id = new Application_Id(jobapplication.getId());
 		Application_Status status = new Application_Status(jobapplication.getStatus());
 		Application_Date date = new Application_Date(jobapplication.getDate_application().toString());

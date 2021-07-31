@@ -22,6 +22,11 @@ public class JobOffer {
 	Job_Offer_Hourly_Rate hourlyRate;
 	Employee employee;
 	Job_Offer_Status status;
+	public JobOffer(Integer id) {
+		super();
+		Job_Offer_Id jobid = new Job_Offer_Id(id);
+		this.id=jobid;
+	}
 	public Job_Offer_Id getId() {
 		return id;
 	}

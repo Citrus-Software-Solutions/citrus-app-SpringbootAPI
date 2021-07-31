@@ -1,14 +1,16 @@
 package com.example.demo.infraestructure.api.DTO;
 
+import com.example.demo.infraestructure.http.DTO.JobOfferHTTPDTO;
+
 public class ApplicationDTO {
 	Integer id;
 	String Application_Date;
 	EmployeeDTO employee;
-	JobOfferDTO jobOffer;
+	JobOfferHTTPDTO jobOffer;
 	Integer status;
 	
 	public ApplicationDTO(Integer id, String Date,
-			EmployeeDTO employee, JobOfferDTO joboffer,
+			EmployeeDTO employee, JobOfferHTTPDTO joboffer,
 			Integer status) {
 		super();
 		this.id = id;
@@ -42,11 +44,11 @@ public class ApplicationDTO {
 		this.employee = employee;
 	}
 
-	public JobOfferDTO getJobOffer() {
+	public JobOfferHTTPDTO getJobOffer() {
 		return jobOffer;
 	}
 
-	public void setJobOffer(JobOfferDTO jobOffer) {
+	public void setJobOffer(JobOfferHTTPDTO jobOffer) {
 		this.jobOffer = jobOffer;
 	}
 

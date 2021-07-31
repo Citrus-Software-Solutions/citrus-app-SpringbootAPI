@@ -20,6 +20,11 @@ public class Employee {
 	Employee_Status status;
 	
 	
+	public Employee(Integer employee_id) {
+		super();
+		Employee_Id id = new Employee_Id(employee_id);
+		this.id=id;
+	}
 	public Employee_Id getId() {
 		return id;
 	}

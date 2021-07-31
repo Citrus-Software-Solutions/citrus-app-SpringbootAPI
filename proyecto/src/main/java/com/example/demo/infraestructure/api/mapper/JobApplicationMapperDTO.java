@@ -9,17 +9,20 @@ import com.example.demo.domain.Application;
 import com.example.demo.infraestructure.api.DTO.EmployeeDTO;
 import com.example.demo.infraestructure.api.DTO.ApplicationDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
+import com.example.demo.infraestructure.http.DTO.JobOfferHTTPDTO;
+import com.example.demo.infraestructure.http.mapper.EmployeeMapperHTTP;
+import com.example.demo.infraestructure.http.mapper.JobOfferMapperHTTP;
 
 @Service
 public class JobApplicationMapperDTO {
 	
-	final EmployeeMapperDTO employeeMapper;
-	final JobOfferMapperDTO jobOfferMapper;
+	final JobOfferMapperHTTP jobOfferMapper;
+	final EmployeeMapperHTTP employeeMapper;
 
 	
-	public JobApplicationMapperDTO(EmployeeMapperDTO employee, JobOfferMapperDTO jobOfferMapper){
-		this.employeeMapper=employee;
+	public JobApplicationMapperDTO( JobOfferMapperHTTP jobOfferMapper, EmployeeMapperHTTP employeeMapper){
 		this.jobOfferMapper=jobOfferMapper;
+		this.employeeMapper= employeeMapper;
 	}
 	
 	public ApplicationDTO toDTO(Application application){
@@ -27,17 +30,21 @@ public class JobApplicationMapperDTO {
 		String date;
 		Integer id;
 		EmployeeDTO employee = new EmployeeDTO();
-	    JobOfferDTO jobOffer = new JobOfferDTO();
+	    JobOfferHTTPDTO jobOffer = new JobOfferHTTPDTO();
 	    
-	    if(application.getEmployee()==(null)) {
+	    if(application.getEmployee()==(null) ) {
 	    	employee= null;
 	    }else {
-	    	employee = employeeMapper.toDTO(application.getEmployee());
+	    	employee = employeeMapper.getById(application.getEmployee().getId().getValue());
 	    }
 	    if (application.getJobOffer()==null) {
 	    	jobOffer = null;
+	    	System.out.println("Hola"); 
 	    }else {
-	    	jobOffer = jobOfferMapper.toDTO(application.getJobOffer());
+	    	System.out.println("Entro"); 
+	    	jobOffer = jobOfferMapper.getById(1);
+			System.out.println(jobOffer.title); 
+
 	    }
 	    
 	    status = (application.getStatus()==null) ? null:application.getStatus().getValue();
