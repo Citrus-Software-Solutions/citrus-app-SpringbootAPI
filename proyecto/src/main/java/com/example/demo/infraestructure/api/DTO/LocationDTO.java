@@ -29,9 +29,18 @@ public class LocationDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public long id;
 	public String name;
 	public String type;
+
 
 }
