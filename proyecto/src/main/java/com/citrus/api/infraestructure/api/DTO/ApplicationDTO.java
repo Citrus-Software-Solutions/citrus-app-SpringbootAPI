@@ -20,6 +20,7 @@ public class ApplicationDTO {
 		this.status=status;	
 	}
 
+
 	public Integer getId() {
 		return id;
 	}

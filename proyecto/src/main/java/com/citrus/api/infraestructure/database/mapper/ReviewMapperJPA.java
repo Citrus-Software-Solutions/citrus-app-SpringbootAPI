@@ -23,7 +23,7 @@ public class ReviewMapperJPA {
 	@Autowired 
 	QuestionRepository questionRepo;
 	
-	public Review toDomain(ReviewJPA review) {
+	/*public Review toDomain(ReviewJPA review) {
 		List<QuestionJPA> questionjpa = questionRepo.findByApplicationId(review.getJobApplicationId());
 		
 		Review_Total_Score totalScore = new Review_Total_Score(review.getTotalscore());
@@ -35,6 +35,6 @@ public class ReviewMapperJPA {
 		
 		
 		
-	}
+	}*/
 
 }

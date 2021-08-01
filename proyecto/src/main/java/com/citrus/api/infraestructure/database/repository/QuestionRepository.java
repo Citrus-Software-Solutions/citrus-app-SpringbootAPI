@@ -10,6 +10,6 @@ import com.citrus.api.infraestructure.database.JPAClasses.QuestionJPA;
 
 public interface QuestionRepository extends JpaRepository<QuestionJPA, Integer>{
 
-	public List<QuestionJPA> findByApplicationId(@Param("application_id") Integer application_id);
+	public List<QuestionJPA> findByReviewId(@Param("review_id") Integer review_id);
 
 }

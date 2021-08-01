@@ -16,10 +16,10 @@ public class InterviewDTO {
 	public void setEmployee(EmployeeDTO employee) {
 		this.employee = employee;
 	}
-	public ApplicationDTO getApplication() {
+	public ApplicationInterviewDTO getApplication() {
 		return application;
 	}
-	public void setApplication(ApplicationDTO application) {
+	public void setApplication(ApplicationInterviewDTO application) {
 		this.application = application;
 	}
 	public Date getStartDate() {
@@ -49,7 +49,7 @@ public class InterviewDTO {
 	int id;
 	EmployeeDTO employee;
 	StaffMemberDTO staffMember;
-	ApplicationDTO application;
+	ApplicationInterviewDTO application;
 	Date startDate;
 	int duration;
 	String accessURL;

@@ -7,38 +7,35 @@ public class EmployeeDTO {
 	public String middle_name;
 	public String last_name;
 	public String phone_number;
-
-	
-	
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getFirstName() {
+	public String getFirst_name() {
 		return first_name;
 	}
-	public void setFirstName(String firstName) {
-		this.first_name = firstName;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
 	}
-	public String getMiddleName() {
+	public String getMiddle_name() {
 		return middle_name;
 	}
-	public void setMiddleName(String middleName) {
-		this.middle_name = middleName;
+	public void setMiddle_name(String middle_name) {
+		this.middle_name = middle_name;
 	}
-	public String getLastName() {
+	public String getLast_name() {
 		return last_name;
 	}
-	public void setLastName(String lastName) {
-		last_name = lastName;
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
-	public String getPhoneNumber() {
+	public String getPhone_number() {
 		return phone_number;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phone_number = phoneNumber;
+	public void setPhone_number(String phone_number) {
+		this.phone_number = phone_number;
 	}
 
 }

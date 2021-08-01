@@ -8,4 +8,8 @@ public class Review_Score {
 
 	Integer value;
 
+	public Integer getValue() {
+		return value;
+	}
+
 }
