@@ -1,5 +1,4 @@
 package com.citrus.api.infraestructure.api.DTO;
-import java.util.Date;
 
 public class EmployeeDTO {
 	

@@ -4,6 +4,15 @@ import java.math.BigDecimal;
 
 public class Review_Total_Score {
 	
-	BigDecimal value;
+	public Review_Total_Score(Integer totalscore) {
+		this.value= totalscore;
+	}
+
+	Integer value;
+
+	public Integer getValue() {
+		return value;
+	}
+	
 
 }
