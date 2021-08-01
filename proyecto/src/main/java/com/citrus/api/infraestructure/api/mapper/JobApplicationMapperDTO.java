@@ -10,17 +10,19 @@ import com.citrus.api.domain.Application;
 import com.citrus.api.infraestructure.api.DTO.ApplicationDTO;
 import com.citrus.api.infraestructure.api.DTO.EmployeeDTO;
 import com.citrus.api.infraestructure.api.DTO.JobOfferDTO;
+import com.citrus.api.infraestructure.http.mapper.EmployeeMapperHTTP;
+import com.citrus.api.infraestructure.http.mapper.JobOfferMapperHTTP;
 
 @Service
 public class JobApplicationMapperDTO {
 	
-	final EmployeeMapperDTO employeeMapper;
-	final JobOfferMapperDTO jobOfferMapper;
+	final JobOfferMapperHTTP jobOfferMapper;
+	final EmployeeMapperHTTP employeeMapper;
 
 	
-	public JobApplicationMapperDTO(EmployeeMapperDTO employee, JobOfferMapperDTO jobOfferMapper){
-		this.employeeMapper=employee;
+	public JobApplicationMapperDTO( JobOfferMapperHTTP jobOfferMapper, EmployeeMapperHTTP employeeMapper){
 		this.jobOfferMapper=jobOfferMapper;
+		this.employeeMapper= employeeMapper;
 	}
 	
 	public ApplicationDTO toDTO(Application application){
@@ -30,22 +32,26 @@ public class JobApplicationMapperDTO {
 		EmployeeDTO employee = new EmployeeDTO();
 	    JobOfferDTO jobOffer = new JobOfferDTO();
 	    
-	    if(application.getEmployee()==(null)) {
+	    if(application.getEmployee()==(null) ) {
 	    	employee= null;
 	    }else {
-	    	employee = employeeMapper.toDTO(application.getEmployee());
+	    	employee = employeeMapper.getById(1);
 	    }
 	    if (application.getJobOffer()==null) {
 	    	jobOffer = null;
+	    	System.out.println("Hola"); 
 	    }else {
-	    	jobOffer = jobOfferMapper.toDTO(application.getJobOffer());
+	    	System.out.println("Entro"); 
+	    	jobOffer = jobOfferMapper.getById(1);
+			System.out.println(jobOffer.title); 
+
 	    }
 	    
 	    status = (application.getStatus()==null) ? null:application.getStatus().getValue();
 	    date = (application.getDate()==null) ? null:application.getDate().getValue();
 	    id = (application.getId()==null) ? null:application.getId().getValue();
 	    
-	    return new ApplicationDTO(id, date, employee, jobOffer, status);
+	    return new ApplicationDTO(id, date, employee, jobOffer,status);
 	}
 	public List<ApplicationDTO> toDTO(List<Application> application) {
 		List<ApplicationDTO> dto = new ArrayList<ApplicationDTO>();
