@@ -9,7 +9,6 @@ import com.example.demo.domain.Application;
 import com.example.demo.infraestructure.api.DTO.EmployeeDTO;
 import com.example.demo.infraestructure.api.DTO.ApplicationDTO;
 import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
-import com.example.demo.infraestructure.http.DTO.JobOfferHTTPDTO;
 import com.example.demo.infraestructure.http.mapper.EmployeeMapperHTTP;
 import com.example.demo.infraestructure.http.mapper.JobOfferMapperHTTP;
 
@@ -30,12 +29,12 @@ public class JobApplicationMapperDTO {
 		String date;
 		Integer id;
 		EmployeeDTO employee = new EmployeeDTO();
-	    JobOfferHTTPDTO jobOffer = new JobOfferHTTPDTO();
+	    JobOfferDTO jobOffer = new JobOfferDTO();
 	    
 	    if(application.getEmployee()==(null) ) {
 	    	employee= null;
 	    }else {
-	    	employee = employeeMapper.getById(application.getEmployee().getId().getValue());
+	    	employee = employeeMapper.getById(1);
 	    }
 	    if (application.getJobOffer()==null) {
 	    	jobOffer = null;

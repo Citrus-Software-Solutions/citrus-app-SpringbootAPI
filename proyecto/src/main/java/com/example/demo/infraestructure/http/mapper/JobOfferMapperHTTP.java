@@ -5,8 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.demo.infraestructure.http.DTO.JobOfferHTTPDTO;
-
+import com.example.demo.infraestructure.api.DTO.JobOfferDTO;
 @Service
 public class JobOfferMapperHTTP {
 	
@@ -16,9 +15,9 @@ public class JobOfferMapperHTTP {
 		this.restTemplate=restTemplate;
 	}
 	
-	public JobOfferHTTPDTO getById(Integer id) {
-		ResponseEntity<JobOfferHTTPDTO> response= restTemplate.getForEntity("https://citrus-api-nest.herokuapp.com/api-nest/job-offers/"+id, JobOfferHTTPDTO.class);
-		JobOfferHTTPDTO job = response.getBody();
+	public JobOfferDTO getById(Integer id) {
+		ResponseEntity<JobOfferDTO> response= restTemplate.getForEntity("https://citrus-api-nest.herokuapp.com/api-nest/job-offers/"+id, JobOfferDTO.class);
+		JobOfferDTO job = response.getBody();
 		return job;
 		
 	}

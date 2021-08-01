@@ -3,11 +3,11 @@ import java.util.Date;
 
 public class EmployeeDTO {
 	
-	Integer id;
-	String first_name;
-	String middle_name;
-	String last_name;
-	String phone_number;
+	public Integer id;
+	public String first_name;
+	public String middle_name;
+	public String last_name;
+	public String phone_number;
 
 	
 	

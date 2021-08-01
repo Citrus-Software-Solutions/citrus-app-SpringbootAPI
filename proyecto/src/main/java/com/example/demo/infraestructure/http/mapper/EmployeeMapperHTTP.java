@@ -15,8 +15,8 @@ public class EmployeeMapperHTTP {
 	
 	public EmployeeDTO getById(Integer id) {
 		ResponseEntity<EmployeeDTO> response= restTemplate.getForEntity("https://citrus-api-nest.herokuapp.com/api-nest/employees/"+id, EmployeeDTO.class);
-		EmployeeDTO employer = response.getBody();
-		return employer;
+		EmployeeDTO employee = response.getBody();
+		return employee;
 		
 	}
 
