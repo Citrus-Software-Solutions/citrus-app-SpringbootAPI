@@ -36,13 +36,13 @@ public class ReviewMapperJPA {
 		
 		List<QuestionJPA> questionjpa = questionRepo.findByReviewId(jpa.getId());
 		
-		Question[] question = questionMapper.toDomain(questionjpa);
+		List<Question> questions = questionMapper.toDomain(questionjpa);
 		
 		
 		
 		Review review = new Review(
 				new Review_Id(jpa.getId()),
-				question,
+				questions,
 				new Review_Total_Score(jpa.getTotalscore()),
 				new Employee(new Employee_Id(jpa.getEmployeeId())),
 				new Employer(new Employer_Id(jpa.getEmployerId())),
@@ -55,6 +55,19 @@ public class ReviewMapperJPA {
 		
 	}
 	
+	public ReviewMapperJPA(QuestionMapperJPA questionMapper, ReviewRepository reviewRepo,
+			QuestionRepository questionRepo) {
+		super();
+		this.questionMapper = questionMapper;
+		this.reviewRepo = reviewRepo;
+		this.questionRepo = questionRepo;
+	}
+	
+	public ReviewMapperJPA() {
+		super();
+	}
+
+
 	public List<Review> toDomain(List<ReviewJPA> jpas){
 		
 		List<Review> Reviews = new ArrayList<Review>();

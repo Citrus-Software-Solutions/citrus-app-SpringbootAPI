@@ -1,6 +1,8 @@
 package com.citrus.api.application.commands;
 
 
+import java.util.List;
+
 import com.citrus.api.domain.Application;
 import com.citrus.api.domain.Employee;
 import com.citrus.api.domain.Employer;
@@ -10,7 +12,7 @@ import com.citrus.api.domain.valueObjects.Review_Total_Score;
 
 public class CreateReviewCommand {
 	
-	public CreateReviewCommand(Review_Id id, Question[] questions, Review_Total_Score totalScore, Employee employee,
+	public CreateReviewCommand(Review_Id id, List <Question> questions, Review_Total_Score totalScore, Employee employee,
 			Employer employer, Application application) {
 		super();
 		this.id = id;
@@ -23,7 +25,7 @@ public class CreateReviewCommand {
 	public Review_Id getId() {
 		return id;
 	}
-	public Question[] getQuestions() {
+	public List<Question> getQuestions() {
 		return questions;
 	}
 	public Review_Total_Score getTotalScore() {
@@ -39,7 +41,7 @@ public class CreateReviewCommand {
 		return application;
 	}
 	Review_Id id;
-	Question[] questions;
+	List<Question> questions;
 	Review_Total_Score totalScore;
 	Employee employee;
 	Employer employer;
