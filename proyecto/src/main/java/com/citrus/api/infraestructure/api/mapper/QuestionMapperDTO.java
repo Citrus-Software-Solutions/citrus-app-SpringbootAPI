@@ -1,8 +1,11 @@
 package com.citrus.api.infraestructure.api.mapper;
 
+import org.springframework.stereotype.Service;
+
 import com.citrus.api.domain.Question;
 import com.citrus.api.infraestructure.api.DTO.QuestionDTO;
 
+@Service
 public class QuestionMapperDTO {
 	
 	public QuestionDTO toDTO(Question question) {

@@ -3,7 +3,15 @@ package com.citrus.api.infraestructure.api.DTO;
 import java.util.Date;
 
 public class InterviewDTO {
-	
+
+	int id;
+	EmployeeDTO employee;
+	StaffMemberDTO staffMember;
+	ApplicationInterviewDTO application;
+	Date startDate;
+	int duration;
+	String accessURL;
+	int status;
 	public int getId() {
 		return id;
 	}
@@ -15,6 +23,12 @@ public class InterviewDTO {
 	}
 	public void setEmployee(EmployeeDTO employee) {
 		this.employee = employee;
+	}
+	public StaffMemberDTO getStaffMember() {
+		return staffMember;
+	}
+	public void setStaffMember(StaffMemberDTO staffMember) {
+		this.staffMember = staffMember;
 	}
 	public ApplicationInterviewDTO getApplication() {
 		return application;
@@ -46,14 +60,6 @@ public class InterviewDTO {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	int id;
-	EmployeeDTO employee;
-	StaffMemberDTO staffMember;
-	ApplicationInterviewDTO application;
-	Date startDate;
-	int duration;
-	String accessURL;
-	int status;
 
 
 }

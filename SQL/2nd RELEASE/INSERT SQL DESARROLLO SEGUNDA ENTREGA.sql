@@ -1,18 +1,18 @@
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-20', 17, null ,0 , 1, 1, 1);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-16', 28, null, 0, 2, 2, 2);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-18', 22, null, 0, 4, 4, 4);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-20', 21, null, 0, 6, 2, 6);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-21', 28, null, 0, 7, 3, 7);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-16', 12, null, 0, 9, 1, 9);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-16', 8, null, 0, 10, 2, 10);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-16', 27, null, 0, 1, 3, 11);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-18', 7, null, 0, 2, 4, 12);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-18', 16,null , 0, 3, 1, 13);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-17', 8, null, 0, 4, 2, 14);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-22', 12, null, 0, 5, 3, 15);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-23', 14, null , 0, 6, 4, 16);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-21', 15, null, 0, 7, 1, 17);
-insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-22', 11,null, 0, 8, 2, 18);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-20', 17, 'zoom.com' ,0 , 1, 1, 1);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-16', 28, 'meet.com', 0, 2, 2, 2);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-18', 22, 'teams.com', 0, 4, 4, 4);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-20', 21, 'teams.com', 0, 6, 2, 6);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-21', 28, 'skype.com', 0, 7, 3, 7);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-16', 12, 'teams.com', 0, 9, 1, 9);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-16', 8, 'meet.com', 0, 10, 2, 10);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-16', 27, 'skype.com', 0, 1, 3, 11);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-18', 7, 'teams.com', 0, 2, 4, 12);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-18', 16,'skype.com' , 0, 3, 1, 13);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-17', 8, 'meet.com', 0, 4, 2, 14);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-22', 12, 'zoom.com', 0, 5, 3, 15);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-23', 14, 'teams.com' , 0, 6, 4, 16);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-21', 15, 'zoom.com', 0, 7, 1, 17);
+insert into Interview (startDate, duration, accessURL, status, employee_id, staff_member_id, job_application_id) values ('2020-07-22', 11,'meet.com', 0, 8, 2, 18);
 
 
 INSERT INTO Application (status, date_application, employee_id, job_offer_id) values 
