@@ -9,9 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.axonframework.modelling.command.AggregateIdentifier;
+import org.axonframework.spring.stereotype.Aggregate;
 import org.hibernate.validator.NotEmpty;
 
-
+@Aggregate
 @Entity
 @Table(name="Interview")
 public class InterviewJPA {
@@ -65,6 +67,7 @@ public class InterviewJPA {
 		this.jobApplicationId = jobApplicationId;
 	}
 	@Id
+	@AggregateIdentifier
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column private Integer id;
 
