@@ -1,10 +1,10 @@
 package com.citrus.api.application.commands;
 
-import org.aspectj.weaver.patterns.TypePatternQuestions.Question;
 
 import com.citrus.api.domain.Application;
 import com.citrus.api.domain.Employee;
 import com.citrus.api.domain.Employer;
+import com.citrus.api.domain.Question;
 import com.citrus.api.domain.valueObjects.Review_Id;
 import com.citrus.api.domain.valueObjects.Review_Total_Score;
 

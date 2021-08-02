@@ -1,10 +1,7 @@
 package com.citrus.api.domain;
 
-import org.aspectj.weaver.patterns.TypePatternQuestions.Question;
 
 import com.citrus.api.domain.valueObjects.Review_Id;
-import com.citrus.api.domain.valueObjects.Review_Question;
-import com.citrus.api.domain.valueObjects.Review_Score;
 import com.citrus.api.domain.valueObjects.Review_Total_Score;
 
 public class Review {
@@ -24,6 +21,7 @@ public class Review {
 		this.employer = employer;
 		this.application = application;
 	}
+
 	Employer employer;
 	Application application;
 	

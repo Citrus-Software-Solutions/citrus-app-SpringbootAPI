@@ -13,7 +13,7 @@ final ReviewRepo repo;
 	}
 
 	
-	public Review findReviewByIf(ReviewByIdQuery query){
+	public Review findReviewById(ReviewByIdQuery query){
 		return repo.findReview(query.getId());
 	}
 }

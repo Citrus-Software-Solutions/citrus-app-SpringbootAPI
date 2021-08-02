@@ -13,6 +13,14 @@ import org.hibernate.validator.NotEmpty;
 @Table(name="question")
 public class QuestionJPA {
 	
+	public QuestionJPA(Integer id, String name, Integer score, Integer reviewId) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.score = score;
+		this.reviewId = reviewId;
+	}
+
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column private Integer id;
