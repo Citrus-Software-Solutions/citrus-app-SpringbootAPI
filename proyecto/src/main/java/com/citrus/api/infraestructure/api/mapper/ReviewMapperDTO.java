@@ -36,7 +36,7 @@ public class ReviewMapperDTO {
 		if(review.getEmployee()==(null) ) {
 			reviewDTO.setEmployee(null);
 	    }else {
-	    	reviewDTO.setEmployee(employeeMapper.getById(review.getEmployee().getId().getValue()));
+	    	reviewDTO.setEmployee(employeeMapper.getById(1));
 	    }
 		
 		if(review.getApplication()==(null) ) {
@@ -47,14 +47,8 @@ public class ReviewMapperDTO {
 		if(review.getEmployer()==(null) ) {
 			reviewDTO.setEmployer(null);
 	    }else {
-	    	reviewDTO.setEmployer(employerMapper.getById(review.getEmployer().getId().getValue()));
+	    	reviewDTO.setEmployer(employerMapper.getById(1));
 	    }
-		if(review.getQuestions() ==(null) ) {
-			reviewDTO.setQuestions(null);
-	    }else {
-	    	reviewDTO.setQuestions(questionMapper.toDTO(review.getQuestions()));
-	    }
-	
 		
 		
 		return reviewDTO;

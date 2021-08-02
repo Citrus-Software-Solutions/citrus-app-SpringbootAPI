@@ -1,8 +1,5 @@
 package com.citrus.api.application.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.citrus.api.application.commands.CreateReviewCommand;
 import com.citrus.api.application.providers.ReviewRepo;
 import com.citrus.api.domain.Question;
@@ -19,10 +16,11 @@ public class ReviewCreator {
 	
 	public void createReview(CreateReviewCommand command) {
 		
-		List<Question> question = command.getQuestions();
+		Question[] question = command.getQuestions();
+		
 		int score = 0;
-		for (int i = 0; i < question.size(); i++) {
-			score = score + question.get(i).getScore().getValue();
+		for (int i = 0; i < question.length; i++) {
+			score = score + question[i].getScore().getValue();
         }
 		
 		Review review = new Review

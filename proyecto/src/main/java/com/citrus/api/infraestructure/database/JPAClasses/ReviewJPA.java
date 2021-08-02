@@ -20,11 +20,6 @@ public class ReviewJPA {
 		this.employerId = employerId;
 		this.jobApplicationId = jobApplicationId;
 	}
-	
-	public ReviewJPA() {
-		super();
-		
-	}
 
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

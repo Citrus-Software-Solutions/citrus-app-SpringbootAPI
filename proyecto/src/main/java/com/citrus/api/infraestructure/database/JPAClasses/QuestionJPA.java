@@ -20,11 +20,6 @@ public class QuestionJPA {
 		this.score = score;
 		this.reviewId = reviewId;
 	}
-	
-	public QuestionJPA() {
-		super();
-	}
-
 
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.citrus.api.domain.Question;
-import com.citrus.api.domain.Review;
 import com.citrus.api.domain.valueObjects.Question_Id;
 import com.citrus.api.domain.valueObjects.Review_Question;
 import com.citrus.api.domain.valueObjects.Review_Score;
@@ -15,8 +14,8 @@ import com.citrus.api.infraestructure.database.JPAClasses.QuestionJPA;
 @Service
 public class QuestionMapperJPA {
 	
+	private Question[] questions;
 
-	
 	public Question toDomain (QuestionJPA jpa) {
 		
 
@@ -27,10 +26,9 @@ public class QuestionMapperJPA {
 				);
 	}
 	
-	public List<Question> toDomain(List<QuestionJPA> jpas){
-		List<Question> questions = new ArrayList<Question>();
+	public Question[] toDomain(List<QuestionJPA> jpas){
 		for (int i = 0; i < jpas.size(); i++) {
-			questions.add(toDomain (jpas.get(i)));
+			questions[i]=toDomain(jpas.get(i));
         }
 		
 		return questions;

@@ -1,18 +1,17 @@
 package com.citrus.api.infraestructure.api.DTO;
 
-import java.util.List;
 
 public class ReviewDTO {
 	
-    List<QuestionDTO> questions;
+    QuestionDTO[] questions;
 	Integer totalScore;
 	EmployeeDTO employee;
 	EmployerDTO employer;
 	ApplicationReviewDTO application;
-	public List<QuestionDTO> getQuestions() {
+	public QuestionDTO[] getQuestions() {
 		return questions;
 	}
-	public void setQuestions(List<QuestionDTO> questions) {
+	public void setQuestions(QuestionDTO[] questions) {
 		this.questions = questions;
 	}
 	public Integer getTotalScore() {
@@ -39,7 +38,6 @@ public class ReviewDTO {
 	public void setApplication(ApplicationReviewDTO application) {
 		this.application = application;
 	}
-
 	
 	
 
