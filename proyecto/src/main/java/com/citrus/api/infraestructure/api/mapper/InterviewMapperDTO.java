@@ -12,6 +12,7 @@ import com.citrus.api.infraestructure.api.DTO.ApplicationDTO;
 import com.citrus.api.infraestructure.api.DTO.InterviewDTO;
 import com.citrus.api.infraestructure.http.mapper.EmployeeMapperHTTP;
 import com.citrus.api.infraestructure.http.mapper.EmployerMapperHTTP;
+import com.citrus.api.infraestructure.http.mapper.StaffMemberMapperHTTP;
 
 @Service
 public class InterviewMapperDTO {
@@ -21,6 +22,9 @@ public class InterviewMapperDTO {
 	
 	@Autowired
 	EmployeeMapperHTTP employeeMapper;
+	
+	@Autowired
+	StaffMemberMapperHTTP staffMapper;
 
 
 	public InterviewDTO toDTO (Interview domain) 
@@ -36,6 +40,11 @@ public class InterviewMapperDTO {
 	    	dto.setEmployee(null);
 	    }else {
 	    	dto.setEmployee(employeeMapper.getById(1));
+	    }
+		if(domain.getStaffMember()==(null) ) {
+	    	dto.setStaffMember(null);
+	    }else {
+	    	dto.setStaffMember(staffMapper.getById(domain.getStaffMember().getId().getValue()));
 	    }
 		
 		if(domain.getApplication()==(null) ) {

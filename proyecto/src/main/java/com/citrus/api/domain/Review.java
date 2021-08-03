@@ -1,20 +1,45 @@
 package com.citrus.api.domain;
 
-import com.citrus.api.domain.valueObjects.Review_Question;
-import com.citrus.api.domain.valueObjects.Review_Score;
+
+import java.util.List;
+
+import com.citrus.api.domain.valueObjects.Review_Id;
 import com.citrus.api.domain.valueObjects.Review_Total_Score;
 
 public class Review {
 	
-	Question[] questions;
+	Review_Id id;
+	List<Question> questions;
 	Review_Total_Score totalScore;
 	Employee employee;
+	
+	public Review(Review_Id id, List<Question> questions, Review_Total_Score totalScore, Employee employee,
+			Employer employer, Application application) {
+		super();
+		this.id = id;
+		this.questions = questions;
+		this.totalScore = totalScore;
+		this.employee = employee;
+		this.employer = employer;
+		this.application = application;
+	}
+
+
+
 	Employer employer;
 	Application application;
-	public Question[] getQuestions() {
+	
+	public Review_Id getId() {
+		return id;
+	}
+	public void setId(Review_Id id) {
+		this.id = id;
+	}
+	
+	public List<Question> getQuestions() {
 		return questions;
 	}
-	public void setQuestions(Question[] questions) {
+	public void setQuestions(List<Question> questions) {
 		this.questions = questions;
 	}
 	public Review_Total_Score getTotalScore() {

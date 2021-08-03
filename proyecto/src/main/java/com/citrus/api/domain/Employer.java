@@ -3,7 +3,7 @@ package com.citrus.api.domain;
 import com.citrus.api.domain.valueObjects.*;
 
 public class Employer{
-	Employee_Id id;
+	Employer_Id id;
 	Employer_Company_Name companyName;
 	Address address;
 	ContactInformation[] contacts;
@@ -11,14 +11,14 @@ public class Employer{
 	Skill[] skills;
 	Special_Requirements specialRequeriments;
 	Employer_Status status;
-	public Employer(Employee_Id id) {
+	public Employer(Employer_Id id) {
 		super();
 		this.id = id;
 	}
-	public Employee_Id getId() {
+	public Employer_Id getId() {
 		return id;
 	}
-	public void setId(Employee_Id id) {
+	public void setId(Employer_Id id) {
 		this.id = id;
 	}
 	public Employer_Company_Name getCompanyName() {

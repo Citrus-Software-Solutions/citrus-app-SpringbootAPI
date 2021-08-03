@@ -75,13 +75,6 @@ public class JobApplicationMapperDTO {
 		Integer id;
 	    JobOfferDTO jobOffer = new JobOfferDTO();
 	    
-	    if (application.getJobOffer()==null) {
-	    	jobOffer = null;
-	    }else {
-	    	jobOffer = jobOfferMapper.getById(2);
-			System.out.println(jobOffer.title); 
-
-	    }
 	    
 	    date = (application.getDate()==null) ? null:application.getDate().getValue();
 	    id = (application.getId()==null) ? null:application.getId().getValue();

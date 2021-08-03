@@ -1,18 +1,22 @@
 package com.citrus.api.domain;
 
+import com.citrus.api.domain.valueObjects.Question_Id;
 import com.citrus.api.domain.valueObjects.Review_Question;
 import com.citrus.api.domain.valueObjects.Review_Score;
 
 public class Question {
 	
+	Question_Id id;
+	
 	Review_Question question;
 	
 	Review_Score score;
 
-	public Question(Review_Question name, Review_Score score2) {
+	public Question(Review_Question name, Review_Score score, Question_Id id) {
 		super();
-		this.score=score2;
+		this.score=score;
 		this.question=name;
+		this.id = id;
 	}
 
 	public Review_Question getQuestion() {
@@ -25,6 +29,10 @@ public class Question {
 
 	public Review_Score getScore() {
 		return score;
+	}
+
+	public Question_Id getId() {
+		return id;
 	}
 
 	public void setScore(Review_Score score) {

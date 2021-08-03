@@ -12,6 +12,20 @@ import org.hibernate.validator.NotEmpty;
 @Entity
 @Table(name="review")
 public class ReviewJPA {
+	public ReviewJPA(Integer id, Integer totalscore, Integer employeeId, Integer employerId, Integer jobApplicationId) {
+		super();
+		this.id = id;
+		this.totalscore = totalscore;
+		this.employeeId = employeeId;
+		this.employerId = employerId;
+		this.ApplicationId = jobApplicationId;
+	}
+	
+	public ReviewJPA() {
+		super();
+		
+	}
+
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column private Integer id;
@@ -25,7 +39,7 @@ public class ReviewJPA {
     @Column(name="employer_id") private Integer employerId;
 	
 	@NotEmpty
-    @Column(name="job_application_id") private Integer jobApplicationId;
+    @Column(name="application_id") private Integer ApplicationId;
 
 	public Integer getId() {
 		return id;
@@ -60,11 +74,11 @@ public class ReviewJPA {
 	}
 
 	public Integer getJobApplicationId() {
-		return jobApplicationId;
+		return ApplicationId;
 	}
 
 	public void setJobApplicationId(Integer jobApplicationId) {
-		this.jobApplicationId = jobApplicationId;
+		this.ApplicationId = jobApplicationId;
 	}
 
 	
