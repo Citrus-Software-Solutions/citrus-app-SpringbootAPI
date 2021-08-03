@@ -1,11 +1,14 @@
 package com.citrus.api.domain;
 
+import org.axonframework.spring.stereotype.Aggregate;
+
 import com.citrus.api.domain.valueObjects.Date_Format;
 import com.citrus.api.domain.valueObjects.Interview_AccessURL;
 import com.citrus.api.domain.valueObjects.Interview_Duration;
 import com.citrus.api.domain.valueObjects.Interview_Id;
 import com.citrus.api.domain.valueObjects.Interview_Status;
 
+@Aggregate
 public class Interview {
 	
 	public Interview() {
