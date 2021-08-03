@@ -35,7 +35,7 @@ public class JobApplicationMapperDTO {
 	    if(application.getEmployee()==(null) ) {
 	    	employee= null;
 	    }else {
-	    	employee = employeeMapper.getById(2);
+	    	employee = employeeMapper.getById(application.getEmployee().getId().getValue());
 	    }
 	    if (application.getJobOffer()==null) {
 	    	jobOffer = null;
@@ -81,6 +81,7 @@ public class JobApplicationMapperDTO {
 	    
 	    return new ApplicationReviewDTO(id, date);
 	}
+	
 	public List<ApplicationDTO> toDTO(List<Application> application) {
 		List<ApplicationDTO> dto = new ArrayList<ApplicationDTO>();
 		for (int i = 0; i < application.size(); i++) {

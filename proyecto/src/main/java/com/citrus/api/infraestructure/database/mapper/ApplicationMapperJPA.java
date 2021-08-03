@@ -21,7 +21,8 @@ public class ApplicationMapperJPA {
 	
 	
 	public Application toDomain(ApplicationJPA jobapplication) {
-		Employee employee = new Employee();
+		System.out.println(jobapplication.getEmployee_id()); 
+		Employee employee = new Employee(new Employee_Id (jobapplication.getEmployee_id()));
 		JobOffer joboffer = new JobOffer();
 		Application_Id id = new Application_Id(jobapplication.getId());
 		Application_Status status = new Application_Status(jobapplication.getStatus());
@@ -31,6 +32,7 @@ public class ApplicationMapperJPA {
 	}
 	
 	
+
 	public CreateJobApplicationCommand toCommand(ApplicationJPA jpa) {
 		CreateJobApplicationCommand command = new CreateJobApplicationCommand(
 				new Application_Id (jpa.getId()), 

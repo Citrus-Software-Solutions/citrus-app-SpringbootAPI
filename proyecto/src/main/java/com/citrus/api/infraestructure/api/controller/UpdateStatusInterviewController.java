@@ -28,7 +28,7 @@ final PersistanceAdapterInterview repo;
 	@Autowired
 	InterviewMapperDTO mapperDTO;
 	
-	@RequestMapping(value="prueba/{id}/status/{status}", method=RequestMethod.PUT)
+	@RequestMapping(value="{id}/status/{status}", method=RequestMethod.PUT)
     public void updateStatus(@PathVariable("id") Integer id, @PathVariable("status") Integer status){
 		UpdateStatusInterviewCommand command = new UpdateStatusInterviewCommand(new Interview_Id(id), new Interview_Status(status));
 		InterviewStatusUpdater handler = new InterviewStatusUpdater(repo);

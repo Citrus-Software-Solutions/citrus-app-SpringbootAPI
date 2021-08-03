@@ -35,6 +35,7 @@ public class InterviewMapperJPA {
 	
 	public Interview toDomain(InterviewJPA jpa) {
 		JobApplicationByIdFinder finder = new JobApplicationByIdFinder(repo);
+		System.out.println(jpa.getEmployeeId()); 
 		Interview domain = new Interview();
 		domain.setAccessURL(new Interview_AccessURL(jpa.getAccessURL()));
 		domain.setApplication(finder.findApplicationById(new JobApplicationByIdQuery(new Application_Id (jpa.getJobApplicationId()))));
@@ -48,6 +49,7 @@ public class InterviewMapperJPA {
 	}
 	
 	public CreateInterviewCommand toCommand(InterviewJPA jpa) {
+		System.out.println("Employee"+jpa.getEmployeeId()); 
 		CreateInterviewCommand command =  new CreateInterviewCommand(
 				new Interview_Id(jpa.getId()),
 				new Employee_Id(jpa.getEmployeeId()),
