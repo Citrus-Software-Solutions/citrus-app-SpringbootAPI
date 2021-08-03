@@ -34,6 +34,7 @@ public class ReviewCreator {
 						command.getEmployer(),
 						command.getApplication()
 				);
+		
 		repo.saveReview(review);
 	}
 	

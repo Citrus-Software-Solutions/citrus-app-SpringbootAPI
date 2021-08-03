@@ -9,6 +9,7 @@ import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.citrus.api.application.commands.CreateReviewCommand;
 import com.citrus.api.application.queries.JobApplicationByIdQuery;
 import com.citrus.api.application.service.JobApplicationByIdFinder;
 import com.citrus.api.domain.Application;
@@ -25,6 +26,7 @@ import com.citrus.api.domain.valueObjects.Review_Total_Score;
 import com.citrus.api.infraestructure.database.JPAClasses.ApplicationJPA;
 import com.citrus.api.infraestructure.database.JPAClasses.QuestionJPA;
 import com.citrus.api.infraestructure.database.JPAClasses.ReviewJPA;
+import com.citrus.api.infraestructure.database.JPAClasses.ReviewRB;
 import com.citrus.api.infraestructure.database.adapter.PersistanceAdapterJobApplication;
 import com.citrus.api.infraestructure.database.repository.JobApplicationRepository;
 import com.citrus.api.infraestructure.database.repository.QuestionRepository;
@@ -45,10 +47,8 @@ public class ReviewMapperJPA {
 	QuestionRepository questionRepo;
 	
 	public Review toDomain(ReviewJPA jpa) {
-		
 		List<QuestionJPA> questionjpa = questionRepo.findByReviewId(jpa.getId());
-		ApplicationJPA applijpa = applicationRepo.findById(jpa.getJobApplicationId()).orElseThrow(EntityNotFoundException::new);;
-
+		ApplicationJPA applijpa = applicationRepo.findById(jpa.getJobApplicationId()).orElseThrow(EntityNotFoundException::new);
 		List<Question> questions = questionMapper.toDomain(questionjpa);
 
 		
@@ -100,6 +100,19 @@ public class ReviewMapperJPA {
 				);
 		return jpa;
 		
+	}
+
+	public CreateReviewCommand toCommand(ReviewRB review) {
+		System.out.println(review.getApplicationId()); 
+		CreateReviewCommand comand = new CreateReviewCommand(
+				new Review_Id(review.getId()),
+				questionMapper.toDomain(review.getQuestions()),
+				new Review_Total_Score (review.getTotalscore()),
+				new Employee(new Employee_Id(review.getEmployeeId())),
+				new Employer(new Employer_Id(review.getEmployerId())),
+				new Application(new Application_Id(review.getApplicationId()))
+				);
+		return comand;
 	}
 
 }

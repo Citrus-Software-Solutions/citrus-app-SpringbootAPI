@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.citrus.api.domain.Question;
 import com.citrus.api.domain.Review;
 import com.citrus.api.domain.valueObjects.Question_Id;
+import com.citrus.api.domain.valueObjects.Review_Id;
 import com.citrus.api.domain.valueObjects.Review_Question;
 import com.citrus.api.domain.valueObjects.Review_Score;
 import com.citrus.api.infraestructure.database.JPAClasses.QuestionJPA;
@@ -23,7 +24,8 @@ public class QuestionMapperJPA {
 		return new Question(
 				new Review_Question(jpa.getName()),
 				new Review_Score(jpa.getScore()),
-				new Question_Id(jpa.getId())
+				new Question_Id(jpa.getId()),
+				new Review_Id(jpa.getReviewId())
 				);
 	}
 	
@@ -35,6 +37,7 @@ public class QuestionMapperJPA {
 		
 		return questions;
 	}
+	
 	
 	public QuestionJPA toJPA(Question domain, Integer reviewId) {
 		QuestionJPA jpa = new QuestionJPA(
