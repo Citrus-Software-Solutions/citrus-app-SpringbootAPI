@@ -34,7 +34,7 @@ final PersistanceAdapterInterview repo;
 	
 	@RequestMapping(value="prueba/{id}/date/{date}", method=RequestMethod.PUT)
     public void updateDate(@PathVariable("id") Integer id, @PathVariable("date") String date) throws ParseException{
-		Date dateParsed=new SimpleDateFormat("yyyy-mm-dd").parse(date);  
+		Date dateParsed=new SimpleDateFormat("yyyy-mm-dd").parse(date);
 		UpdateDateInterviewCommand command = new UpdateDateInterviewCommand(new Interview_Id(id), new Date_Format(dateParsed));
 		InterviewDateUpdater handler = new InterviewDateUpdater(repo);
 		handler.updateDateInterview(command);
