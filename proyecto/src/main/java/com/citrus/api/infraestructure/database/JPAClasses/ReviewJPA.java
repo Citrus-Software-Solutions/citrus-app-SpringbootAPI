@@ -18,7 +18,7 @@ public class ReviewJPA {
 		this.totalscore = totalscore;
 		this.employeeId = employeeId;
 		this.employerId = employerId;
-		this.jobApplicationId = jobApplicationId;
+		this.ApplicationId = jobApplicationId;
 	}
 	
 	public ReviewJPA() {
@@ -39,7 +39,7 @@ public class ReviewJPA {
     @Column(name="employer_id") private Integer employerId;
 	
 	@NotEmpty
-    @Column(name="job_application_id") private Integer jobApplicationId;
+    @Column(name="application_id") private Integer ApplicationId;
 
 	public Integer getId() {
 		return id;
@@ -74,11 +74,11 @@ public class ReviewJPA {
 	}
 
 	public Integer getJobApplicationId() {
-		return jobApplicationId;
+		return ApplicationId;
 	}
 
 	public void setJobApplicationId(Integer jobApplicationId) {
-		this.jobApplicationId = jobApplicationId;
+		this.ApplicationId = jobApplicationId;
 	}
 
 	

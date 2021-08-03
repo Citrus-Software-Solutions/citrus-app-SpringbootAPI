@@ -4,4 +4,5 @@ public class EmployerDTO {
 	
 	public String company_name;
 	public int id;
+	
 }

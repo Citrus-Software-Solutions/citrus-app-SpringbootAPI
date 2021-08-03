@@ -2,10 +2,15 @@ package com.citrus.api.infraestructure.database.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.citrus.api.application.queries.JobApplicationByIdQuery;
+import com.citrus.api.application.service.JobApplicationByIdFinder;
 import com.citrus.api.domain.Application;
 import com.citrus.api.domain.Employee;
 import com.citrus.api.domain.Employer;
@@ -17,17 +22,24 @@ import com.citrus.api.domain.valueObjects.Employee_Id;
 import com.citrus.api.domain.valueObjects.Employer_Id;
 import com.citrus.api.domain.valueObjects.Review_Id;
 import com.citrus.api.domain.valueObjects.Review_Total_Score;
+import com.citrus.api.infraestructure.database.JPAClasses.ApplicationJPA;
 import com.citrus.api.infraestructure.database.JPAClasses.QuestionJPA;
 import com.citrus.api.infraestructure.database.JPAClasses.ReviewJPA;
+import com.citrus.api.infraestructure.database.adapter.PersistanceAdapterJobApplication;
+import com.citrus.api.infraestructure.database.repository.JobApplicationRepository;
 import com.citrus.api.infraestructure.database.repository.QuestionRepository;
 import com.citrus.api.infraestructure.database.repository.ReviewRepository;
 
 @Service
 public class ReviewMapperJPA {
 	QuestionMapperJPA questionMapper = new QuestionMapperJPA();
+	ApplicationMapperJPA applicationMapper = new ApplicationMapperJPA();
 	
 	@Autowired 
 	ReviewRepository reviewRepo;
+	
+	@Autowired 
+	JobApplicationRepository applicationRepo;
 	
 	@Autowired 
 	QuestionRepository questionRepo;
@@ -35,10 +47,10 @@ public class ReviewMapperJPA {
 	public Review toDomain(ReviewJPA jpa) {
 		
 		List<QuestionJPA> questionjpa = questionRepo.findByReviewId(jpa.getId());
-		
+		ApplicationJPA applijpa = applicationRepo.findById(jpa.getJobApplicationId()).orElseThrow(EntityNotFoundException::new);;
+
 		List<Question> questions = questionMapper.toDomain(questionjpa);
-		
-		
+
 		
 		Review review = new Review(
 				new Review_Id(jpa.getId()),
@@ -46,10 +58,9 @@ public class ReviewMapperJPA {
 				new Review_Total_Score(jpa.getTotalscore()),
 				new Employee(new Employee_Id(jpa.getEmployeeId())),
 				new Employer(new Employer_Id(jpa.getEmployerId())),
-				new Application (new Application_Id(jpa.getJobApplicationId()))
+				applicationMapper.toDomain(applijpa)
+				
 				);
-		
-		
 		return review;
 	
 		

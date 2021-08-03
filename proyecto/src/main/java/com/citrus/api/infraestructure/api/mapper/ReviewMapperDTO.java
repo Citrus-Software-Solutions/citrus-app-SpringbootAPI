@@ -39,24 +39,27 @@ public class ReviewMapperDTO {
 	    	reviewDTO.setEmployee(employeeMapper.getById(review.getEmployee().getId().getValue()));
 	    }
 		
+		
 		if(review.getApplication()==(null) ) {
 			reviewDTO.setApplication(null);
 	    }else {
 	    	reviewDTO.setApplication(applicationMapper.toDTOR(review.getApplication()));
 	    }
+		
+		
 		if(review.getEmployer()==(null) ) {
 			reviewDTO.setEmployer(null);
 	    }else {
 	    	reviewDTO.setEmployer(employerMapper.getById(review.getEmployer().getId().getValue()));
 	    }
+		
+		
 		if(review.getQuestions() ==(null) ) {
 			reviewDTO.setQuestions(null);
 	    }else {
 	    	reviewDTO.setQuestions(questionMapper.toDTO(review.getQuestions()));
 	    }
 	
-		
-		
 		return reviewDTO;
 	}
 	public List<ReviewDTO> toDTO(List<Review> review) {

@@ -13,7 +13,7 @@ public class EmployerMapperHTTP {
 		this.restTemplate=restTemplate;
 	}
 	public EmployerDTO getById(Integer id) {
-		ResponseEntity<EmployerDTO> response= restTemplate.getForEntity("https://citrus-api-nest.herokuapp.com/api-nest/employees/"+id, EmployerDTO.class);
+		ResponseEntity<EmployerDTO> response= restTemplate.getForEntity("https://citrus-api-nest.herokuapp.com/api-nest/employers/"+id, EmployerDTO.class);
 		EmployerDTO employer = response.getBody();
 		return employer;
 	}
