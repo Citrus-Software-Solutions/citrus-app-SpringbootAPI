@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class User {
 
-/*	 @RabbitListener(queues = RabbitMqConfig.QUEUE)
+	 @RabbitListener(queues = RabbitMqConfig.QUEUE)
 	    public void consumeMessageFromQueue(Prueba orderStatus) throws JsonProcessingException {
 	        System.out.println("Message recieved from queue : " + orderStatus);
 	        
@@ -23,5 +23,5 @@ public class User {
 	    	                    .writeValueAsString(orderStatus);
 	    	
 	    	System.out.println("Message recieved from queue : " + json);
-	    }*/
+	    }
 }

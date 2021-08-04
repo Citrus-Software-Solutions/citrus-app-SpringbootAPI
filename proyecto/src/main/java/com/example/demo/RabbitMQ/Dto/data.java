@@ -22,17 +22,6 @@ public class data {
     private String special_requirements;
     private Integer status;
     
-    public data() {}    
-    public data (Integer id, String company_name, String data, address address, List<contacts> contacts, List<skills> skills, String special_requirements, Integer status) {
-    	super();
-    	this.id = id;
-    	this.company_name = company_name;
-    	this.address = address;
-    	this.contacts = contacts;
-    	this.skills = skills;
-    	this.special_requirements = special_requirements;
-    	this.status = status;
-    }
     
 	public Integer getid() {
 		return id;
