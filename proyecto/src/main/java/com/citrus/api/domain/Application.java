@@ -3,7 +3,6 @@ package com.citrus.api.domain;
 import com.citrus.api.domain.valueObjects.Application_Date;
 import com.citrus.api.domain.valueObjects.Application_Id;
 import com.citrus.api.domain.valueObjects.Application_Status;
-import com.citrus.api.domain.valueObjects.Date_Format;
 
 public class Application {
 

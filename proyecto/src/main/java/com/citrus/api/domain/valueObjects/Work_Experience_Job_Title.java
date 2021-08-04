@@ -7,5 +7,8 @@ public class Work_Experience_Job_Title {
 	public String getValue() {
 		return value;
 	}
+	public Work_Experience_Job_Title(String value) {
+		this.value = value;
+	}
 
 }

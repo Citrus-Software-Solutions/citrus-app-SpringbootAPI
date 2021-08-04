@@ -8,4 +8,7 @@ public class Work_Experience_Company_Name {
 		return value;
 	}
 
+	public Work_Experience_Company_Name(String value) {
+		this.value = value;
+	}
 }

@@ -8,4 +8,7 @@ public class Contact_Information_Full_Name {
 		return value;
 	}
 
+	public Contact_Information_Full_Name(String value) {
+		this.value = value;
+	}
 }

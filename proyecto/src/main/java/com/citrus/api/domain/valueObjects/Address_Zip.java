@@ -8,4 +8,7 @@ public class Address_Zip {
 		return value;
 	}
 
+	public Address_Zip(String value) {
+		this.value = value;
+	}
 }

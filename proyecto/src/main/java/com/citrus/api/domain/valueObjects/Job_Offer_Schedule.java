@@ -10,4 +10,7 @@ public class Job_Offer_Schedule {
 		return value;
 	} 
 
+	public Job_Offer_Schedule(Date[] value) {
+		this.value = value;
+	}
 }

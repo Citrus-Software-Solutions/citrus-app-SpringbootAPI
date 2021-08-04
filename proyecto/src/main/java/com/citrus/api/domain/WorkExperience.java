@@ -10,6 +10,13 @@ public class WorkExperience {
 	Work_Experience_Company_Name companyName;
 	Work_Experience_Category category;
 	
+	public WorkExperience(Work_Experience_Job_Title jobTile, Work_Experience_Company_Name companyName,
+			Work_Experience_Category category) {
+
+		this.jobTile = jobTile;
+		this.companyName = companyName;
+		this.category = category;
+	}
 	public Work_Experience_Job_Title getJobTile() {
 		return jobTile;
 	}

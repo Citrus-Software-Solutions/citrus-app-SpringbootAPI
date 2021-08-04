@@ -8,4 +8,7 @@ public class Reference_Name {
 		return value;
 	}
 
+	public Reference_Name(String value) {
+		this.value = value;
+	}
 }

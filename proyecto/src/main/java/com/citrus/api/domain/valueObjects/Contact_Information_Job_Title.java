@@ -8,4 +8,7 @@ public class Contact_Information_Job_Title {
 		return value;
 	}
 
+	public Contact_Information_Job_Title(String value) {
+		this.value = value;
+	}
 }

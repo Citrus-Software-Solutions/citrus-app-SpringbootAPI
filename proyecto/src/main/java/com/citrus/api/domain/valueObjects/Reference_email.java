@@ -8,4 +8,7 @@ public class Reference_email {
 		return value;
 	}
 
+	public Reference_email(String value) {
+		this.value = value;
+	}
 }

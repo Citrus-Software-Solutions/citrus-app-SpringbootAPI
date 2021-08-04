@@ -8,4 +8,7 @@ public class Contact_Information_Email {
 		return value;
 	}
 
+	public Contact_Information_Email(String value) {
+		this.value = value;
+	}
 }

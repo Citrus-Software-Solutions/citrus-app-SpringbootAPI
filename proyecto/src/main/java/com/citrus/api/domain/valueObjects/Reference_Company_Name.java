@@ -8,4 +8,7 @@ public class Reference_Company_Name {
 		return value;
 	}
 
+	public Reference_Company_Name(String value) {
+		this.value = value;
+	}
 }

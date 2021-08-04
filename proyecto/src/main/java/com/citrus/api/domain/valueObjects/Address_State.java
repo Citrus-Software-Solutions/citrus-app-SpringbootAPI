@@ -8,4 +8,7 @@ public class Address_State {
 		return value;
 	}
 
+	public Address_State(String value) {
+		this.value = value;
+	}
 }

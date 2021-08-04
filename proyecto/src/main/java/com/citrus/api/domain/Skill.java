@@ -10,6 +10,11 @@ public class Skill {
 	Skill_Name name;
 	Skill_Category category;
 	
+	public Skill(Skill_Id id, Skill_Name name, Skill_Category category) {
+		this.id = id;
+		this.name = name;
+		this.category = category;
+	}
 	public Skill_Id getId() {
 		return id;
 	}

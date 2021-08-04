@@ -9,5 +9,8 @@ public class Job_Offer_Hourly_Rate {
 	public Float getValue() {
 		return value;
 	}
+	public Job_Offer_Hourly_Rate(Float value) {
+		this.value = value;
+	}
 
 }

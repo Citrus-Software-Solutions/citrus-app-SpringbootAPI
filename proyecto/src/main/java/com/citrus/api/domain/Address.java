@@ -12,6 +12,17 @@ public class Address {
 	Address_City city;
 	Address_State state;
 	Address_Zip zip;
+	
+	public Address(Address_Street street1, Address_Street street2, Address_City city,
+			Address_State state, Address_Zip zip) {
+
+		this.street1 = street1;
+		this.street2 = street2;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+	}
+	
 	public Address_Street getStreet1() {
 		return street1;
 	}

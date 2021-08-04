@@ -7,5 +7,8 @@ public class Employee_SSN {
 		return value;
 	}
 	
+	public Employee_SSN(String value) {
+		this.value = value;
+	}
 
 }

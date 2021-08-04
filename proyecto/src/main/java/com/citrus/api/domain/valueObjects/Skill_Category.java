@@ -8,4 +8,7 @@ public class Skill_Category {
 		return value;
 	}
 
+	public Skill_Category(Integer value) {
+		this.value = value;
+	}
 }

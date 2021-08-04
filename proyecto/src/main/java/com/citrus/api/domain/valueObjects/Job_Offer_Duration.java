@@ -10,5 +10,8 @@ public class Job_Offer_Duration {
 		// TODO Auto-generated method stub
 		return value;
 	}
+	public Job_Offer_Duration(Float value) {
+		this.value = value;
+	}
 
 }

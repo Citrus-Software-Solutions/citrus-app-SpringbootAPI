@@ -8,4 +8,7 @@ public class Address_City {
 		return value;
 	}
 
+	public Address_City (String value) {
+		this.value = value;
+	}
 }

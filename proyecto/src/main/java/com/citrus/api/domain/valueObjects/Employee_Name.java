@@ -12,6 +12,10 @@ public class Employee_Name {
 		this.value = value;
 	}
 	
+	public Employee_Name (String value) {
+		this.value = value;
+	}
+	
 
 
 }

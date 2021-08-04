@@ -9,4 +9,7 @@ public class Employee_Status {
 		return value;
 	}
 
+	public Employee_Status(Integer value) {
+		this.value = value;
+	}
 }

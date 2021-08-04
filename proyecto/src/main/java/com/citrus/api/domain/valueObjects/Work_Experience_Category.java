@@ -8,4 +8,7 @@ public class Work_Experience_Category {
 		return value;
 	}
 
+	public Work_Experience_Category(Integer value) {
+		this.value = value;
+	}
 }

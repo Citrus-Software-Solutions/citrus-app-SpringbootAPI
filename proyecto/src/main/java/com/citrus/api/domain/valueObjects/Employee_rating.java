@@ -10,5 +10,9 @@ public class Employee_rating {
 		
 		return value;
 	}
+	
+	public Employee_rating(Float value) {
+		this.value =value;
+	}
 
 }

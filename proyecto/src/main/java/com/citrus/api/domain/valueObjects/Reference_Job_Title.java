@@ -8,4 +8,7 @@ public class Reference_Job_Title {
 		return value;
 	}
 
+	public Reference_Job_Title(String value) {
+		this.value = value;
+	}
 }

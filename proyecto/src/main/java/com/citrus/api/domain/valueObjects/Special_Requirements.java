@@ -8,4 +8,7 @@ public class Special_Requirements {
 		return value;
 	}
 
+	public Special_Requirements(String[] value) {
+		this.value = value;
+	}
 }

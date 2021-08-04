@@ -11,6 +11,16 @@ public class ContactInformation {
 	Contact_Information_Job_Title jobTitle;
 	Phone_Number phoneNumber;
 	Contact_Information_Email email;
+	
+	public ContactInformation(Contact_Information_Full_Name fullname, Contact_Information_Job_Title jobTitle,
+			Phone_Number phoneNumber, Contact_Information_Email email) {
+		
+		this.fullname = fullname;
+		this.jobTitle = jobTitle;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
+	
 	public Contact_Information_Full_Name getFullname() {
 		return fullname;
 	}

@@ -8,5 +8,8 @@ public class Phone_Number {
 		return value;
 	}
 	
+	public Phone_Number (String value) {
+		this.value = value;
+	}
 
 }

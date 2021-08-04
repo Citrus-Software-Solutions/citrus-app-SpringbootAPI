@@ -7,5 +7,8 @@ public class Employer_Status {
 	public Integer getValue() {
 		return value;
 	}
+	public Employer_Status(Integer value) {
+		this.value = value;
+	}
 
 }

@@ -10,4 +10,7 @@ public class Employer_Logo {
 		return value;
 	}
 
+	public Employer_Logo(String value) {
+		this.value = value;
+	}
 }

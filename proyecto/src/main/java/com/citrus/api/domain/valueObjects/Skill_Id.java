@@ -7,5 +7,8 @@ public class Skill_Id {
 	public Integer getValue() {
 		return value;
 	}
+	public Skill_Id(Integer value) {
+		this.value = value;
+	}
 
 }
