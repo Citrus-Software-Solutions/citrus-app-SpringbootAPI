@@ -1,7 +1,6 @@
 package com.citrus.api.infraestructure.RabbitMQ.Consumer;
 
 import com.citrus.api.infraestructure.RabbitMQ.RabbitMQConfig;
-import com.citrus.api.infraestructure.RabbitMQ.DTO.JobOfferRabbit;
 import com.citrus.api.infraestructure.api.DTO.JobOfferDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
