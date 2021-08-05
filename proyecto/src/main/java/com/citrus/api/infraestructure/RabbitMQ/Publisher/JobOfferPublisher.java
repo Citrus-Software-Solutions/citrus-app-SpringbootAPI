@@ -14,7 +14,7 @@ public class JobOfferPublisher {
 	@Autowired
     private RabbitTemplate template;
 
-    @PutMapping("/{id}/approve")
+    @PostMapping("/{id}/approve")
     public String PruebaRabbitMQ(@RequestBody Application application, @PathVariable("id") Integer id) {
         template.convertAndSend(RabbitMQConfig.EXCHANGE, RabbitMQConfig.ROUTING_KEY, application);
         return "Success !!";
