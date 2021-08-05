@@ -4,6 +4,7 @@ com\citrus\api\ProyectoApplication.class
 com\citrus\api\domain\valueObjects\Employer_Company_Name.class
 com\citrus\api\application\commands\CreateJobApplicationCommand.class
 com\citrus\api\application\providers\ReviewRepo.class
+com\citrus\api\infraestructure\RabbitMQ\Consumer\JobOfferConsumer.class
 com\citrus\api\infraestructure\api\DTO\JobOfferDTO.class
 com\citrus\api\infraestructure\api\DTO\EmployerDTO.class
 com\citrus\api\infraestructure\http\mapper\EmployeeMapperHTTP.class
@@ -47,6 +48,7 @@ com\citrus\api\application\service\InterviewCreator.class
 com\citrus\api\domain\Address.class
 com\citrus\api\domain\valueObjects\Job_Offer_Description.class
 com\citrus\api\domain\JobOffer.class
+com\citrus\api\infraestructure\RabbitMQ\RabbitMQConfig.class
 com\citrus\api\infraestructure\api\DTO\ApplicationDTO.class
 com\citrus\api\infraestructure\api\controller\FindAllJobApplicationsController.class
 com\citrus\api\domain\Interview.class
@@ -127,6 +129,7 @@ com\citrus\api\infraestructure\api\mapper\JobApplicationMapperDTO.class
 com\citrus\api\application\port\in\JobOfferValidation.class
 com\citrus\api\domain\valueObjects\StaffMember_Id.class
 com\citrus\api\domain\valueObjects\Work_Experience_Job_Title.class
+com\citrus\api\infraestructure\RabbitMQ\Publisher\InterviewPublisher.class
 com\citrus\api\domain\valueObjects\Contact_Information_Email.class
 com\citrus\api\infraestructure\api\mapper\QuestionMapperDTO.class
 com\citrus\api\infraestructure\database\mapper\QuestionMapperJPA.class
