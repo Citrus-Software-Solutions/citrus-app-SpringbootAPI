@@ -103,7 +103,6 @@ public class ReviewMapperJPA {
 	}
 
 	public CreateReviewCommand toCommand(ReviewRB review) {
-		System.out.println(review.getApplicationId()); 
 		CreateReviewCommand comand = new CreateReviewCommand(
 				new Review_Id(review.getId()),
 				questionMapper.toDomain(review.getQuestions()),

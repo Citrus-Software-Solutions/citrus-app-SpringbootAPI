@@ -62,7 +62,6 @@ public class PersistanceAdapterReview implements ReviewRepo{
 		review.setTotalScore(new Review_Total_Score(score));
 		
 		id= (reviewRepo.save(mapper.toJPA(review))).getId();
-		System.out.println(id); 
 		for (int i = 0; i < question.size(); i++) {
 			questionRepo.save(qMapper.toJPA(question.get(i), id));
         }

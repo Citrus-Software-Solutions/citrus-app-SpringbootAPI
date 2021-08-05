@@ -40,8 +40,8 @@ public class JobApplicationMapperDTO {
 	    if (application.getJobOffer()==null) {
 	    	jobOffer = null;
 	    }else {
-	    	jobOffer = jobOfferMapper.getById(2);
-			System.out.println(jobOffer.title); 
+	    	jobOffer = jobOfferMapper.getById(application.getJobOffer().getId().getValue());
+ 
 
 	    }
 	    
@@ -59,7 +59,7 @@ public class JobApplicationMapperDTO {
 	    if (application.getJobOffer()==null) {
 	    	jobOffer = null;
 	    }else {
-	    	jobOffer = jobOfferMapper.getById(2);
+	    	jobOffer = jobOfferMapper.getById(application.getJobOffer().getId().getValue());
 			System.out.println(jobOffer.title); 
 
 	    }
