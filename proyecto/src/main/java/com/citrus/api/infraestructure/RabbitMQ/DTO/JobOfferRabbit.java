@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class JobOffer {
+public class JobOfferRabbit {
 
 	private String pattern;
     private List<data> data;
@@ -19,8 +19,8 @@ public class JobOffer {
 		return pattern;
 	}
 	
-    public JobOffer() {}    
-    public JobOffer (String pattern, List<data> data) {
+    public JobOfferRabbit() {}    
+    public JobOfferRabbit (String pattern, List<data> data) {
     	super();
     	this.pattern = pattern;
     	this.data = data;

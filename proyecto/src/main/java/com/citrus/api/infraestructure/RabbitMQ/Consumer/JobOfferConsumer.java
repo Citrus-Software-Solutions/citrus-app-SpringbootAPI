@@ -1,7 +1,8 @@
 package com.citrus.api.infraestructure.RabbitMQ.Consumer;
 
 import com.citrus.api.infraestructure.RabbitMQ.RabbitMQConfig;
-import com.citrus.api.infraestructure.RabbitMQ.DTO.JobOffer;
+import com.citrus.api.infraestructure.RabbitMQ.DTO.JobOfferRabbit;
+import com.citrus.api.infraestructure.api.DTO.JobOfferDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class JobOfferConsumer {
 
 	 @RabbitListener(queues = RabbitMQConfig.QUEUE2)
-	    public void consumeMessageFromQueue(JobOffer joboffer) throws JsonProcessingException {
+	    public void consumeMessageFromQueue(JobOfferDTO joboffer) throws JsonProcessingException {
 	        System.out.println("Message recieved from queue : " + joboffer);
 	        
 	    	ObjectMapper mapper = new ObjectMapper();
