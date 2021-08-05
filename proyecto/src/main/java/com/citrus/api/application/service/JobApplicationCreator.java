@@ -5,6 +5,7 @@ import com.citrus.api.application.providers.JobApplicationRepo;
 import com.citrus.api.domain.Application;
 import com.citrus.api.domain.Employee;
 import com.citrus.api.domain.JobOffer;
+import com.citrus.api.infraestructure.database.JPAClasses.ApplicationJPA;
 
 
 public class JobApplicationCreator {
@@ -18,7 +19,7 @@ public class JobApplicationCreator {
 	
 	
 
-	public void createJobApplication(CreateJobApplicationCommand command) {
+	public ApplicationJPA createJobApplication(CreateJobApplicationCommand command) {
 		
 		Application jobApplication = new Application(
 				command.getId(),
@@ -29,7 +30,7 @@ public class JobApplicationCreator {
 				
 				);
 		
-		repo.saveJobApplication(jobApplication);
+		return repo.saveJobApplication(jobApplication);
 	}
 
 }

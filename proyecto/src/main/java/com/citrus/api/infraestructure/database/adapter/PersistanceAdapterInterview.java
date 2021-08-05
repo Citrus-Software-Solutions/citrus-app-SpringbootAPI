@@ -37,9 +37,9 @@ public class PersistanceAdapterInterview implements InterviewRepo{
 	}
 
 	@Override
-	public Interview saveInterview(Interview interview) {	
+	public InterviewJPA saveInterview(Interview interview) {	
 		InterviewJPA result = interviewRepo.save(mapper.toJPA(interview));
-		return mapper.toDomain(result);
+		return result;
 	}	
 	
 	

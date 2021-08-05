@@ -6,6 +6,7 @@ import com.citrus.api.domain.Application;
 import com.citrus.api.domain.Employee;
 import com.citrus.api.domain.Interview;
 import com.citrus.api.domain.StaffMember;
+import com.citrus.api.infraestructure.database.JPAClasses.InterviewJPA;
 
 
 public class InterviewCreator {
@@ -16,7 +17,7 @@ final InterviewRepo repo;
 		this.repo = repo;
 	}
 	
-	public void createInterview(CreateInterviewCommand command) {
+	public InterviewJPA createInterview(CreateInterviewCommand command) {
 		
 		Interview interview = new Interview
 				(command.getId(),
@@ -28,7 +29,7 @@ final InterviewRepo repo;
 						command.getAccessURL(),
 						command.getStatus()
 				);
-		repo.saveInterview(interview);	
+		return repo.saveInterview(interview);	
 	}
 
 }

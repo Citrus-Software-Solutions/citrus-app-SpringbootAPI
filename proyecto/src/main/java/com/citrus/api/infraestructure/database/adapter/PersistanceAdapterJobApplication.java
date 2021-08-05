@@ -35,9 +35,9 @@ public class PersistanceAdapterJobApplication implements JobApplicationRepo{
 		return mapper.toDomain(jobRepo.findById(apid).orElseThrow(EntityNotFoundException::new));
 	}
 	@Override
-	public Application saveJobApplication(Application jobApplication) {
+	public ApplicationJPA saveJobApplication(Application jobApplication) {
 		ApplicationJPA result = jobRepo.save(mapper.toJPA(jobApplication));
-		return mapper.toDomain(result);
+		return result;
 	}
 	@Override
 	public List<Application> findJobApplication(Employee_Id employee) {

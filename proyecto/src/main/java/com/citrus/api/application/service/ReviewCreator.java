@@ -8,6 +8,7 @@ import com.citrus.api.application.providers.ReviewRepo;
 import com.citrus.api.domain.Question;
 import com.citrus.api.domain.Review;
 import com.citrus.api.domain.valueObjects.Review_Total_Score;
+import com.citrus.api.infraestructure.database.JPAClasses.ReviewJPA;
 
 public class ReviewCreator {
 
@@ -17,7 +18,7 @@ public class ReviewCreator {
 		this.repo = repo;
 	}
 	
-	public void createReview(CreateReviewCommand command) {
+	public ReviewJPA createReview(CreateReviewCommand command) {
 		
 		List<Question> question = command.getQuestions();
 		int score = 0;
@@ -35,7 +36,7 @@ public class ReviewCreator {
 						command.getApplication()
 				);
 		
-		repo.saveReview(review);
+		return repo.saveReview(review);
 	}
 	
 	

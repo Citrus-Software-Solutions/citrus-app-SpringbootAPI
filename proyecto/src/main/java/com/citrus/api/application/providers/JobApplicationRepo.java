@@ -5,11 +5,12 @@ import java.util.List;
 import com.citrus.api.domain.Application;
 import com.citrus.api.domain.valueObjects.Application_Id;
 import com.citrus.api.domain.valueObjects.Employee_Id;
+import com.citrus.api.infraestructure.database.JPAClasses.ApplicationJPA;
 
 public interface JobApplicationRepo {
 	List<Application> findJobApplication();
 	Application findJobApplication(Application_Id id);
-	Application saveJobApplication(Application jobApplication);
+	ApplicationJPA saveJobApplication(Application jobApplication);
 	List<Application> findJobApplication(Employee_Id employee);
 
 }

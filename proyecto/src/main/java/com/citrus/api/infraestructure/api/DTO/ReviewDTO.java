@@ -4,11 +4,19 @@ import java.util.List;
 
 public class ReviewDTO {
 	
-    List<QuestionDTO> questions;
+	Integer id;
+
+	List<QuestionDTO> questions;
 	Integer totalScore;
 	EmployeeDTO employee;
 	EmployerDTO employer;
 	ApplicationReviewDTO application;
+    public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public List<QuestionDTO> getQuestions() {
 		return questions;
 	}

@@ -13,6 +13,7 @@ import com.citrus.api.domain.Review;
 import com.citrus.api.domain.valueObjects.Employer_Id;
 import com.citrus.api.domain.valueObjects.Review_Id;
 import com.citrus.api.domain.valueObjects.Review_Total_Score;
+import com.citrus.api.infraestructure.database.JPAClasses.ReviewJPA;
 import com.citrus.api.infraestructure.database.mapper.QuestionMapperJPA;
 import com.citrus.api.infraestructure.database.mapper.ReviewMapperJPA;
 import com.citrus.api.infraestructure.database.repository.QuestionRepository;
@@ -47,12 +48,10 @@ public class PersistanceAdapterReview implements ReviewRepo{
 	}
 
 	@Override
-	public void saveReview(Review review) {
+	public ReviewJPA saveReview(Review review) {
 		
 		Integer id = review.getId().getValue();
 		List<Question> question = review.getQuestions();
-		System.out.println(review.getId().getValue()); 
-
 		
 		int score = 0;
 		for (int i = 0; i < question.size(); i++) {
@@ -60,12 +59,12 @@ public class PersistanceAdapterReview implements ReviewRepo{
         }
 		
 		review.setTotalScore(new Review_Total_Score(score));
-		
-		id= (reviewRepo.save(mapper.toJPA(review))).getId();
+		ReviewJPA jpa = reviewRepo.save(mapper.toJPA(review));
+		id= (jpa).getId();
 		for (int i = 0; i < question.size(); i++) {
 			questionRepo.save(qMapper.toJPA(question.get(i), id));
         }
-		
+		return jpa;
 		
 	}
 

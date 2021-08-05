@@ -32,6 +32,8 @@ public class ReviewMapperDTO {
 	public ReviewDTO toDTO(Review review) {
 		ReviewDTO reviewDTO = new ReviewDTO();
 		reviewDTO.setTotalScore((review.getTotalScore()== null)? null:review.getTotalScore().getValue());
+		reviewDTO.setId((review.getId()== null)? null:review.getId().getValue());
+
 
 		if(review.getEmployee()==(null) ) {
 			reviewDTO.setEmployee(null);

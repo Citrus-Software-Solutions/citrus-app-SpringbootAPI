@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.citrus.api.application.service.InterviewCreator;
-
+import com.citrus.api.infraestructure.api.DTO.InterviewDTO;
+import com.citrus.api.infraestructure.api.mapper.InterviewMapperDTO;
 import com.citrus.api.infraestructure.database.JPAClasses.InterviewJPA;
 import com.citrus.api.infraestructure.database.adapter.PersistanceAdapterInterview;
 import com.citrus.api.infraestructure.database.mapper.InterviewMapperJPA;
@@ -16,7 +17,9 @@ import com.citrus.api.infraestructure.database.mapper.InterviewMapperJPA;
 @RequestMapping("/interview")
 public class CreateInterviewController {
 	
-	
+	@Autowired
+	InterviewMapperDTO mapperDTO;
+
 	final PersistanceAdapterInterview repo;
 	
 	public CreateInterviewController(PersistanceAdapterInterview repo) {
@@ -29,9 +32,9 @@ public class CreateInterviewController {
 
 	
 	@RequestMapping(value="", method=RequestMethod.POST)
-	public void newInterview(@RequestBody InterviewJPA interview) {
+	public InterviewDTO newInterview(@RequestBody InterviewJPA interview) {
 		InterviewCreator handler = new InterviewCreator(repo);
-		handler.createInterview(mapperJPA.toCommand(interview));
+		return mapperDTO.toDTO(mapperJPA.toDomain(handler.createInterview(mapperJPA.toCommand(interview))));
 	}
 	
 

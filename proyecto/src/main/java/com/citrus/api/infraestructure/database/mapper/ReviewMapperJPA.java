@@ -66,13 +66,6 @@ public class ReviewMapperJPA {
 		
 	}
 	
-	public ReviewMapperJPA(QuestionMapperJPA questionMapper, ReviewRepository reviewRepo,
-			QuestionRepository questionRepo) {
-		super();
-		this.questionMapper = questionMapper;
-		this.reviewRepo = reviewRepo;
-		this.questionRepo = questionRepo;
-	}
 	
 	public ReviewMapperJPA() {
 		super();
@@ -112,6 +105,21 @@ public class ReviewMapperJPA {
 				new Application(new Application_Id(review.getApplicationId()))
 				);
 		return comand;
+	}
+
+	public Review toDomain(ReviewRB jpa) {
+		ApplicationJPA applijpa = applicationRepo.findById(jpa.getApplicationId()).orElseThrow(EntityNotFoundException::new);
+		
+		Review review = new Review(
+				new Review_Id(jpa.getId()),
+				questionMapper.toDomain(jpa.getQuestions()),
+				new Review_Total_Score(jpa.getTotalscore()),
+				new Employee(new Employee_Id(jpa.getEmployeeId())),
+				new Employer(new Employer_Id(jpa.getEmployerId())),
+				applicationMapper.toDomain(applijpa)
+				
+				);
+		return review;
 	}
 
 }
