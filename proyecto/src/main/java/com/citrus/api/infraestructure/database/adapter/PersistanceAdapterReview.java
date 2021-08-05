@@ -43,6 +43,11 @@ public class PersistanceAdapterReview implements ReviewRepo{
 		
 	}
 	
+	@Override
+	public List<Review> findReview() {
+		return mapper.toDomain(reviewRepo.findAll());
+		
+	}
 	
 	@Override
 	public Review findReview(Review_Id id) {

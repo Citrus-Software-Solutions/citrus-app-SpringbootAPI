@@ -12,5 +12,6 @@ public interface ReviewRepo {
 	List<Review> findReview(Employer_Id id);
 	Review findReview(Review_Id id);
 	Review saveReview(Review review);
+	List<Review> findReview();
 
 }
