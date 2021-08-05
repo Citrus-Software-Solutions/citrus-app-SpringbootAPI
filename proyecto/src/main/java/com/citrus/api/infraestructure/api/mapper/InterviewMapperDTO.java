@@ -39,7 +39,7 @@ public class InterviewMapperDTO {
 		if(domain.getEmployee()==(null) ) {
 	    	dto.setEmployee(null);
 	    }else {
-	    	dto.setEmployee(employeeMapper.getById(domain.getStaffMember().getId().getValue()));
+	    	dto.setEmployee(employeeMapper.getById(domain.getEmployee().getId().getValue()));
 	    }
 		if(domain.getStaffMember()==(null) ) {
 	    	dto.setStaffMember(null);

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.citrus.api.application.providers.InterviewRepo;
 import com.citrus.api.domain.Interview;
+import com.citrus.api.domain.valueObjects.Employee_Id;
 import com.citrus.api.domain.valueObjects.Interview_Id;
 import com.citrus.api.infraestructure.database.JPAClasses.InterviewJPA;
 import com.citrus.api.infraestructure.database.mapper.InterviewMapperJPA;
@@ -34,6 +35,12 @@ public class PersistanceAdapterInterview implements InterviewRepo{
 	@Override
 	public Interview findInterview(Interview_Id id) {
 		return(mapper.toDomain(interviewRepo.findById(id.getValue()).orElseThrow(EntityNotFoundException::new)));
+	}
+	
+	@Override
+	public List<Interview> findInterview(Employee_Id id) {
+		return mapper.toDomain(interviewRepo.findByEmployeeId(id.getValue()));
+		
 	}
 
 	@Override

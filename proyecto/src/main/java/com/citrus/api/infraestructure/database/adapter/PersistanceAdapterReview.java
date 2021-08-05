@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.citrus.api.application.providers.ReviewRepo;
 import com.citrus.api.domain.Question;
 import com.citrus.api.domain.Review;
+import com.citrus.api.domain.valueObjects.Employee_Id;
 import com.citrus.api.domain.valueObjects.Employer_Id;
 import com.citrus.api.domain.valueObjects.Review_Id;
 import com.citrus.api.domain.valueObjects.Review_Total_Score;
@@ -41,7 +42,8 @@ public class PersistanceAdapterReview implements ReviewRepo{
 		return mapper.toDomain(reviewRepo.findByEmployerId(id.getValue()));
 		
 	}
-
+	
+	
 	@Override
 	public Review findReview(Review_Id id) {
 		return mapper.toDomain(reviewRepo.findById(id.getValue()).orElseThrow(EntityNotFoundException::new));
