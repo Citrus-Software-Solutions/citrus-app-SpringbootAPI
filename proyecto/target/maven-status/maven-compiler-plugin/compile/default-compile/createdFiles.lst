@@ -1,3 +1,4 @@
+com\citrus\api\infraestructure\database\JPAClasses\ReviewRB.class
 com\citrus\api\application\providers\InterviewRepo.class
 com\citrus\api\ProyectoApplication.class
 com\citrus\api\domain\valueObjects\Employer_Company_Name.class
