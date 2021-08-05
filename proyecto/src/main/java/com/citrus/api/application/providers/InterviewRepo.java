@@ -10,6 +10,6 @@ public interface InterviewRepo {
 
 	List<Interview> findInterview();
 	Interview findInterview(Interview_Id id);
-	InterviewJPA saveInterview(Interview interview);
+	Interview saveInterview(Interview interview);
 	
 }

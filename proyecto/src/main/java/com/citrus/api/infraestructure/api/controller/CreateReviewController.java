@@ -36,7 +36,7 @@ public class CreateReviewController {
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public ReviewDTO newReview(@RequestBody ReviewRB review) {
 		ReviewCreator handler = new ReviewCreator(repo);
-		return mapperDTO.toDTO(mapperJPA.toDomain(handler.createReview(mapperJPA.toCommand(review))));
+		return mapperDTO.toDTO(handler.createReview(mapperJPA.toCommand(review)));
 	}
 
 }

@@ -18,7 +18,7 @@ public class ReviewCreator {
 		this.repo = repo;
 	}
 	
-	public ReviewJPA createReview(CreateReviewCommand command) {
+	public Review createReview(CreateReviewCommand command) {
 		
 		List<Question> question = command.getQuestions();
 		int score = 0;

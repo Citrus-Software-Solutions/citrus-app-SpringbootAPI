@@ -10,7 +10,7 @@ import com.citrus.api.infraestructure.database.JPAClasses.ApplicationJPA;
 public interface JobApplicationRepo {
 	List<Application> findJobApplication();
 	Application findJobApplication(Application_Id id);
-	ApplicationJPA saveJobApplication(Application jobApplication);
+	Application saveJobApplication(Application jobApplication);
 	List<Application> findJobApplication(Employee_Id employee);
 
 }

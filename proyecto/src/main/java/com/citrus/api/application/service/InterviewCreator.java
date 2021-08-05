@@ -17,7 +17,7 @@ final InterviewRepo repo;
 		this.repo = repo;
 	}
 	
-	public InterviewJPA createInterview(CreateInterviewCommand command) {
+	public Interview createInterview(CreateInterviewCommand command) {
 		
 		Interview interview = new Interview
 				(command.getId(),

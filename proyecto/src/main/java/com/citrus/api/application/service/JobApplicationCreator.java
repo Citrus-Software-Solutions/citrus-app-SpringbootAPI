@@ -19,7 +19,7 @@ public class JobApplicationCreator {
 	
 	
 
-	public ApplicationJPA createJobApplication(CreateJobApplicationCommand command) {
+	public Application createJobApplication(CreateJobApplicationCommand command) {
 		
 		Application jobApplication = new Application(
 				command.getId(),

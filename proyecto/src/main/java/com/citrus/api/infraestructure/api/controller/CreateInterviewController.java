@@ -34,7 +34,7 @@ public class CreateInterviewController {
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public InterviewDTO newInterview(@RequestBody InterviewJPA interview) {
 		InterviewCreator handler = new InterviewCreator(repo);
-		return mapperDTO.toDTO(mapperJPA.toDomain(handler.createInterview(mapperJPA.toCommand(interview))));
+		return mapperDTO.toDTO(handler.createInterview(mapperJPA.toCommand(interview)));
 	}
 	
 

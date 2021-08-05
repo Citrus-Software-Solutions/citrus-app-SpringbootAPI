@@ -35,7 +35,7 @@ public class CreateJobApplicationController {
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public ApplicationDTO newJobApplication(@RequestBody ApplicationJPA job_appliaction) {
 		JobApplicationCreator handler = new JobApplicationCreator(repo);
-		return mapperDTO.toDTO(mapperJPA.toDomain(handler.createJobApplication(mapperJPA.toCommand(job_appliaction))));
+		return mapperDTO.toDTO(handler.createJobApplication(mapperJPA.toCommand(job_appliaction)));
 	}
 
 }

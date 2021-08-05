@@ -48,7 +48,7 @@ public class PersistanceAdapterReview implements ReviewRepo{
 	}
 
 	@Override
-	public ReviewJPA saveReview(Review review) {
+	public Review saveReview(Review review) {
 		
 		Integer id = review.getId().getValue();
 		List<Question> question = review.getQuestions();
@@ -64,7 +64,7 @@ public class PersistanceAdapterReview implements ReviewRepo{
 		for (int i = 0; i < question.size(); i++) {
 			questionRepo.save(qMapper.toJPA(question.get(i), id));
         }
-		return jpa;
+		return mapper.toDomain(jpa);
 		
 	}
 
