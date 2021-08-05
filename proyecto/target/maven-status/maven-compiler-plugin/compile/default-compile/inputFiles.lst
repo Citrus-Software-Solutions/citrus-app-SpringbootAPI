@@ -65,6 +65,7 @@ C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\http\mapper\JobOfferMapperHTTP.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\valueObjects\Payment_Id.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\service\InterviewByIdFinder.java
+C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\database\JPAClasses\ReviewRB.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\valueObjects\Employer_Id.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\api\mapper\InterviewMapperDTO.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\service\InterviewFinder.java
