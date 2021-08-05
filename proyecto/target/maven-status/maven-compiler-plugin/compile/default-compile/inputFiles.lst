@@ -4,12 +4,14 @@ C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\queries\JobApplicationByEmployeeQuery.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\service\ReviewCreator.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\valueObjects\Job_Offer_Id.java
+C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\api\controller\FindAllReviewController.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\valueObjects\Interview_Status.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\Review.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\valueObjects\Review_Question.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\Ivalidator\IJobOfferValidator.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\api\mapper\ReviewMapperDTO.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\api\DTO\StaffMemberDTO.java
+C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\api\controller\FindInterviewByIdEmployeeController.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\database\JPAClasses\ApplicationJPA.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\valueObjects\Email.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\api\mapper\QuestionMapperDTO.java
@@ -31,6 +33,8 @@ C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\database\repository\ReviewRepository.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\api\controller\CreateJobApplicationController.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\database\mapper\QuestionMapperJPA.java
+C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\service\InterviewByEmployeeIdFinder.java
+C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\queries\InterviewByIdEmployeeQuery.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\api\DTO\InterviewDTO.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\providers\ReviewRepo.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\api\controller\FindAllJobApplicationsController.java
@@ -90,6 +94,7 @@ C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\http\mapper\StaffMemberMapperHTTP.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\WorkExperience.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\service\InterviewDateUpdater.java
+C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\application\service\ReviewFinder.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\valueObjects\Employee_SSN.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\infraestructure\http\mapper\EmployeeMapperHTTP.java
 C:\eclipse-c-workspace\Citrus Software Solutions\citrus-app-SpringbootAPI\citrus-app-SpringbootAPI\proyecto\src\main\java\com\citrus\api\domain\valueObjects\Contact_Information_Job_Title.java

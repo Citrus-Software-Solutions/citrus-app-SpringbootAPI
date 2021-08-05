@@ -11,11 +11,14 @@ com\citrus\api\infraestructure\http\mapper\EmployeeMapperHTTP.class
 com\citrus\api\application\providers\JobApplicationRepo.class
 com\citrus\api\domain\valueObjects\Address_City.class
 com\citrus\api\application\queries\JobApplicationByEmployeeQuery.class
+com\citrus\api\application\service\ReviewFinder.class
 com\citrus\api\domain\valueObjects\Job_Offer_Duration.class
 com\citrus\api\infraestructure\database\mapper\ReviewMapperJPA.class
 com\citrus\api\application\service\ReviewByIdFinder.class
 com\citrus\api\domain\valueObjects\Application_Date.class
 com\citrus\api\infraestructure\api\controller\UpdateDateInterviewController.class
+com\citrus\api\infraestructure\api\controller\FindAllReviewController.class
+com\citrus\api\application\service\InterviewByEmployeeIdFinder.class
 com\citrus\api\domain\valueObjects\Work_Experience_Company_Name.class
 com\citrus\api\domain\valueObjects\Skill_Category.class
 com\citrus\api\application\validator\JobOfferValidation.class
@@ -60,6 +63,7 @@ com\citrus\api\domain\valueObjects\Job_Offer_Hourly_Rate.class
 com\citrus\api\domain\valueObjects\Review_Id.class
 com\citrus\api\domain\valueObjects\Email.class
 com\citrus\api\domain\valueObjects\Payment_Status.class
+com\citrus\api\infraestructure\api\controller\FindInterviewByIdEmployeeController.class
 com\citrus\api\application\service\JobApplicationCreator.class
 com\citrus\api\domain\valueObjects\Employee_rating.class
 com\citrus\api\domain\valueObjects\Question_Id.class
@@ -92,6 +96,7 @@ com\citrus\api\domain\Application.class
 com\citrus\api\domain\valueObjects\Skill_Id.class
 com\citrus\api\infraestructure\database\adapter\PersistanceAdapterInterview.class
 com\citrus\api\application\service\InterviewByIdFinder.class
+com\citrus\api\application\queries\InterviewByIdEmployeeQuery.class
 com\citrus\api\application\validator\JobApplicationValidation.class
 com\citrus\api\domain\valueObjects\Employee_Id.class
 com\citrus\api\domain\valueObjects\Reference_Company_Name.class
