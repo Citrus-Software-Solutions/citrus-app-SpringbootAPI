@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
 	public static final String QUEUE = "test_queue";
+	public static final String QUEUE2 = "Interview_queue";
     public static final String EXCHANGE = "javatechie_exchange";
     public static final String ROUTING_KEY = "javatechie_routingKey";
     //private static final boolean IS_DURABLE_QUEUE = false;
@@ -19,6 +20,11 @@ public class RabbitMQConfig {
     @Bean
     public Queue queue() {
         return new Queue(QUEUE);
+    }
+    
+    @Bean
+    public Queue queue2() {
+        return new Queue(QUEUE2);
     }
 
     @Bean
