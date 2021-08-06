@@ -68,10 +68,9 @@ public class ApplicationIntegrationTest {
           .andExpect(content()
           .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
           .andExpect(jsonPath("id", is(jobapplicationjpa.getId())))
-          //.andExpect(jsonPath("date_application", is(jobapplicationjpa.getDate_application())))
-          .andExpect(jsonPath("status", is(jobapplicationjpa.getStatus())));
-          //.andExpect(jsonPath("employee_id", is(jobapplicationjpa.getEmployee_id())))
-          //.andExpect(jsonPath("job_offer_id", is(jobapplicationjpa.getJob_offer_id())));
-        System.out.println(json);
+          .andExpect(jsonPath("application_Date", is(jobapplicationjpa.getDate_application()+ "T04:00:00.000+00:00")))
+          .andExpect(jsonPath("status", is(jobapplicationjpa.getStatus())))
+          .andExpect(jsonPath("employee.id", is(jobapplicationjpa.getEmployee_id())))
+          .andExpect(jsonPath("jobOffer.id", is(jobapplicationjpa.getJob_offer_id())));
     }
 }
