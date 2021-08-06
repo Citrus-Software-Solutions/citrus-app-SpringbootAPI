@@ -7,6 +7,7 @@ com\citrus\api\application\providers\ReviewRepo.class
 com\citrus\api\infraestructure\RabbitMQ\Consumer\JobOfferConsumer.class
 com\citrus\api\infraestructure\api\DTO\JobOfferDTO.class
 com\citrus\api\infraestructure\api\DTO\EmployerDTO.class
+com\citrus\api\infraestructure\RabbitMQ\DTO\data.class
 com\citrus\api\infraestructure\http\mapper\EmployeeMapperHTTP.class
 com\citrus\api\application\providers\JobApplicationRepo.class
 com\citrus\api\domain\valueObjects\Address_City.class
@@ -15,6 +16,7 @@ com\citrus\api\domain\valueObjects\Job_Offer_Duration.class
 com\citrus\api\infraestructure\database\mapper\ReviewMapperJPA.class
 com\citrus\api\application\service\ReviewByIdFinder.class
 com\citrus\api\domain\valueObjects\Application_Date.class
+com\citrus\api\infraestructure\RabbitMQ\DTO\Application.class
 com\citrus\api\infraestructure\api\controller\UpdateDateInterviewController.class
 com\citrus\api\domain\valueObjects\Work_Experience_Company_Name.class
 com\citrus\api\domain\valueObjects\Skill_Category.class
@@ -32,6 +34,7 @@ com\citrus\api\domain\valueObjects\Interview_AccessURL.class
 com\citrus\api\application\service\JobApplicationByEmployeeFinder.class
 com\citrus\api\infraestructure\database\JPAClasses\ReviewJPA.class
 com\citrus\api\domain\valueObjects\Interview_Status.class
+com\citrus\api\infraestructure\RabbitMQ\Publisher\JobOfferPublisher.class
 com\citrus\api\infraestructure\api\controller\UpdateStatusInterviewController.class
 com\citrus\api\infraestructure\database\repository\InterviewRepository.class
 com\citrus\api\domain\valueObjects\Address_Street.class
@@ -52,6 +55,7 @@ com\citrus\api\infraestructure\RabbitMQ\RabbitMQConfig.class
 com\citrus\api\infraestructure\api\DTO\ApplicationDTO.class
 com\citrus\api\infraestructure\api\controller\FindAllJobApplicationsController.class
 com\citrus\api\domain\Interview.class
+com\citrus\api\application\service\JobApplicationApprover.class
 com\citrus\api\infraestructure\database\adapter\PersistanceAdapterReview.class
 com\citrus\api\application\service\JobApplicationByIdFinder.class
 com\citrus\api\infraestructure\api\DTO\EmployeeDTO.class
@@ -62,6 +66,7 @@ com\citrus\api\domain\valueObjects\Email.class
 com\citrus\api\domain\valueObjects\Payment_Status.class
 com\citrus\api\application\service\JobApplicationCreator.class
 com\citrus\api\domain\valueObjects\Employee_rating.class
+com\citrus\api\infraestructure\api\controller\RejectJobApplicationController.class
 com\citrus\api\domain\valueObjects\Question_Id.class
 com\citrus\api\domain\valueObjects\Payment_Net_Payment.class
 com\citrus\api\domain\valueObjects\Reference_email.class
@@ -84,6 +89,7 @@ com\citrus\api\domain\WorkExperience.class
 com\citrus\api\domain\valueObjects\Document.class
 com\citrus\api\infraestructure\database\repository\QuestionRepository.class
 com\citrus\api\application\commands\CreateInterviewCommand.class
+com\citrus\api\application\service\JobApplicationRejecter.class
 com\citrus\api\infraestructure\database\mapper\InterviewMapperJPA.class
 com\citrus\api\domain\valueObjects\Address_Zip.class
 com\citrus\api\application\commands\UpdateDateInterviewCommand.class
@@ -106,6 +112,8 @@ com\citrus\api\application\service\JobApplicationFinder.class
 com\citrus\api\domain\valueObjects\Bill_Id.class
 com\citrus\api\domain\valueObjects\Review_Question.class
 com\citrus\api\application\service\ReviewCreator.class
+com\citrus\api\infraestructure\api\controller\ApproveJobApplicationController.class
+com\citrus\api\application\commands\UpdateStatusApplicationCommand.class
 com\citrus\api\domain\valueObjects\Address_State.class
 com\citrus\api\infraestructure\api\controller\FindInterviewByIdController.class
 com\citrus\api\infraestructure\api\DTO\StaffMemberDTO.class
@@ -129,7 +137,6 @@ com\citrus\api\infraestructure\api\mapper\JobApplicationMapperDTO.class
 com\citrus\api\application\port\in\JobOfferValidation.class
 com\citrus\api\domain\valueObjects\StaffMember_Id.class
 com\citrus\api\domain\valueObjects\Work_Experience_Job_Title.class
-com\citrus\api\infraestructure\RabbitMQ\Publisher\InterviewPublisher.class
 com\citrus\api\domain\valueObjects\Contact_Information_Email.class
 com\citrus\api\infraestructure\api\mapper\QuestionMapperDTO.class
 com\citrus\api\infraestructure\database\mapper\QuestionMapperJPA.class
