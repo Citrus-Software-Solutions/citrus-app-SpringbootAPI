@@ -2,6 +2,7 @@ package com.example.demo.resources;
 
 import java.sql.Date;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import com.citrus.api.application.commands.CreateJobApplicationCommand;
@@ -108,7 +109,7 @@ public class TestResourcesApplication {
 	Employer_Id id_ee = new Employer_Id(3);
 	Employer_Company_Name company_ee = new Employer_Company_Name("UCAB");
 	Employer_Logo logo_ee = new Employer_Logo("www.foto.com");
-	Special_Requirements special_ee = new Special_Requirements(String[].class.cast("Tener 10 años de experiencia"));
+	Special_Requirements special_ee = new Special_Requirements("Tener 10 años de experiencia");
 	Employer_Status status_ee = new Employer_Status(0);
 	
 	public Employer em = new Employer(id_ee, company_ee, ad, contact, logo_ee, skill, special_ee, status_ee);
@@ -134,8 +135,8 @@ public class TestResourcesApplication {
 	Job_Offer_Id id_j = new Job_Offer_Id(2);
 	Job_Offer_Title title_j = new Job_Offer_Title("Desarrollador de Software");
 	Date_Format date_j = new Date_Format(Date.valueOf("2021-08-10"));
-	Job_Offer_Schedule schedule_j = new Job_Offer_Schedule(Date[].class.cast("2021-08-2021"));
-	Special_Requirements special_j = new Special_Requirements(String[].class.cast("Tener 10 años de experiencia"));
+	Job_Offer_Schedule schedule_j = new Job_Offer_Schedule(Date.valueOf("2021-08-20"));
+	Special_Requirements special_j = new Special_Requirements("Tener 10 años de experiencia");
 	Job_Offer_Duration duration_j = new Job_Offer_Duration((float) 200);
 	Job_Offer_Hourly_Rate rate_j = new Job_Offer_Hourly_Rate((float) 500);
 	Job_Offer_Status status_j = new Job_Offer_Status(0);

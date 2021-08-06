@@ -2,14 +2,14 @@ package com.citrus.api.domain.valueObjects;
 
 public class Special_Requirements {
 	
-	public Special_Requirements(String[] value) {
+	public Special_Requirements(String value) {
 		super();
 		this.value = value;
 	}
 
-	String[] value;
+	String value;
 
-	public String[] getValue() {
+	public String getValue() {
 		return value;
 	}
 

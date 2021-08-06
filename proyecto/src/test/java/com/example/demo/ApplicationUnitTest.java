@@ -1,16 +1,17 @@
-package com.example.demo.UnitTest;
+package com.example.demo;
 
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.lenient;
+
 import java.text.ParseException;
-import org.junit.Test;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -22,8 +23,8 @@ import com.example.demo.resources.TestResourcesApplication;
 
 @ExtendWith(MockitoExtension.class)
 @RunWith(SpringRunner.class)
-@SpringBootTest
-public class ApplicationTest {
+@SpringBootTest(classes={com.citrus.api.ProyectoApplication.class})
+public class ApplicationUnitTest {
 
 	@Mock
 	private JobApplicationRepo repo;
@@ -31,8 +32,7 @@ public class ApplicationTest {
 	@InjectMocks
 	private JobApplicationCreator application;
 	
-	@Autowired
-	private TestResourcesApplication testResourceapplication;
+	TestResourcesApplication resource = new TestResourcesApplication ();
 	
 	  @BeforeEach
 	  void initUseCase() {
@@ -41,9 +41,10 @@ public class ApplicationTest {
 	  
 	 @Test
 	 public void savedJobOfferService() throws ParseException{
-		 Application app = testResourceapplication.JobApplicationCreate();
-		 JobApplicationCreator mock = org.mockito.Mockito.mock(JobApplicationCreator.class);
-		 when(mock.createJobApplication(app)).thenReturn(app);
-		 Assertions.assertNotNull(app);
+         Application app = resource.JobApplicationCreate();
+         CreateJobApplicationCommand command = resource.CreateJobApplicationCommandCreate();
+         JobApplicationCreator mock = org.mockito.Mockito.mock(JobApplicationCreator.class);
+         lenient().when(mock.createJobApplication(command)).thenReturn(app);
+         Assertions.assertNotNull(app);
 	 }
 }
