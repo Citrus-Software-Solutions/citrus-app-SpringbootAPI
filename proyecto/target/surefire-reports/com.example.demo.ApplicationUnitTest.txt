@@ -1,4 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.example.demo.ApplicationUnitTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.115 s - in com.example.demo.ApplicationUnitTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 19.983 s <<< FAILURE! - in com.example.demo.ApplicationUnitTest
+savedJobOfferService  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+Caused by: org.postgresql.util.PSQLException: FATAL: too many connections for role "ujqmasjrnidhnd"
+

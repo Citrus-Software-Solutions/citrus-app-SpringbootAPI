@@ -18,7 +18,9 @@ com\citrus\api\application\service\ReviewByIdFinder.class
 com\citrus\api\domain\valueObjects\Application_Date.class
 com\citrus\api\infraestructure\api\controller\UpdateDateInterviewController.class
 com\citrus\api\infraestructure\api\controller\FindAllReviewController.class
+com\citrus\api\infraestructure\RabbitMQ\Dto\ApplicationMessage.class
 com\citrus\api\application\service\InterviewByEmployeeIdFinder.class
+com\citrus\api\infraestructure\RabbitMQ\Publisher\ApplicationPublisher.class
 com\citrus\api\domain\valueObjects\Work_Experience_Company_Name.class
 com\citrus\api\domain\valueObjects\Skill_Category.class
 com\citrus\api\application\validator\JobOfferValidation.class
@@ -43,6 +45,7 @@ com\citrus\api\application\Ivalidator\IApplicationValidator.class
 com\citrus\api\infraestructure\database\JPAClasses\ApplicationJPA.class
 com\citrus\api\domain\Employer.class
 com\citrus\api\application\service\ReviewByEmployerFinder.class
+com\citrus\api\infraestructure\api\controller\rejectJobApplicationController.class
 com\citrus\api\infraestructure\database\mapper\ApplicationMapperJPA.class
 com\citrus\api\application\queries\ReviewByEmployerQuery.class
 com\citrus\api\domain\Employee.class
@@ -105,6 +108,7 @@ com\citrus\api\domain\valueObjects\Reference_Company_Name.class
 com\citrus\api\application\commands\UpdateStatusInterviewCommand.class
 com\citrus\api\application\service\InterviewFinder.class
 com\citrus\api\infraestructure\api\mapper\InterviewMapperDTO.class
+com\citrus\api\application\service\JobApplicationStatusUpdater.class
 com\citrus\api\domain\valueObjects\Contact_Information_Full_Name.class
 com\citrus\api\application\commands\CreateReviewCommand.class
 com\citrus\api\domain\valueObjects\Review_Score.class
@@ -113,6 +117,7 @@ com\citrus\api\application\service\JobApplicationFinder.class
 com\citrus\api\domain\valueObjects\Bill_Id.class
 com\citrus\api\domain\valueObjects\Review_Question.class
 com\citrus\api\application\service\ReviewCreator.class
+com\citrus\api\infraestructure\api\controller\ApproveJobApplicationController.class
 com\citrus\api\domain\valueObjects\Address_State.class
 com\citrus\api\infraestructure\api\controller\FindInterviewByIdController.class
 com\citrus\api\infraestructure\api\DTO\StaffMemberDTO.class
@@ -122,6 +127,7 @@ com\citrus\api\infraestructure\database\adapter\PersistanceAdapterJobApplication
 com\citrus\api\application\service\InterviewStatusUpdater.class
 com\citrus\api\domain\valueObjects\Employee_Name.class
 com\citrus\api\domain\valueObjects\Interview_Id.class
+com\citrus\api\application\commands\UpdateStatusJobApplicationCommand.class
 com\citrus\api\domain\valueObjects\Contact_Information_Job_Title.class
 com\citrus\api\domain\Skill.class
 com\citrus\api\infraestructure\api\DTO\ReviewDTO.class
@@ -136,7 +142,6 @@ com\citrus\api\infraestructure\api\mapper\JobApplicationMapperDTO.class
 com\citrus\api\application\port\in\JobOfferValidation.class
 com\citrus\api\domain\valueObjects\StaffMember_Id.class
 com\citrus\api\domain\valueObjects\Work_Experience_Job_Title.class
-com\citrus\api\infraestructure\RabbitMQ\Publisher\InterviewPublisher.class
 com\citrus\api\domain\valueObjects\Contact_Information_Email.class
 com\citrus\api\infraestructure\api\mapper\QuestionMapperDTO.class
 com\citrus\api\infraestructure\database\mapper\QuestionMapperJPA.class

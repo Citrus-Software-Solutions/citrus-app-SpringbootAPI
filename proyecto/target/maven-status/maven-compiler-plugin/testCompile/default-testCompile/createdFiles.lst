@@ -1,3 +1,7 @@
-com\example\demo\resources\TestResourcesApplication.class
-com\example\demo\ProyectoApplicationTests.class
 com\example\demo\ApplicationUnitTest.class
+com\example\demo\ApplicationIntegrationTest.class
+com\example\demo\AplicationAcceptanceTest.class
+com\example\demo\resources\TestResourcesApplication.class
+com\example\demo\resources\TestResourcesReview.class
+com\example\demo\ProyectoApplicationTests.class
+com\example\demo\CreateReviewUnitTest.class
