@@ -41,9 +41,9 @@ public class ApplicationTest {
 	  
 	 @Test
 	 public void savedJobOfferService() throws ParseException{
-		 CreateJobApplicationCommand app = testResourceapplication.CreateJobApplicationCommandCreate();
+		 Application app = testResourceapplication.JobApplicationCreate();
 		 JobApplicationCreator mock = org.mockito.Mockito.mock(JobApplicationCreator.class);
-		 when(mock.createJobApplication(app));
+		 when(mock.createJobApplication(app)).thenReturn(app);
 		 Assertions.assertNotNull(app);
 	 }
 }
