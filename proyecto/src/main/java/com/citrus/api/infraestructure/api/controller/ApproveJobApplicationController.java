@@ -10,7 +10,9 @@ import com.citrus.api.application.commands.UpdateStatusJobApplicationCommand;
 import com.citrus.api.application.service.JobApplicationStatusUpdater;
 import com.citrus.api.domain.valueObjects.Application_Id;
 import com.citrus.api.domain.valueObjects.Application_Status;
+import com.citrus.api.infraestructure.RabbitMQ.Publisher.InterviewPublisher;
 import com.citrus.api.infraestructure.api.mapper.InterviewMapperDTO;
+import com.citrus.api.infraestructure.api.mapper.JobApplicationMapperDTO;
 import com.citrus.api.infraestructure.database.adapter.PersistanceAdapterJobApplication;
 
 @RestController
@@ -19,19 +21,23 @@ public class ApproveJobApplicationController {
 	
 	final PersistanceAdapterJobApplication repo;
 	
-	public ApproveJobApplicationController(PersistanceAdapterJobApplication repo) {
+	public ApproveJobApplicationController(PersistanceAdapterJobApplication repo, InterviewPublisher publisher) {
 	super();
 	this.repo = repo;
+	this.publisher=publisher;
 	}
 	
+	final InterviewPublisher publisher;
+	
 	@Autowired
-	InterviewMapperDTO mapperDTO;
+	JobApplicationMapperDTO mapperDTO;
 	
 	@RequestMapping(value="{id}/approve", method=RequestMethod.PUT)
     public void approveApplication(@PathVariable("id") Integer id){
 		UpdateStatusJobApplicationCommand command = new UpdateStatusJobApplicationCommand(new Application_Id(id), new Application_Status(2));
 		JobApplicationStatusUpdater handler = new JobApplicationStatusUpdater(repo);
-		handler.updateStatusApplication(command);
+		publisher.PruebaRabbitMQ(mapperDTO.toDTO(handler.updateStatusApplication(command)));
+		
  }	
 
 }

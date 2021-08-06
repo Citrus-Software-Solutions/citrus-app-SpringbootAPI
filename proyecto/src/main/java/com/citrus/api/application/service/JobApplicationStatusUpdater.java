@@ -12,10 +12,10 @@ public class JobApplicationStatusUpdater {
 		this.repo = repo;
 	}
 	
-	public void updateStatusApplication(UpdateStatusJobApplicationCommand command) {
+	public Application updateStatusApplication(UpdateStatusJobApplicationCommand command) {
 		Application application = repo.findJobApplication(command.getId());
 		application.setStatus(command.getStatus());
-		repo.saveJobApplication(application);
+		return repo.saveJobApplication(application);
 	}
 
 }
