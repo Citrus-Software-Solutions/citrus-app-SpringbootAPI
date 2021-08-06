@@ -6,14 +6,14 @@ import com.citrus.api.infraestructure.api.DTO.ApplicationDTO;
 
 public class ApplicationMessage {
 	
-	public String patern;
+	public String pattern;
 	public List<ApplicationDTO> data;
 	
 	public ApplicationMessage() {}
 	public ApplicationMessage(String patern,List<ApplicationDTO> data ) {
 		super();
 		this.data=data;
-		this.patern=patern;
+		this.pattern=patern;
 	}
 
 }
