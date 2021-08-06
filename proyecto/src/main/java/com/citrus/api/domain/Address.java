@@ -7,6 +7,15 @@ import com.citrus.api.domain.valueObjects.Address_Zip;
 
 public class Address {
 	
+	public Address(Address_Street street1, Address_Street street2, Address_City city, Address_State state,
+			Address_Zip zip) {
+		super();
+		this.street1 = street1;
+		this.street2 = street2;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+	}
 	Address_Street street1;
 	Address_Street street2;
 	Address_City city;

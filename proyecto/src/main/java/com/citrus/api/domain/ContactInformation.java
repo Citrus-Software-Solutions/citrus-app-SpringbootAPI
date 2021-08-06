@@ -7,6 +7,14 @@ import com.citrus.api.domain.valueObjects.Phone_Number;
 
 public class ContactInformation {
 	
+	public ContactInformation(Contact_Information_Full_Name fullname, Contact_Information_Job_Title jobTitle,
+			Phone_Number phoneNumber, Contact_Information_Email email) {
+		super();
+		this.fullname = fullname;
+		this.jobTitle = jobTitle;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
 	Contact_Information_Full_Name fullname;
 	Contact_Information_Job_Title jobTitle;
 	Phone_Number phoneNumber;

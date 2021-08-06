@@ -6,6 +6,13 @@ import com.citrus.api.domain.valueObjects.Work_Experience_Job_Title;
 
 public class WorkExperience {
 	
+	public WorkExperience(Work_Experience_Job_Title jobTile, Work_Experience_Company_Name companyName,
+			Work_Experience_Category category) {
+		super();
+		this.jobTile = jobTile;
+		this.companyName = companyName;
+		this.category = category;
+	}
 	Work_Experience_Job_Title jobTile;
 	Work_Experience_Company_Name companyName;
 	Work_Experience_Category category;

@@ -8,6 +8,15 @@ import com.citrus.api.domain.valueObjects.Reference_email;
 
 public class Reference {
 	
+	public Reference(Reference_Name fullName, Reference_Job_Title jobTitle, Reference_Company_Name companyName,
+			Phone_Number phoneNumber, Reference_email email) {
+		super();
+		this.fullName = fullName;
+		this.jobTitle = jobTitle;
+		this.companyName = companyName;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
 	Reference_Name fullName;
 	Reference_Job_Title jobTitle;
 	Reference_Company_Name companyName;
