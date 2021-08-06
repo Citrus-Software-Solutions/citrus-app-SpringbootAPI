@@ -4,9 +4,13 @@ import java.util.Date;
 
 public class Job_Offer_Schedule {
 	
-	Date[] value;
+	public Job_Offer_Schedule(Date value) {
+		super();
+		this.value = value;
+	}
 
-	public Date[] getValue() {
+	Date value;
+	public Date getValue() {
 		return value;
 	} 
 

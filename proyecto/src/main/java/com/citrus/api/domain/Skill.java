@@ -6,6 +6,12 @@ import com.citrus.api.domain.valueObjects.Skill_Name;
 
 public class Skill {
 	
+	public Skill(Skill_Id id, Skill_Name name, Skill_Category category) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.category = category;
+	}
 	Skill_Id id;
 	Skill_Name name;
 	Skill_Category category;

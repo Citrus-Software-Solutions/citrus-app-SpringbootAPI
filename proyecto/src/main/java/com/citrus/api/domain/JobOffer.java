@@ -10,6 +10,23 @@ import com.citrus.api.domain.valueObjects.Job_Offer_Title;
 import com.citrus.api.domain.valueObjects.Special_Requirements;
 
 public class JobOffer {
+	public JobOffer(Job_Offer_Id id, Job_Offer_Title title, Employer employer, Address location, Date_Format deadline,
+			Job_Offer_Schedule schedules, Skill[] skills, Special_Requirements sprecialRequirements,
+			Job_Offer_Duration duration, Job_Offer_Hourly_Rate hourlyRate, Employee employee, Job_Offer_Status status) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.employer = employer;
+		this.location = location;
+		this.deadline = deadline;
+		this.schedules = schedules;
+		this.skills = skills;
+		this.sprecialRequirements = sprecialRequirements;
+		this.duration = duration;
+		this.hourlyRate = hourlyRate;
+		this.employee = employee;
+		this.status = status;
+	}
 	Job_Offer_Id id;
 	Job_Offer_Title title;
 	Employer employer;

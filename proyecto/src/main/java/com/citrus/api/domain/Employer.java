@@ -3,6 +3,18 @@ package com.citrus.api.domain;
 import com.citrus.api.domain.valueObjects.*;
 
 public class Employer{
+	public Employer(Employer_Id id, Employer_Company_Name companyName, Address address, ContactInformation[] contacts,
+			Employer_Logo logo, Skill[] skills, Special_Requirements specialRequeriments, Employer_Status status) {
+		super();
+		this.id = id;
+		this.companyName = companyName;
+		this.address = address;
+		this.contacts = contacts;
+		this.logo = logo;
+		this.skills = skills;
+		this.specialRequeriments = specialRequeriments;
+		this.status = status;
+	}
 	Employer_Id id;
 	Employer_Company_Name companyName;
 	Address address;
