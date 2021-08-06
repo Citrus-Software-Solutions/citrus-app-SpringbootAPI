@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import com.citrus.api.infraestructure.api.DTO.ApplicationDTO;
 
 @Service
-public class InterviewPublisher {
+public class ApplicationPublisher {
 
 	@Autowired
     private RabbitTemplate template;

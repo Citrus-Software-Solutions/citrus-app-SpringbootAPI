@@ -10,7 +10,7 @@ import com.citrus.api.application.commands.UpdateStatusJobApplicationCommand;
 import com.citrus.api.application.service.JobApplicationStatusUpdater;
 import com.citrus.api.domain.valueObjects.Application_Id;
 import com.citrus.api.domain.valueObjects.Application_Status;
-import com.citrus.api.infraestructure.RabbitMQ.Publisher.InterviewPublisher;
+import com.citrus.api.infraestructure.RabbitMQ.Publisher.ApplicationPublisher;
 import com.citrus.api.infraestructure.api.mapper.InterviewMapperDTO;
 import com.citrus.api.infraestructure.api.mapper.JobApplicationMapperDTO;
 import com.citrus.api.infraestructure.database.adapter.PersistanceAdapterJobApplication;
@@ -21,13 +21,13 @@ public class ApproveJobApplicationController {
 	
 	final PersistanceAdapterJobApplication repo;
 	
-	public ApproveJobApplicationController(PersistanceAdapterJobApplication repo, InterviewPublisher publisher) {
+	public ApproveJobApplicationController(PersistanceAdapterJobApplication repo, ApplicationPublisher publisher) {
 	super();
 	this.repo = repo;
 	this.publisher=publisher;
 	}
 	
-	final InterviewPublisher publisher;
+	final ApplicationPublisher publisher;
 	
 	@Autowired
 	JobApplicationMapperDTO mapperDTO;
