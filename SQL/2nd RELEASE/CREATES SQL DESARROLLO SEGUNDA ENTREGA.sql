@@ -11,7 +11,7 @@ CREATE TABLE Interview (
 
 CREATE TABLE Application (
     id serial PRIMARY KEY,
-    status integer NOT NULL CHECK (status = 0 or status = 1 or status = 2),
+    status integer NOT NULL CHECK (status = 0 or status = 1 or status = 2 or status = 3),
     date_application date not null,
     employee_id integer not null,
     job_offer_id integer not null
