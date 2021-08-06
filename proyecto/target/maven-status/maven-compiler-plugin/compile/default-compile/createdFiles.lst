@@ -76,7 +76,9 @@ com\citrus\api\infraestructure\api\controller\FindJobApplicationByEmployeeContro
 com\citrus\api\infraestructure\api\DTO\QuestionDTO.class
 com\citrus\api\domain\valueObjects\Employer_Status.class
 com\citrus\api\infraestructure\api\controller\CreateReviewController.class
+com\citrus\api\infraestructure\RabbitMQ\Dto\Receiver.class
 com\citrus\api\infraestructure\database\repository\JobApplicationRepository.class
+com\citrus\api\infraestructure\RabbitMQ\Dto\data.class
 com\citrus\api\infraestructure\api\DTO\InterviewDTO.class
 com\citrus\api\application\queries\JobApplicationByIdQuery.class
 com\citrus\api\domain\valueObjects\Job_Offer_Status.class
